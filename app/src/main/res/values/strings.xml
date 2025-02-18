@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">turnonauta</string>
+    <!-- Pantalla Login -->
+    <string name="app_name">Turnonauta</string>
+    <string name="correu">Correu:</string>
+    <string name="contrasenya">Contrasenya:</string>
+    <string name="iniciar_sessio">Iniciar Sessió</string>
+    <string name="inici_de_sessio">Inici de Sessió</string>
+    <string name="sense_registre1">Si no tens conta registrat aquí</string>
+    <string name="logo">Logo</string>
 </resources>

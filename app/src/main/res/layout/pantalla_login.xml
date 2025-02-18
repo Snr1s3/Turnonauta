@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/pantallaLogin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/color_background"
     tools:context=".PantallLogin">
 
         <LinearLayout
@@ -22,17 +22,17 @@
                 android:layout_height="100dp"
                 android:layout_marginBottom="10dp"
                 android:scaleType="centerCrop"
-                app:tint="@color/design_default_color_primary"
-                android:src="@drawable/ic_launcher_foreground" />
+                android:contentDescription="@string/logo"
+                android:src="@drawable/logo2" />
 
             <!-- Title -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FCE889"
+                android:background="@color/color_surface"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="Inici de Sessió"
+                android:text="@string/inici_de_sessio"
                 android:textColor="#000"
                 android:textSize="22sp"
                 android:textStyle="bold" />
@@ -45,40 +45,39 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-
+            android:gravity="center_horizontal"
             android:layout_weight="6"
             android:padding="20dp">
 
             <EditText
-                android:layout_width="370dp"
+                android:layout_width="300dp"
                 android:layout_height="60dp"
                 android:layout_marginBottom="10dp"
-                android:background="@android:color/darker_gray"
-                android:hint="correu:"
-                android:inputType="textWebEmailAddress"
                 android:padding="10dp"
-                android:textColor="#000"
-                android:textColorHint="#FFFFFF" />
+                android:textSize="16sp"
+                android:hint="@string/correu"
+                android:autofillHints="emailAddress"
+                android:inputType="textWebEmailAddress"
+                style="@style/TextField"/>
 
             <EditText
-                android:layout_width="370dp"
+                android:layout_width="300dp"
                 android:layout_height="60dp"
                 android:layout_marginBottom="15dp"
-                android:background="@android:color/darker_gray"
-                android:hint="contrasenya:"
-                android:inputType="textPassword"
                 android:padding="10dp"
-                android:textColor="#000"
-                android:textColorHint="#FFFFFF" />
+                android:textSize="16sp"
+                android:hint="@string/contrasenya"
+                android:autofillHints="password"
+                android:inputType="textPassword"
+                style="@style/TextField"/>
 
             <!-- Login Button -->
             <Button
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#001F3F"
                 android:padding="10dp"
-                android:text="Iniciar Sessió"
-                android:textColor="#FFFFFF" />
+                android:text="@string/iniciar_sessio"
+                style="@style/CustomButton"/>
         </LinearLayout>
 
         <LinearLayout
@@ -95,12 +94,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Si no tens conta registrat aquí"
-                android:textColor="#000"
+                android:text="@string/sense_registre1"
+                android:textColor="@color/color_text"
                 android:textSize="14sp" />
 
         </LinearLayout>
-
-    </LinearLayout>
-
 </LinearLayout>

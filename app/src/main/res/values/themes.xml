@@ -1,9 +1,22 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.Turnonauta" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="buttonStyle">@style/CustomButton</item>
+    </style>
+
+    <style name="CustomButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/color_primary_variant</item>
+        <item name="android:textColor">@color/color_text2</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextField" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:background">@color/color_primary_variant</item>
+        <item name="android:textColor">@color/color_text2</item>
+        <item name="android:textColorHint">@color/color_text2</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="Theme.Turnonauta" parent="Base.Theme.Turnonauta" />
+
 </resources>
