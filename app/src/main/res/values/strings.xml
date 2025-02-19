@@ -1,10 +1,27 @@
-<resources>
-    <!-- Pantalla Login -->
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Turnonauta</string>
+    <!-- Pantalla Login -->
     <string name="correu">Correu:</string>
     <string name="contrasenya">Contrasenya:</string>
+    <string name="contrasenyaOblidada">Has oblidat la contrasenya?</string>
     <string name="iniciar_sessio">Iniciar Sessió</string>
     <string name="inici_de_sessio">Inici de Sessió</string>
     <string name="sense_registre1">Si no tens conta registrat aquí</string>
     <string name="logo">Logo</string>
+    <!-- Recuperar Contrasenya -->
+    <string name="recuperar_contrasenya">Recuperar contrasenya</string>
+    <string name="escriu_el_mail">Escriu el teu correu electronic</string>
+    <string name="mail_exemple" tools:ignore="Typos">exemple@gmail.com</string>
+    <string name="enviar_codi">Enviar codi al correu</string>
+    <string name="escriu_el_codi">Escriu el codi que has rebut</string>
+    <string name="codi">Codi</string>
+    <string name="reenviar_codi">Si no has rebut el correu, Reenviar</string>
+    <string name="comprobar">Comprobar</string>
+    <string name="actualitzar_contrasenya">Actualitzar contrasenya</string>
+    <string name="nova_contrasenya">Nova contrasenya</string>
+    <string name="repetir_contrasenya">Repetir contrasenya</string>
+    <string name="genial">Genial! La vostra contrasenya</string>
+    <string name="exit">s\'ha restablert amb èxit.</string>
 </resources>
+ 
+
