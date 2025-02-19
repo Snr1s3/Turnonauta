@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".recuperar_contrasenya.ContrasenyaActualitzada"
+    android:background="@color/color_background"
     android:orientation="vertical">
 
     <LinearLayout

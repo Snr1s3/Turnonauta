@@ -19,20 +19,20 @@ class PantallLogin : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.pantalla_login)
 
-        var count = 1
+        var count = 0
 
         bInici = findViewById(R.id.bInici)
         tConObl = findViewById(R.id.tConObl)
 
         bInici.setOnClickListener {
-            if(count == 1){
+            if(count == 0){
                 tConObl.visibility = View.VISIBLE
             }
-            else{
-                val intent = Intent(this, RecuperarContrasenya::class.java)
-                startActivity(intent)
-            }
-            count = count * -1
+            count = count +1
+        }
+        tConObl.setOnClickListener{
+            val intent = Intent(this, RecuperarContrasenya::class.java)
+            startActivity(intent)
         }
     }
 }
