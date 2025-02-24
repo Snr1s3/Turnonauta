@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="30dp"
+    android:background="@color/color_background"
+    android:orientation="vertical"
+    tools:context=".registre.Registre">
+
+    <!-- Login Form -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Profile Image -->
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="10dp"
+            android:contentDescription="@string/logo"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logo2" />
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_surface"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/registre"
+            android:textColor="#000"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="100"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_marginBottom="100dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="40dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+                <TextView
+                    android:layout_margin="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/nom_usuari"
+                    android:textColor="@color/color_text"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/iNomUsuari"
+                    style="@style/TextField"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:autofillHints="emailAddress"
+                    android:hint="@string/nom_usuari2"
+                    android:inputType="textWebEmailAddress"
+                    android:padding="10dp"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_margin="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/mail"
+                    android:textColor="@color/color_text"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/iCorreu"
+                    style="@style/TextField"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:autofillHints="emailAddress"
+                    android:hint="@string/mail2"
+                    android:inputType="textWebEmailAddress"
+                    android:padding="10dp"
+                    android:textSize="16sp" />
+                <TextView
+                    android:layout_margin="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/telf"
+                    android:textColor="@color/color_text"
+                    android:textSize="18sp" />
+
+                <!-- Login Button -->
+
+                <EditText
+                    android:id="@+id/itelf"
+                    style="@style/TextField"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:autofillHints="emailAddress"
+                    android:hint="@string/telf2"
+                    android:inputType="textWebEmailAddress"
+                    android:padding="10dp"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_margin="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/contra"
+                    android:textColor="@color/color_text"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/iNomUsuari2"
+                    style="@style/TextField"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:autofillHints="emailAddress"
+                    android:hint="@string/contra2"
+                    android:inputType="textWebEmailAddress"
+                    android:padding="10dp"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_margin="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/rep_contra"
+                    android:textColor="@color/color_text"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/iCorreu2"
+                    style="@style/TextField"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:autofillHints="emailAddress"
+                    android:hint="@string/rep_contra2"
+                    android:inputType="textWebEmailAddress"
+                    android:padding="10dp"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/bRegistre"
+                    style="@style/CustomButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:paddingBottom="30dp"
+                    android:text="@string/enviar_codi" />
+
+            </LinearLayout>
+        </ScrollView>
+
+
+    </LinearLayout>
+
+</LinearLayout>

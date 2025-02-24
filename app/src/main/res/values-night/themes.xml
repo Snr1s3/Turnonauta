@@ -7,11 +7,19 @@
     <style name="CustomButton" parent="Widget.MaterialComponents.Button">
         <item name="android:backgroundTint">@color/color_primary_variant</item>
         <item name="android:textColor">@color/color_text2</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="TextField" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="android:background">@color/color_primary_variant</item>
         <item name="android:textColor">@color/color_text2</item>
         <item name="android:textColorHint">@color/color_text2</item>
+    </style>
+
+
+    <style name="CustomButton2" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/color_surface</item>
+        <item name="android:textColor">@color/color_text2</item>
+        <item name="android:textStyle">bold</item>
     </style>
 </resources>
