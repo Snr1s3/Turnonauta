@@ -21,6 +21,11 @@
         <item name="android:textColor">@color/color_text2</item>
         <item name="android:textStyle">bold</item>
     </style>
+    <style name="CustomImageButton2">
+        <item name="android:backgroundTint">@color/color_surface</item>
+        <item name="android:textColor">@color/color_text2</item>
+        <item name="android:textStyle">bold</item>
+    </style>
     <style name="Theme.Turnonauta" parent="Base.Theme.Turnonauta" />
 
 </resources>

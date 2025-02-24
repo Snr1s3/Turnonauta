@@ -7,7 +7,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import proj.tcg.turnonauta.aplicacio.PaginaPrincipal
+import proj.tcg.turnonauta.aplicacio.Pagina_Principal
 import proj.tcg.turnonauta.recuperar_contrasenya.RecuperarContrasenya
 import proj.tcg.turnonauta.registre.Registre
 
@@ -32,7 +32,7 @@ class PantallaLogin : AppCompatActivity() {
                 tConObl.visibility = View.VISIBLE
             }
             else{
-                val intent = Intent(this, PaginaPrincipal::class.java)
+                val intent = Intent(this, Pagina_Principal::class.java)
                 startActivity(intent)
             }
             count++
