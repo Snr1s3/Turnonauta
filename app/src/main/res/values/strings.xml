@@ -4,7 +4,7 @@
     <!-- Pantalla Login -->
     <string name="correu">Correu:</string>
     <string name="contrasenya">Contrasenya:</string>
-    <string name="contrasenyaOblidada">Has oblidat la contrasenya?</string>
+    <string name="contrasenyaOblidada">Has oblidat la contrasenya? Clica aquí!</string>
     <string name="iniciar_sessio">Iniciar Sessió</string>
     <string name="inici_de_sessio">Inici de Sessió</string>
     <string name="sense_registre1">Si no tens conta registrat aquí</string>
