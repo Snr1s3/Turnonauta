@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".aplicacio.PaginaPrincipal">
+    android:background="@color/color_background"
+    tools:context=".aplicacio.Pagina_Principal">
     <!-- Login Form -->
     <LinearLayout
         android:layout_width="match_parent"
@@ -41,32 +42,30 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="432dp"
         android:layout_weight="100"
         android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:padding="10dp">
+        android:orientation="vertical">
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="10dp"
-            android:layout_marginBottom="100dp">
+            android:paddingTop="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/drawable"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:background="@drawable/drawable"
-                    android:padding="10dp"
-                    android:layout_margin="10dp">
+                    android:padding="10dp">
 
                     <TextView
                         android:layout_width="0dp"
@@ -84,25 +83,25 @@
                         android:gravity="center"
                         android:text="2311231232AD"
                         android:textColor="@color/color_surface"
-                        android:textSize="22sp"/>
+                        android:textSize="22sp" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/drawable"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:background="@drawable/drawable"
-                    android:padding="10dp"
-                    android:layout_margin="10dp">
+                    android:padding="10dp">
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:layout_margin="10dp"
                         android:text="@string/usuari"
                         android:textColor="@color/color_surface"
                         android:textSize="22sp" />
@@ -110,9 +109,9 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
                         android:layout_weight="2"
                         android:gravity="center"
-                        android:layout_margin="10dp"
                         android:text="PACO ALVAREZ"
                         android:textColor="@color/color_surface"
                         android:textSize="22sp" />
@@ -121,18 +120,18 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/drawable"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:background="@drawable/drawable"
-                    android:padding="10dp"
-                    android:layout_margin="10dp">
+                    android:padding="10dp">
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
                         android:layout_weight="3"
                         android:gravity="center"
-                        android:layout_margin="10dp"
                         android:text="@string/rondesJ"
                         android:textColor="@color/color_surface"
                         android:textSize="22sp" />
@@ -140,9 +139,9 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:layout_margin="10dp"
                         android:text="20"
                         android:textColor="@color/color_surface"
                         android:textSize="22sp" />
@@ -151,18 +150,18 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/drawable"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:background="@drawable/drawable"
-                    android:padding="10dp"
-                    android:layout_margin="10dp">
+                    android:padding="10dp">
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
                         android:layout_weight="3"
                         android:gravity="center"
-                        android:layout_margin="10dp"
                         android:text="@string/rondesG"
                         android:textColor="@color/color_surface"
                         android:textSize="22sp" />
@@ -170,9 +169,9 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:layout_margin="10dp"
                         android:text="5"
                         android:textColor="@color/color_surface"
                         android:textSize="22sp" />
@@ -181,11 +180,11 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/drawable"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:background="@drawable/drawable"
-                    android:padding="10dp"
-                    android:layout_margin="10dp">
+                    android:padding="10dp">
 
                     <TextView
                         android:layout_width="0dp"
@@ -199,9 +198,9 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:layout_margin="10dp"
                         android:text="4"
                         android:textColor="@color/color_surface"
                         android:textSize="22sp" />
@@ -210,18 +209,18 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/drawable"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:background="@drawable/drawable"
-                    android:padding="10dp"
-                    android:layout_margin="10dp">
+                    android:padding="10dp">
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
                         android:layout_weight="3"
                         android:gravity="center"
-                        android:layout_margin="10dp"
                         android:text="@string/tornejosG"
                         android:textColor="@color/color_surface"
                         android:textSize="22sp" />
@@ -229,9 +228,9 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:layout_margin="10dp"
                         android:text="0"
                         android:textColor="@color/color_surface"
                         android:textSize="22sp" />
@@ -239,6 +238,17 @@
             </LinearLayout>
         </ScrollView>
 
-
     </LinearLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="proj.tcg.turnonauta.fragments.BottomMenu"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout="@layout/fragment_bottom_menu"
+        />
 </LinearLayout>
