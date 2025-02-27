@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Turnonauta"
         tools:targetApi="31">
         <activity
+            android:name=".aplicacio.PreviewTorneig"
+            android:exported="false" />
+        <activity
             android:name=".aplicacio.EscriureCodi"
             android:exported="false" />
         <activity
