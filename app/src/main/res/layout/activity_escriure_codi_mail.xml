@@ -14,8 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:orientation="vertical">
 
         <!-- Profile Image -->
         <ImageView
@@ -35,8 +34,8 @@
             android:padding="10dp"
             android:text="@string/recuperar_contrasenya"
             android:textColor="#000"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            android:textSize="32sp"
+            android:fontFamily="@font/poppins_regular" />
 
     </LinearLayout>
 
@@ -58,25 +57,77 @@
             android:layout_marginTop="10dp"
             android:text="@string/escriu_el_codi"
             android:textColor="@color/color_text"
+            android:fontFamily="@font/poppins_regular"
             android:textSize="24sp" />
 
-        <EditText
-            android:id="@+id/iCodi"
-            style="@style/TextField"
-            android:layout_width="300dp"
-            android:layout_height="60dp"
-            android:layout_marginBottom="10dp"
-            android:hint="@string/codi"
-            android:autofillHints="password"
-            android:inputType="number"
-            android:maxLength="5"
-            android:padding="10dp"
-            android:textSize="16sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="10dp">
+
+            <EditText
+                android:id="@+id/otp1"
+                style="@style/TextField"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:importantForAccessibility="no" />
+
+            <EditText
+                android:id="@+id/otp2"
+                style="@style/TextField"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:importantForAccessibility="no" />
+
+            <EditText
+                android:id="@+id/otp3"
+                style="@style/TextField"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:importantForAccessibility="no" />
+
+            <EditText
+                android:id="@+id/otp4"
+                style="@style/TextField"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:importantForAccessibility="no" />
+
+            <EditText
+                android:id="@+id/otp5"
+                style="@style/TextField"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:importantForAccessibility="no" />
+        </LinearLayout>
+
+
         <!-- Register Link -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:text="@string/reenviar_codi"
             android:textColor="@color/color_text"
             android:textSize="14sp" />
@@ -85,8 +136,9 @@
         <Button
             android:id="@+id/bComprobar"
             style="@style/CustomButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
             android:padding="10dp"
             android:text="@string/comprobar" />
 

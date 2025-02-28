@@ -4,7 +4,7 @@
     <!-- Pantalla Login -->
     <string name="correu">Correu:</string>
     <string name="contrasenya">Contrasenya:</string>
-    <string name="contrasenyaOblidada">Has oblidat la contrasenya?</string>
+    <string name="contrasenyaOblidada">Has oblidat la contrasenya? Clica aquí!</string>
     <string name="iniciar_sessio">Iniciar Sessió</string>
     <string name="inici_de_sessio">Inici de Sessió</string>
     <string name="sense_registre1">Si no tens conta registrat aquí</string>
@@ -17,7 +17,7 @@
     <string name="enviar_codi">Enviar codi al correu</string>
     <string name="escriu_el_codi">Escriu el codi que has rebut</string>
     <string name="codi">Codi</string>
-    <string name="reenviar_codi">Si no has rebut el correu, Reenviar</string>
+    <string name="reenviar_codi">Si no has rebut el correu, Reenvia´l !</string>
     <string name="comprobar">Comprobar</string>
     <string name="actualitzar_contrasenya">Actualitzar contrasenya</string>
     <string name="nova_contrasenya">Nova contrasenya</string>
