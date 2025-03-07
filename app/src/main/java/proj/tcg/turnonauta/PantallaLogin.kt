@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import proj.tcg.turnonauta.aplicacio.Pagina_Principal
 import proj.tcg.turnonauta.recuperar_contrasenya.RecuperarContrasenya
 import proj.tcg.turnonauta.registre.Registre
+import proj.tcg.turnonauta.screen.MenuInferiorAndroid
 
 class PantallaLogin : AppCompatActivity() {
     private lateinit var bInici : Button
@@ -20,7 +21,8 @@ class PantallaLogin : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.pantalla_login)
-
+        val menuInferior = MenuInferiorAndroid(window)
+        menuInferior.hideSystemNavigationBar()
         var count = 0
 
         bInici = findViewById(R.id.bInici)

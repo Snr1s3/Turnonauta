@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import proj.tcg.turnonauta.R
+import proj.tcg.turnonauta.screen.MenuInferiorAndroid
 
 class EscriureCodiMail : AppCompatActivity() {
 
@@ -20,6 +21,8 @@ class EscriureCodiMail : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_escriure_codi_mail)
+        val menuInferior = MenuInferiorAndroid(window)
+        menuInferior.hideSystemNavigationBar()
 
         bComprobar = findViewById(R.id.bComprobar)
 
