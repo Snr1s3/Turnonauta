@@ -20,10 +20,13 @@
     <string name="reenviar_codi">Si no has rebut el correu, Reenvia´l !</string>
     <string name="comprobar">Comprobar</string>
     <string name="actualitzar_contrasenya">Actualitzar contrasenya</string>
-    <string name="nova_contrasenya">Nova contrasenya</string>
-    <string name="repetir_contrasenya">Repetir contrasenya</string>
+    <string name="nova_contrasenya">Nova contrasenya:</string>
+    <string name="repetir_contrasenya">Repetir contrasenya:</string>
     <string name="genial">Genial! La vostra contrasenya</string>
     <string name="exit">s\'ha restablert amb èxit.</string>
+    <string name="error_new_pw_1">Las contrasenyes no coinsideixen</string>
+    <string name="error_new_pw_2">La contrasenya a de contenir lletres, números i caràracters especials</string>
+    <string name="error_new_pw_3">La contrasenya a de contenir com a minim 8 caracters</string>
 
     <!-- Registre -->
     <string name="registre">Registre</string>
