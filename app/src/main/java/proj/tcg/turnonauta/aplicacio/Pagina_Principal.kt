@@ -8,13 +8,16 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import proj.tcg.turnonauta.R
 import proj.tcg.turnonauta.config.Configuracio
+import proj.tcg.turnonauta.screen.MenuInferiorAndroid
 
 class Pagina_Principal : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_pagina_principal)
-        hideSystemNavigationBar()
+       
+        val menuInferior = MenuInferiorAndroid(window)
+        menuInferior.hideSystemNavigationBar()
 
         val botonConfig = findViewById<ImageButton>(R.id.boton_config)
 
@@ -22,14 +25,5 @@ class Pagina_Principal : AppCompatActivity() {
             val intent = Intent(this, Configuracio::class.java)
             startActivity(intent)
         }
-    }
-
-    private fun hideSystemNavigationBar() {
-        val decorView = window.decorView
-        decorView.systemUiVisibility = (
-                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or
-                        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION or
-                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                )
     }
 }

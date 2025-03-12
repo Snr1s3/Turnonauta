@@ -9,6 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import proj.tcg.turnonauta.PantallaLogin
 import proj.tcg.turnonauta.R
+import proj.tcg.turnonauta.screen.MenuInferiorAndroid
 
 class Registre : AppCompatActivity() {
     private lateinit var bRegistre : Button
@@ -16,7 +17,8 @@ class Registre : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_registre)
-
+        val menuInferior = MenuInferiorAndroid(window)
+        menuInferior.hideSystemNavigationBar()
         bRegistre = findViewById(R.id.bRegistre)
 
         bRegistre.setOnClickListener{

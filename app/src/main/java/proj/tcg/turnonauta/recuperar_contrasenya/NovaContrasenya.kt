@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import proj.tcg.turnonauta.R
+import proj.tcg.turnonauta.screen.MenuInferiorAndroid
 
 class NovaContrasenya : AppCompatActivity() {
 
@@ -20,8 +21,9 @@ class NovaContrasenya : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_nova_contrasenya)
-
         // Inicialización de vistas
+        val menuInferior = MenuInferiorAndroid(window)
+        menuInferior.hideSystemNavigationBar()
         bActualitzar = findViewById(R.id.bActualitzar)
         iContra = findViewById(R.id.iContra)
         iContra2 = findViewById(R.id.iContra2)

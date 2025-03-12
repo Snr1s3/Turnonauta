@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import proj.tcg.turnonauta.R
+import proj.tcg.turnonauta.screen.MenuInferiorAndroid
 
 import proj.tcg.turnonauta.usuari_recyled_view.AdapterUsuariRecycledView
 
@@ -16,6 +17,8 @@ class PreviewTorneig : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_preview_torneig)
+        val menuInferior = MenuInferiorAndroid(window)
+        menuInferior.hideSystemNavigationBar()
         startRecycled(8)
     }
     private fun startRecycled(n:Int){

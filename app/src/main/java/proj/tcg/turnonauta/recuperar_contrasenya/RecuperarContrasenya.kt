@@ -7,6 +7,7 @@ import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import proj.tcg.turnonauta.R
+import proj.tcg.turnonauta.screen.MenuInferiorAndroid
 
 class RecuperarContrasenya : AppCompatActivity(){
     private lateinit var bEnviar : Button
@@ -16,7 +17,8 @@ class RecuperarContrasenya : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_recuperar_contrasenya)
-
+        val menuInferior = MenuInferiorAndroid(window)
+        menuInferior.hideSystemNavigationBar()
         bEnviar = findViewById(R.id.bEnviar)
         iCorreu = findViewById(R.id.iCorreu)
 
