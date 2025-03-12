@@ -37,6 +37,12 @@
             android:name=".recuperar_contrasenya.RecuperarContrasenya"
             android:exported="false" />
         <activity
+            android:name=".config.EditarPerfil"
+            android:exported="false" />
+        <activity
+            android:name=".config.Configuracio"
+            android:exported="false" />
+        <activity
             android:name=".PantallaLogin"
             android:exported="true">
             <intent-filter>

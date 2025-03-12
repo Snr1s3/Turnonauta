@@ -19,8 +19,8 @@ class BottomMenu : Fragment() {
 
         view.findViewById<ImageButton>(R.id.iBHistorial)
             .setOnClickListener {
-               // val intent = Intent(activity, ::class.java)
-               // startActivity(intent)
+                // val intent = Intent(activity, ::class.java)
+                // startActivity(intent)
             }
         view.findViewById<ImageButton>(R.id.iBCodi)
             .setOnClickListener {
@@ -29,8 +29,8 @@ class BottomMenu : Fragment() {
             }
         view.findViewById<ImageButton>(R.id.iBUsuari)
             .setOnClickListener {
-              //  val intent = Intent(activity, Header::class.java)
-              //  startActivity(intent)
+                //  val intent = Intent(activity, Header::class.java)
+                //  startActivity(intent)
             }
         return view
     }
