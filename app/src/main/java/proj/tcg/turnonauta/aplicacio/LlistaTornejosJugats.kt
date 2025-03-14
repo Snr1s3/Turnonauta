@@ -18,7 +18,7 @@ class LlistaTornejosJugats : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_llista_tornejos_jugats)
-        startRecycled(8)
+        startRecycled(20)
         val menuInferior = MenuInferiorAndroid(window)
         menuInferior.hideSystemNavigationBar()
         filtresButton = findViewById(R.id.filtres)

@@ -2,7 +2,7 @@
     <string name="app_name">Turnonauta</string>
 
     <!-- Pantalla Login -->
-    <string name="correu">Correu:</string>
+    <string name="usuari">Usuari:</string>
     <string name="contrasenya">Contrasenya:</string>
     <string name="contrasenyaOblidada">Has oblidat la contrasenya? Clica aquí!</string>
     <string name="iniciar_sessio">Iniciar Sessió</string>
@@ -45,7 +45,6 @@
     <!-- Pantalla Inici -->
     <string name="inici">Benvinguda</string>
     <string name="id">ID:</string>
-    <string name="usuari">Usuari:</string>
     <string name="rondesJ">Rondes Jugades:</string>
     <string name="rondesG">Rondes Guanyades:</string>
     <string name="tornejosJ">Tornejos Jugats:</string>

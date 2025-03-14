@@ -60,17 +60,19 @@
             android:padding="40dp">
 
             <EditText
+                android:id="@+id/eTUsuari"
                 style="@style/TextField"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginBottom="30dp"
                 android:autofillHints="emailAddress"
-                android:hint="@string/correu"
+                android:hint="@string/usuari"
                 android:inputType="textWebEmailAddress"
                 android:padding="10dp"
                 android:textSize="16sp" />
 
             <EditText
+                android:id="@+id/eTContra"
                 style="@style/TextField"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
