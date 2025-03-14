@@ -2,7 +2,6 @@ package proj.tcg.turnonauta.aplicacio
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +10,7 @@ import proj.tcg.turnonauta.config.Configuracio
 import proj.tcg.turnonauta.screen.MenuInferiorAndroid
 
 class Pagina_Principal : AppCompatActivity() {
+    private lateinit var botonConfig : ImageButton
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -19,7 +19,7 @@ class Pagina_Principal : AppCompatActivity() {
         val menuInferior = MenuInferiorAndroid(window)
         menuInferior.hideSystemNavigationBar()
 
-        val botonConfig = findViewById<ImageButton>(R.id.boton_config)
+        botonConfig = findViewById<ImageButton>(R.id.boton_config)
 
         botonConfig.setOnClickListener {
             val intent = Intent(this, Configuracio::class.java)

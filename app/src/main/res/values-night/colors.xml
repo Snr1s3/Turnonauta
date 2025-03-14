@@ -8,4 +8,5 @@
     <color name="color_surface">#FFC300</color>
     <color name="color_text">#FFD60A</color>
     <color name="color_text2">#FFD60A</color>
+    <color name="color_radio_button">#FFD60A</color>
 </resources>

@@ -9,6 +9,7 @@ import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import proj.tcg.turnonauta.R
 import proj.tcg.turnonauta.aplicacio.EscriureCodi
+import proj.tcg.turnonauta.aplicacio.LlistaTornejosJugats
 
 
 class BottomMenu : Fragment() {
@@ -19,8 +20,8 @@ class BottomMenu : Fragment() {
 
         view.findViewById<ImageButton>(R.id.iBHistorial)
             .setOnClickListener {
-                // val intent = Intent(activity, ::class.java)
-                // startActivity(intent)
+                val intent = Intent(activity, LlistaTornejosJugats::class.java)
+                startActivity(intent)
             }
         view.findViewById<ImageButton>(R.id.iBCodi)
             .setOnClickListener {

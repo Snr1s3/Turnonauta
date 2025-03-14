@@ -13,7 +13,7 @@
     <!-- Recuperar Contrasenya -->
     <string name="recuperar_contrasenya">Recuperar contrasenya</string>
     <string name="escriu_el_mail">Escriu el teu correu electronic</string>
-    <string name="mail_exemple">exemple@gmail.com</string>
+    <string name="mail_exemple">example@gmail.com</string>
     <string name="enviar_codi">Enviar codi al correu</string>
     <string name="escriu_el_codi">Escriu el codi que has rebut</string>
     <string name="codi">Codi</string>
@@ -50,11 +50,40 @@
     <string name="rondesG">Rondes Guanyades:</string>
     <string name="tornejosJ">Tornejos Jugats:</string>
     <string name="tornejosG">Tornes Guanyats:</string>
+    <string name="config">config</string>
+
+
+    <!-- Pantalla Recycler Torneig-->
+    <string name="codi_text">Codi: %d</string>
+    <string name="joc_text">Joc: %s</string>
+    <string name="format_text">Format: %s</string>
+    <string name="jugadors_text">Jugadors: %d</string>
+
     <!-- Pantalla Escriure el Coid-->
     <string name="eCodi">Entrar Al Torneig</string>
     <string name="codiTorneig">Escriu el codi del torneig</string>
     <string name="codiTorneig2">Escriu el codi del torneig:</string>
     <string name="buscarTorneig">Buscar torneig</string>
+
+    <!-- Pantalla Detall Torneig-->
+    <string name="detallTorneig">Detall del Torneig</string>
+    <string name="tornar">Tornar</string>
+
+    <!-- Pantalla Llista Tornejos-->
+    <string name="llistaTornejos">Tornejos Jugats</string>
+    <string name="filtres">Filtres</string>
+
+    <!-- Pantalla Oponent Actual-->
+    <string name="oponentActual">Oponent Actual</string>
+    <string name="enviar">Enviar</string>
+    <string name="tu">Tu</string>
+    <string name="p1">Partida 1</string>
+    <string name="p2">Partida 2</string>
+    <string name="p3">Partida 3</string>
+
+    <!-- Pantalla Preview torneig-->
+    <string name="comencar">Comença</string>
+
 </resources>
  
 

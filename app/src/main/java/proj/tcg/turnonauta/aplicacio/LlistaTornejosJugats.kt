@@ -9,34 +9,32 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import proj.tcg.turnonauta.R
 import proj.tcg.turnonauta.screen.MenuInferiorAndroid
+import proj.tcg.turnonauta.tornejos_jugats.recycled_view.Adapter_tornejosJugats_recyled_view
+import proj.tcg.turnonauta.tornejos_jugats.recycled_view.tornejosJugats_recyled_view
 
-import proj.tcg.turnonauta.usuari_recyled_view.AdapterUsuariRecycledView
-
-import proj.tcg.turnonauta.usuari_recyled_view.usuari_recyled_view
-
-class PreviewTorneig : AppCompatActivity() {
-    private lateinit var btn : Button
+class LlistaTornejosJugats : AppCompatActivity() {
+    private lateinit var filtresButton : Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_preview_torneig)
-        btn = findViewById<Button>(R.id.bActualitzar)
+        setContentView(R.layout.activity_llista_tornejos_jugats)
+        startRecycled(8)
         val menuInferior = MenuInferiorAndroid(window)
         menuInferior.hideSystemNavigationBar()
-        startRecycled(8)
-        btn.setOnClickListener(){
-            val intent = Intent(this, OponentActual::class.java)
+        filtresButton = findViewById(R.id.filtres)
+        filtresButton.setOnClickListener {
+            val intent = Intent(this, FiltresTornejos::class.java)
             startActivity(intent)
         }
     }
     private fun startRecycled(n:Int){
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
-        recyclerView.layoutManager = GridLayoutManager(this, 2)
-        val data = ArrayList<usuari_recyled_view>()
+        recyclerView.layoutManager = GridLayoutManager(this, 1)
+        val data = ArrayList<tornejosJugats_recyled_view>()
         for (i in 1..n) {
-            data.add(usuari_recyled_view(R.drawable.logo2, "Jugador $i"))
+            data.add(tornejosJugats_recyled_view("Torneig $i", 23,"MTG", "Suis", 16))
         }
-        val adapter = AdapterUsuariRecycledView(data)
+        val adapter = Adapter_tornejosJugats_recyled_view(this, data)
         recyclerView.adapter = adapter
     }
 }

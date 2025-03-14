@@ -1,12 +1,12 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Base.Theme.Turnonauta" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="buttonStyle">@style/CustomButton</item>
     </style>
     <style name="CustomButton" parent="Widget.MaterialComponents.Button">
-        <item name="android:background">@drawable/drawable</item>
         <item name="backgroundTint">@color/color_primary_variant</item>
         <item name="android:textColor">@color/color_text2</item>
+        <item name="android:minHeight">48dp</item>
         <item name="android:fontFamily">@font/poppins_regular</item>
     </style>
 
@@ -16,7 +16,12 @@
         <item name="android:textColor">@color/color_text3</item>
         <item name="android:textColorHint">@color/color_text3</item>
         <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
 
+    <style name="TextField2" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:background">@drawable/drawable_fragment</item>
+        <item name="android:textColor">@color/color_text2</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
     </style>
 
     <style name="WhiteButton" parent="Widget.MaterialComponents.Button">
@@ -41,7 +46,7 @@
         <item name="android:textStyle">bold</item>
     </style>
     <style name="CustomImageButton2">
-        <item name="android:backgroundTint">@color/color_surface</item>
+        <item name="android:backgroundTint">@color/color_bottom_menu</item>
         <item name="android:textColor">@color/color_text2</item>
         <item name="android:textStyle">bold</item>
     </style>

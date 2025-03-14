@@ -2,14 +2,10 @@ package proj.tcg.turnonauta.aplicacio
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
-import android.view.View
-import android.view.WindowInsetsController
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.WindowInsetsCompat
 import proj.tcg.turnonauta.R
 
 import proj.tcg.turnonauta.screen.MenuInferiorAndroid

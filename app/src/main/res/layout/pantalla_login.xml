@@ -78,7 +78,6 @@
                 android:autofillHints="password"
                 android:hint="@string/contrasenya"
                 android:inputType="textPassword"
-                android:background="@drawable/rounded_edittext"
                 android:padding="10dp"
                 android:textSize="16sp" />
 

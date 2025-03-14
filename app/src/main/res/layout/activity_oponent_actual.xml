@@ -19,7 +19,6 @@
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginBottom="10dp"
             android:contentDescription="@string/logo"
             android:scaleType="centerCrop"
             android:src="@drawable/logo2" />
@@ -31,7 +30,7 @@
             android:background="@color/color_surface"
             android:gravity="center"
             android:padding="10dp"
-            android:text="Oponent Actual"
+            android:text="@string/oponentActual"
             android:textColor="#000"
             android:textSize="22sp"
             android:fontFamily="@font/poppins_regular"/>
@@ -40,54 +39,66 @@
 
 
     <!-- Login Form -->
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="6"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:padding="10dp">
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="30dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:background="@color/color_radio_button">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/playerName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Jugador 2"
-                android:textSize="20sp"
+                android:layout_weight="1"
                 android:gravity="end"
+                android:paddingStart="10dp"
                 android:paddingEnd="10dp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:layout_weight="1"/>
+                android:text="Jugador 2"
+                android:textColor="@color/color_text2"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:paddingStart="10dp"
-                android:text="0-0"
-                android:textSize="20sp"
-                android:textStyle="bold"
                 android:layout_weight="1"
-                android:textColor="@android:color/black"/>
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="0-0"
+                android:textColor="@color/color_text2"
+                android:textSize="20sp"
+                android:textStyle="bold" />
         </LinearLayout>
+
         <TextView
             android:id="@+id/round"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ronda 1"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@android:color/black"
             android:layout_gravity="center_horizontal"
-            android:paddingTop="8dp"/>
+            android:paddingTop="8dp"
+            android:text="Ronda 1"
+            android:textColor="@color/color_text2"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TableLayout
             android:layout_width="315dp"
@@ -104,7 +115,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Partida 1"
+                    android:text="@string/p1"
                     android:textColor="#00000000"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -114,8 +125,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Tu"
-                    android:textColor="@android:color/black"
+                    android:text="@string/tu"
+                    android:textColor="@color/color_text2"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -125,7 +136,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="Jugador 2"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/color_text2"
                     android:textSize="18sp"
                     android:textStyle="bold" />
             </TableRow>
@@ -135,25 +146,32 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="7"
-                    android:text="Partida 1"
-                    android:textColor="@android:color/black"
+                    android:layout_weight="1"
+                    android:text="@string/p1"
+                    android:textColor="@color/color_text2"
                     android:textSize="20sp"
                     android:textStyle="bold" />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
+                <RadioGroup
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:buttonTint="#5A3E8C" />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
                     android:layout_weight="1"
+                    app:backgroundTint="@color/color_text2"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:buttonTint="#5A3E8C" />
+                    android:layout_weight="1"
+                    app:buttonTint="@color/color_bottom_menu" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:buttonTint="@color/color_bottom_menu" />
+                </RadioGroup>
             </TableRow>
 
             <!-- Row 2 -->
@@ -162,27 +180,33 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="7"
-                    android:text="Partida 2"
-                    android:textColor="@android:color/black"
+                    android:layout_weight="1"
+                    android:text="@string/p2"
+                    android:textColor="@color/color_text2"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-                <RadioButton
-                    android:layout_width="wrap_content"
+                <RadioGroup
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
-                    android:layout_weight="2"
-                    android:buttonTint="#5A3E8C" />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
                     android:layout_weight="1"
-                    android:buttonTint="#5A3E8C" />
+                    app:backgroundTint="@color/color_text2"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:buttonTint="@color/color_bottom_menu" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:buttonTint="@color/color_bottom_menu" />
+                </RadioGroup>
             </TableRow>
 
             <!-- Row 3 -->
@@ -191,37 +215,67 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="7"
-                    android:text="Partida 3"
-                    android:textColor="@android:color/black"
+                    android:layout_weight="1"
+                    android:text="@string/p3"
+                    android:textColor="@color/color_text2"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-                <RadioButton
-                    android:layout_width="wrap_content"
+                <RadioGroup
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
-                    android:layout_weight="2"
-                    android:buttonTint="#5A3E8C" />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
                     android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="#5A3E8C" />
+                    app:backgroundTint="@color/color_text2"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:buttonTint="@color/color_bottom_menu" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:buttonTint="@color/color_bottom_menu" />
+                </RadioGroup>
             </TableRow>
 
         </TableLayout>
-        <!-- Login Button -->
+
+
+            <!-- Login Button -->
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_weight="1"
+        android:orientation="horizontal">
         <Button
             android:id="@+id/bActualitzar"
             style="@style/CustomButton"
-            android:layout_marginTop="20dp"
+            android:layout_gravity="center_vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Enviar" />
-
+            android:text="@string/enviar" />
     </LinearLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="proj.tcg.turnonauta.fragments.BottomMenu"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout="@layout/fragment_bottom_menu"
+        />
+
 </LinearLayout>
