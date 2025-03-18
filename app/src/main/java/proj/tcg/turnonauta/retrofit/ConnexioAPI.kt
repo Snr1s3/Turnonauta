@@ -21,11 +21,14 @@ import javax.net.ssl.SSLSocketFactory
 import javax.net.ssl.TrustManager
 import javax.net.ssl.X509TrustManager
 import proj.tcg.turnonauta.models.UsuariLogin
-import proj.tcg.turnonauta.models.LoginResponse
+import proj.tcg.turnonauta.models.Usuaris
 
 interface ApiService {
-    @POST("/login")
-    suspend fun postLogin(@Body request: UsuariLogin): Response<ResponseBody>
+    @GET("/login")
+    suspend fun getLogin(
+        @Query("username") username: String,
+        @Query("password") password: String
+    ): Usuaris
 }
 
 class ConnexioAPI {

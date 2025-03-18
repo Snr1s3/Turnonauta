@@ -2,6 +2,7 @@ package proj.tcg.turnonauta
 import proj.tcg.turnonauta.retrofit.ConnexioAPI
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import proj.tcg.turnonauta.models.UsuariLogin
 import android.widget.Button
 import android.widget.EditText
@@ -18,6 +19,7 @@ import proj.tcg.turnonauta.registre.Registre
 import proj.tcg.turnonauta.screen.MenuInferiorAndroid
 import retrofit2.HttpException
 import retrofit2.Response
+import proj.tcg.turnonauta.models.Usuaris
 import java.io.IOException
 
 class PantallaLogin : AppCompatActivity() {
@@ -26,7 +28,7 @@ class PantallaLogin : AppCompatActivity() {
     private lateinit var tRegistre : TextView
     private lateinit var eTUsuari : EditText
     private lateinit var eTContra : EditText
-    private lateinit var response : Response<ResponseBody>
+    private lateinit var response : Usuaris
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,11 +67,11 @@ class PantallaLogin : AppCompatActivity() {
             Toast.makeText(this, "Please enter both username and password", Toast.LENGTH_SHORT).show()
             return
         }
-        val loginRequest = UsuariLogin( username,password)
         lifecycleScope.launch {
             try {
-                response = ConnexioAPI.API().postLogin(loginRequest)
-                if (response != null) {
+                response = ConnexioAPI.API().getLogin(username,password)
+                Log.d("BonDIA", response.toString())
+                if (response != null && response.toString().contains("OK", ignoreCase = true)) {
                     Toast.makeText(this@PantallaLogin, "Login Successful!", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this@PantallaLogin, Pagina_Principal::class.java)
                     startActivity(intent)
