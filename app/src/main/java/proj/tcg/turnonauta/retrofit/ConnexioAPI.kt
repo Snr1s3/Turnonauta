@@ -28,7 +28,7 @@ interface ApiService {
     suspend fun getLogin(
         @Query("username") username: String,
         @Query("password") password: String
-    ): Usuaris
+    ): Int
 }
 
 class ConnexioAPI {

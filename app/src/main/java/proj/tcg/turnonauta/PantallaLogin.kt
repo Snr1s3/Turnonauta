@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 import okhttp3.ResponseBody
+import org.json.JSONObject
 import proj.tcg.turnonauta.aplicacio.Pagina_Principal
 import proj.tcg.turnonauta.recuperar_contrasenya.RecuperarContrasenya
 import proj.tcg.turnonauta.registre.Registre
@@ -28,7 +29,7 @@ class PantallaLogin : AppCompatActivity() {
     private lateinit var tRegistre : TextView
     private lateinit var eTUsuari : EditText
     private lateinit var eTContra : EditText
-    private lateinit var response : Usuaris
+    private var response : Int = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,10 +40,9 @@ class PantallaLogin : AppCompatActivity() {
         bInici = findViewById(R.id.bInici)
         tConObl = findViewById(R.id.tConObl)
         tRegistre = findViewById(R.id.tRegistre)
-
         eTUsuari = findViewById(R.id.eTUsuari)
         eTContra = findViewById(R.id.eTContra)
-
+        response = -1
         bInici.setOnClickListener {
             checkLogin()
         }
@@ -71,7 +71,8 @@ class PantallaLogin : AppCompatActivity() {
             try {
                 response = ConnexioAPI.API().getLogin(username,password)
                 Log.d("BonDIA", response.toString())
-                if (response != null && response.toString().contains("OK", ignoreCase = true)) {
+
+                if (response != null && response != -1) {
                     Toast.makeText(this@PantallaLogin, "Login Successful!", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this@PantallaLogin, Pagina_Principal::class.java)
                     startActivity(intent)
