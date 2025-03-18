@@ -6,6 +6,7 @@ import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import proj.tcg.turnonauta.R
+import proj.tcg.turnonauta.screen.MenuInferiorAndroid
 
 class FiltresTornejos : AppCompatActivity() {
     private lateinit var guardarButton : Button
@@ -13,6 +14,8 @@ class FiltresTornejos : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_filtres_tornejos)
+        val menuInferior = MenuInferiorAndroid(window)
+        menuInferior.hideSystemNavigationBar()
         guardarButton = findViewById(R.id.guardar)
         guardarButton.setOnClickListener{
             val intent = Intent(this, LlistaTornejosJugats::class.java)

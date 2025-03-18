@@ -22,9 +22,10 @@ interface ApiService {
         @Query("password") password: String
     ): Int
 
+
     @GET("/user_statistics")
     suspend fun getStatistic(
-        @Query("id") id: Int
+        @Query("user_id") user_id: Int
     ): UsuarisStatistics
 }
 
