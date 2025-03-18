@@ -65,11 +65,13 @@ class PantallaLogin : AppCompatActivity() {
         lifecycleScope.launch {
             try {
                 response = ConnexioAPI.API().getLogin(username,password)
-                Log.d("User_ID Login:", "ID: "+response.toString())
+                Log.d("User_ID Login:", "ID: "+response)
 
                 if (response > -1) {
                     Toast.makeText(this@PantallaLogin, "Login Successful!", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this@PantallaLogin, Pagina_Principal::class.java)
+                    val intent = Intent(this@PantallaLogin, Pagina_Principal::class.java).apply {
+                        putExtra("user_id", response)
+                    }
                     startActivity(intent)
                 } else {
                     Toast.makeText(this@PantallaLogin, "Invalid login credentials", Toast.LENGTH_SHORT).show()

@@ -14,3 +14,12 @@ data class Usuaris(
     val rang: Int? = null,
     val data_de_registre: LocalDate? = null
 )
+
+data class UsuarisStatistics(
+    val id : Int,
+    val username: String,
+    val rounds_played: Int,
+    val rounds_won: Int,
+    val tournaments_played: Int,
+    val tournaments_won: Int
+)
