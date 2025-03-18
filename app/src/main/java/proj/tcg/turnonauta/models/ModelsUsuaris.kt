@@ -2,14 +2,6 @@ package proj.tcg.turnonauta.models
 
 import java.time.LocalDate
 
-data class UsuariLogin(
-    val username : String,
-    val password : String
-)
-data class LoginResponse(
-    val message: String,
-    val user: Usuaris
-)
 
 data class Usuaris(
     val id_usuaris: Int? = null,
