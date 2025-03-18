@@ -3,7 +3,6 @@ import proj.tcg.turnonauta.retrofit.ConnexioAPI
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import proj.tcg.turnonauta.models.UsuariLogin
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -12,15 +11,11 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
-import okhttp3.ResponseBody
-import org.json.JSONObject
 import proj.tcg.turnonauta.aplicacio.Pagina_Principal
 import proj.tcg.turnonauta.recuperar_contrasenya.RecuperarContrasenya
 import proj.tcg.turnonauta.registre.Registre
 import proj.tcg.turnonauta.screen.MenuInferiorAndroid
 import retrofit2.HttpException
-import retrofit2.Response
-import proj.tcg.turnonauta.models.Usuaris
 import java.io.IOException
 
 class PantallaLogin : AppCompatActivity() {
@@ -70,9 +65,9 @@ class PantallaLogin : AppCompatActivity() {
         lifecycleScope.launch {
             try {
                 response = ConnexioAPI.API().getLogin(username,password)
-                Log.d("BonDIA", response.toString())
+                Log.d("User_ID Login:", "ID: "+response.toString())
 
-                if (response != null && response != -1) {
+                if (response > -1) {
                     Toast.makeText(this@PantallaLogin, "Login Successful!", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this@PantallaLogin, Pagina_Principal::class.java)
                     startActivity(intent)
