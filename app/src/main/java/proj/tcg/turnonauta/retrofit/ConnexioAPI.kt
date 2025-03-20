@@ -2,6 +2,7 @@ package proj.tcg.turnonauta.retrofit
 
 import android.util.Log
 import okhttp3.OkHttpClient
+import proj.tcg.turnonauta.models.UsuarisStatistics
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
@@ -22,7 +23,10 @@ interface ApiService {
     ): Int
 
 
-
+    @GET("/user_statistics")
+    suspend fun getStatistic(
+        @Query("user_id") user_id: Int
+    ): UsuarisStatistics
 }
 
 class ConnexioAPI {
