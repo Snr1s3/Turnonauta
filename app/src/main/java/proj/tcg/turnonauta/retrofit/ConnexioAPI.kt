@@ -2,16 +2,9 @@ package proj.tcg.turnonauta.retrofit
 
 import android.util.Log
 import okhttp3.OkHttpClient
-import okhttp3.ResponseBody
-import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Body
-import retrofit2.http.DELETE
 import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.PUT
-import retrofit2.http.Path
 import retrofit2.http.Query
 import java.security.SecureRandom
 import java.security.cert.CertificateException
@@ -20,8 +13,6 @@ import javax.net.ssl.SSLContext
 import javax.net.ssl.SSLSocketFactory
 import javax.net.ssl.TrustManager
 import javax.net.ssl.X509TrustManager
-import proj.tcg.turnonauta.models.UsuariLogin
-import proj.tcg.turnonauta.models.Usuaris
 
 interface ApiService {
     @GET("/login")
@@ -29,6 +20,9 @@ interface ApiService {
         @Query("username") username: String,
         @Query("password") password: String
     ): Int
+
+
+
 }
 
 class ConnexioAPI {
