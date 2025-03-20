@@ -14,8 +14,10 @@ import kotlinx.coroutines.launch
 import proj.tcg.turnonauta.R
 import proj.tcg.turnonauta.config.Configuracio
 import proj.tcg.turnonauta.models.UsuarisStatistics
+import proj.tcg.turnonauta.utilities.Utilities
 import proj.tcg.turnonauta.retrofit.ConnexioAPI
 import proj.tcg.turnonauta.screen.MenuInferiorAndroid
+import proj.tcg.turnonauta.fragments.BottomMenu
 import retrofit2.HttpException
 import java.io.IOException
 
@@ -33,6 +35,9 @@ class Pagina_Principal : AppCompatActivity() {
         if (bundle != null) {
             val value = bundle.getInt("user_id")
             Log.d("User_ID Pantalla d'Inici:", "Bundle: "+value)
+            val util = Utilities(supportFragmentManager)
+            val containerId = R.id.fragmentContainerView
+            util.loadFragment(value, containerId)
             getDataUser(value)
         }
         botonConfig.setOnClickListener {

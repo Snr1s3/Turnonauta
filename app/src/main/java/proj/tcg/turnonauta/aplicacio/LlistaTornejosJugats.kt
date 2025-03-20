@@ -2,37 +2,73 @@ package proj.tcg.turnonauta.aplicacio
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.coroutines.launch
 import proj.tcg.turnonauta.R
+import proj.tcg.turnonauta.models.Torneig
+import proj.tcg.turnonauta.retrofit.ConnexioAPI
 import proj.tcg.turnonauta.screen.MenuInferiorAndroid
 import proj.tcg.turnonauta.tornejos_jugats.recycled_view.Adapter_tornejosJugats_recyled_view
 import proj.tcg.turnonauta.tornejos_jugats.recycled_view.tornejosJugats_recyled_view
+import proj.tcg.turnonauta.utilities.Utilities
+import retrofit2.HttpException
+import java.io.IOException
 
 class LlistaTornejosJugats : AppCompatActivity() {
     private lateinit var filtresButton : Button
+    private lateinit var response: List<Torneig>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_llista_tornejos_jugats)
-        startRecycled(20)
         val menuInferior = MenuInferiorAndroid(window)
         menuInferior.hideSystemNavigationBar()
+        val bundle = intent.extras
+        if (bundle != null) {
+            val value = bundle.getInt("user_id")
+            Log.d("Llista tornejos:", "Bundle: "+value)
+            val util = Utilities(supportFragmentManager)
+            val containerId = R.id.fragmentContainerView
+            util.loadFragment(value, containerId)
+            getTornejosList(value)
+        }
         filtresButton = findViewById(R.id.filtres)
         filtresButton.setOnClickListener {
             val intent = Intent(this, FiltresTornejos::class.java)
             startActivity(intent)
         }
     }
-    private fun startRecycled(n:Int){
+
+    private fun getTornejosList(id : Int){
+        lifecycleScope.launch {
+            try {
+                response = ConnexioAPI.API().getTournamentsPlayed(id)
+                Log.d("User_ID Pantalla d'Inici:", "ID: "+response)
+                startRecycled()
+            } catch (e: HttpException) {
+                Toast.makeText(this@LlistaTornejosJugats, "HTTP Error: ${e.message}", Toast.LENGTH_SHORT).show()
+            } catch (e: IOException) {
+                Toast.makeText(this@LlistaTornejosJugats,"Network Error: ${e.message}", Toast.LENGTH_SHORT).show()
+            } catch (e: Exception) {
+                Toast.makeText(this@LlistaTornejosJugats,"Error: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun startRecycled(){
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
         recyclerView.layoutManager = GridLayoutManager(this, 1)
         val data = ArrayList<tornejosJugats_recyled_view>()
-        for (i in 1..n) {
-            data.add(tornejosJugats_recyled_view("Torneig $i", 23,"MTG", "Suis", 16))
+        for (t in response) {
+            data.add(tornejosJugats_recyled_view(t.nom, t.idTorneig!!,t.joc, t.format!!, 16))
         }
         val adapter = Adapter_tornejosJugats_recyled_view(this, data)
         recyclerView.adapter = adapter
