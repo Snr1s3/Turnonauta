@@ -3,7 +3,6 @@ package proj.tcg.turnonauta.aplicacio
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
@@ -12,17 +11,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 import proj.tcg.turnonauta.R
+import proj.tcg.turnonauta.app.AppTurnonauta
 import proj.tcg.turnonauta.config.Configuracio
 import proj.tcg.turnonauta.models.UsuarisStatistics
-import proj.tcg.turnonauta.utilities.Utilities
 import proj.tcg.turnonauta.retrofit.ConnexioAPI
 import proj.tcg.turnonauta.screen.MenuInferiorAndroid
-import proj.tcg.turnonauta.fragments.BottomMenu
 import retrofit2.HttpException
 import java.io.IOException
 
 class Pagina_Principal : AppCompatActivity() {
     private lateinit var botonConfig : ImageButton
+    private var userId: Int = 0
     private lateinit var response: UsuarisStatistics
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,26 +29,22 @@ class Pagina_Principal : AppCompatActivity() {
         setContentView(R.layout.activity_pagina_principal)
         val menuInferior = MenuInferiorAndroid(window)
         menuInferior.hideSystemNavigationBar()
+        val appInstance = AppTurnonauta.getInstance()
+        userId = appInstance.getUserIdApp()
+      //Log.d("User_ID Login:", "user ID: "+userId)
+        getDataUser()
         botonConfig = findViewById(R.id.boton_config)
-        val bundle = intent.extras
-        if (bundle != null) {
-            val value = bundle.getInt("user_id")
-            Log.d("User_ID Pantalla d'Inici:", "Bundle: "+value)
-            val util = Utilities(supportFragmentManager)
-            val containerId = R.id.fragmentContainerView
-            util.loadFragment(value, containerId)
-            getDataUser(value)
-        }
+
         botonConfig.setOnClickListener {
             val intent = Intent(this, Configuracio::class.java)
             startActivity(intent)
         }
     }
 
-    private fun getDataUser(id : Int){
+    private fun getDataUser(){
         lifecycleScope.launch {
             try {
-                response = ConnexioAPI.API().getStatistic(id)
+                response = ConnexioAPI.API().getStatistic(userId)
                 Log.d("User_ID Pantalla d'Inici:", "ID: "+response)
                 val idText = findViewById<TextView>(R.id.idUser)
                 val nomText = findViewById<TextView>(R.id.nomUser)
@@ -63,7 +58,6 @@ class Pagina_Principal : AppCompatActivity() {
                 rG.setText(response.roundsWon.toString())
                 tJ.setText(response.tournamentsPlayed.toString())
                 tG.setText(response.tournamentsWon.toString())
-
             } catch (e: HttpException) {
                 Toast.makeText(this@Pagina_Principal, "HTTP Error: ${e.message}", Toast.LENGTH_SHORT).show()
             } catch (e: IOException) {

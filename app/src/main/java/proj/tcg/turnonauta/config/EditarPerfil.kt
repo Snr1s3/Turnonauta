@@ -24,7 +24,7 @@ class EditarPerfil : AppCompatActivity() {
         userId = intent.getIntExtra("USER_ID", -1)
 
         if (userId != -1) {
-            obtenerNombreUsuario(userId)
+          //  obtenerNombreUsuario(userId)
         }
     }
 

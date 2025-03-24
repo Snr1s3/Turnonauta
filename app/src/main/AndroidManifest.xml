@@ -8,6 +8,7 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/logo2"
         android:label="@string/app_name"
+        android:name=".app.AppTurnonauta"
         android:roundIcon="@drawable/logo2"
         android:supportsRtl="true"
         android:theme="@style/Theme.Turnonauta"

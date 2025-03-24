@@ -26,6 +26,7 @@ data class Torneig(
     @SerializedName("virtual") val virtual: Boolean,
     @SerializedName("format") val format: String?,
     @SerializedName("premi") val premi: String?,
+    @SerializedName("num_jugadors") val numJugadors: Int?,
     @SerializedName("data_d_inici") val dataDInici: Date,
     @SerializedName("data_final") val dataFinal: Date?
 )

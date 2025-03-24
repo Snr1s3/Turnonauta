@@ -1,5 +1,6 @@
 package proj.tcg.turnonauta
 import proj.tcg.turnonauta.retrofit.ConnexioAPI
+import proj.tcg.turnonauta.app.AppTurnonauta
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -52,8 +53,8 @@ class PantallaLogin : AppCompatActivity() {
     }
 
     /*
-    "username": "user1",
-    "password": "password1"
+    "username": "admin",   "password": "password1"
+    "username": "player1",   "password": "password1"   admin
      */
     private fun checkLogin() {
         val username = eTUsuari.text.toString().trim()
@@ -66,12 +67,11 @@ class PantallaLogin : AppCompatActivity() {
             try {
                 response = ConnexioAPI.API().getLogin(username,password)
                 Log.d("User_ID Login:", "ID: "+response)
-
                 if (response > -1) {
+                    val appInstance = AppTurnonauta.getInstance()
+                    appInstance.setUserIdApp(response)
                     Toast.makeText(this@PantallaLogin, "Login Successful!", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this@PantallaLogin, Pagina_Principal::class.java).apply {
-                        putExtra("user_id", response)
-                    }
+                    val intent = Intent(this@PantallaLogin, Pagina_Principal::class.java)
                     startActivity(intent)
                 } else {
                     Toast.makeText(this@PantallaLogin, "Invalid login credentials", Toast.LENGTH_SHORT).show()
