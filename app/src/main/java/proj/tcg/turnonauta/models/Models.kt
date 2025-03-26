@@ -16,6 +16,10 @@ data class Usuaris(
     val rang: Int? = null,
     val data_de_registre: LocalDate? = null
 )
+data class UsuarisAmbPunts(
+    val username: String,
+    val punts: Int
+)
 
 data class Torneig(
     @SerializedName("id_torneig") val idTorneig: Int?,

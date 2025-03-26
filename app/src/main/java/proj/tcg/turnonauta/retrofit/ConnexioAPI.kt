@@ -4,6 +4,7 @@ import android.util.Log
 import okhttp3.OkHttpClient
 import proj.tcg.turnonauta.models.Torneig
 import proj.tcg.turnonauta.models.Usuaris
+import proj.tcg.turnonauta.models.UsuarisAmbPunts
 import proj.tcg.turnonauta.models.UsuarisStatistics
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -24,6 +25,10 @@ interface ApiService {
         @Query("password") password: String
     ): Int
 
+    @GET("/user_by_id")
+    suspend fun getUserById(
+        @Query("user_id") user_id: Int
+    ): Usuaris
 
     @GET("/user_statistics")
     suspend fun getStatistic(
@@ -34,6 +39,16 @@ interface ApiService {
     suspend fun getTournamentsPlayed(
         @Query("user_id") user_id: Int
     ): List<Torneig>
+
+    @GET("/users_in_tournament")
+    suspend fun get_users_in_tournament(
+        @Query("torneig_id") torneig_id: Int
+    ): List<UsuarisAmbPunts>
+
+    @GET("/tournament_by_id")
+    suspend fun getTournamentById(
+        @Query("torneig_id")torneigId: Int
+    ): Torneig
 }
 
 class ConnexioAPI {

@@ -53,8 +53,8 @@ class PantallaLogin : AppCompatActivity() {
     }
 
     /*
-    "username": "admin",   "password": "password1"
-    "username": "player1",   "password": "password1"   admin
+    "username": "admin",   "password": "password123"
+    "username": "player1",   "password": "password123"
      */
     private fun checkLogin() {
         val username = eTUsuari.text.toString().trim()

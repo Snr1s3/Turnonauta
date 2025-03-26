@@ -7,6 +7,7 @@ import android.content.Context
 class AppTurnonauta : Application() {
 
     var userId: Int = 0
+    var torneigId: Int = 0
 
     companion object {
         private var instance: AppTurnonauta? = null
@@ -27,5 +28,12 @@ class AppTurnonauta : Application() {
 
     fun getUserIdApp(): Int {
         return userId
+    }
+    fun setTorneigIdApp(response: Int) {
+        torneigId = response
+    }
+
+    fun getTorneigIdApp(): Int {
+        return torneigId
     }
 }

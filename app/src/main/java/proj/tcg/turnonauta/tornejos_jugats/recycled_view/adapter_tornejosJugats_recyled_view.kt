@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import proj.tcg.turnonauta.R
 import proj.tcg.turnonauta.aplicacio.DetallTorneig
 import proj.tcg.turnonauta.aplicacio.LlistaTornejosJugats
+import proj.tcg.turnonauta.app.AppTurnonauta
 
 class Adapter_tornejosJugats_recyled_view(private val context: Context, private val list: List<tornejosJugats_recyled_view>) :
     RecyclerView.Adapter<Adapter_tornejosJugats_recyled_view.ViewHolder>() {
@@ -30,6 +31,8 @@ class Adapter_tornejosJugats_recyled_view(private val context: Context, private 
 
 
         holder.itemView.setOnClickListener {
+            val appInstance = AppTurnonauta.getInstance()
+            appInstance.setTorneigIdApp(item.codi)
             val intent = when (context) {
                 is LlistaTornejosJugats -> Intent(context, DetallTorneig::class.java)
                 else -> null

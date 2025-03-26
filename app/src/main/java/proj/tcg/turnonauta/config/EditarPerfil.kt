@@ -29,7 +29,7 @@ class EditarPerfil : AppCompatActivity() {
     }
 
     private fun obtenerNombreUsuario(userId: Int) {
-        lifecycleScope.launch {
+     /*   lifecycleScope.launch {
             try {
                 val response = ConnexioAPI.API().getUserById(userId) // Llamar a la API
 
@@ -48,5 +48,7 @@ class EditarPerfil : AppCompatActivity() {
                 textNombreUsuario.text = "Error: ${e.message}"
             }
         }
+
+      */
     }
 }
