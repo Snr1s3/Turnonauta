@@ -5,9 +5,14 @@ import okhttp3.OkHttpClient
 import proj.tcg.turnonauta.models.Torneig
 import proj.tcg.turnonauta.models.Usuaris
 import proj.tcg.turnonauta.models.UsuarisStatistics
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.POST
+import retrofit2.http.PUT
+import retrofit2.http.Path
 import retrofit2.http.Query
 import java.security.SecureRandom
 import java.security.cert.CertificateException
@@ -34,6 +39,23 @@ interface ApiService {
     suspend fun getTournamentsPlayed(
         @Query("user_id") user_id: Int
     ): List<Torneig>
+
+    @GET("users/check_username")
+    suspend fun checkUsernameExists(
+        @Query("username") username: String
+    ): Response<Boolean>
+
+    @PUT("users/{id}/update_name")
+    suspend fun updateUserName(@Path("id") userId: Int, @Body newName: String): Response<Void>
+
+    @POST("register")
+    suspend fun registerUser(
+        @Query("username") username: String,
+        @Query("email") email: String,
+        @Query("phone") phone: String,
+        @Query("password") password: String
+    ): Response<Void>
+
 }
 
 class ConnexioAPI {

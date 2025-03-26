@@ -1,51 +1,60 @@
 package proj.tcg.turnonauta.config
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.lifecycleScope
+import com.google.android.material.button.MaterialButton
 import kotlinx.coroutines.launch
 import org.json.JSONObject
 import proj.tcg.turnonauta.R
+import proj.tcg.turnonauta.app.AppTurnonauta
+import proj.tcg.turnonauta.models.UsuarisStatistics
 import proj.tcg.turnonauta.retrofit.ConnexioAPI
+import retrofit2.HttpException
 import java.io.IOException
 
 class EditarPerfil : AppCompatActivity() {
     private lateinit var textNombreUsuario: TextView
-    private var userId: Int = -1
+    private var userId: Int = 0
+    private lateinit var response: UsuarisStatistics
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_editar_perfil)
 
-        textNombreUsuario = findViewById(R.id.btnChangeName) // El TextView donde mostraremos el nombre
+        textNombreUsuario = findViewById(R.id.btnChangeName)
 
-        // Recibir el ID del usuario desde el Intent
-        userId = intent.getIntExtra("USER_ID", -1)
+         val appInstance = AppTurnonauta.getInstance()
+         userId = appInstance.getUserIdApp()
+        getDataUser()
 
-        if (userId != -1) {
-          //  obtenerNombreUsuario(userId)
+
+        textNombreUsuario.setOnClickListener {
+            val fragment = EditName_Fragment()
+            val fragmentManager: FragmentManager = supportFragmentManager
+            fragment.show(fragmentManager, "editar_nombre_fragment")
         }
+
     }
 
-    private fun obtenerNombreUsuario(userId: Int) {
+    private fun getDataUser(){
         lifecycleScope.launch {
             try {
-                val response = ConnexioAPI.API().getUserById(userId) // Llamar a la API
+                response = ConnexioAPI.API().getStatistic(userId)
+                Log.d("User_ID Pantalla d'Inici:", "ID: "+response)
+                val nomText = findViewById<MaterialButton>(R.id.btnChangeName)
 
-                if (response.isSuccessful) {
-                    val jsonResponse = response.body()?.string()
-                    val jsonObject = JSONObject(jsonResponse)
-                    val nombre = jsonObject.getString("nombre") // Extraer el nombre
-
-                    textNombreUsuario.text = nombre // Mostrar el nombre en el TextView
-                } else {
-                    textNombreUsuario.text = "Usuario no encontrado"
-                }
+                nomText.setText(response.username.toString())
+            } catch (e: HttpException) {
+                Toast.makeText(this@EditarPerfil, "HTTP Error: ${e.message}", Toast.LENGTH_SHORT).show()
             } catch (e: IOException) {
-                textNombreUsuario.text = "Error de conexión"
+                Toast.makeText(this@EditarPerfil, "Network Error: ${e.message}", Toast.LENGTH_SHORT).show()
             } catch (e: Exception) {
-                textNombreUsuario.text = "Error: ${e.message}"
+                Toast.makeText(this@EditarPerfil,"Error: ${e.message}", Toast.LENGTH_SHORT).show()
             }
         }
     }

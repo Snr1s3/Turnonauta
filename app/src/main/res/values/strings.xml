@@ -40,6 +40,9 @@
     <string name="nom_usuari2">Nom d\'usuari:</string>
     <string name="contra2">Contrasenya:</string>
     <string name="rep_contra2">Repetir Contrasenya:</string>
+    <string name="registrar_button">Registrar-se</string>
+
+
 
 
     <!-- Pantalla Inici -->
