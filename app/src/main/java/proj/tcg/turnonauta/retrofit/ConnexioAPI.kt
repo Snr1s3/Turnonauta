@@ -61,17 +61,16 @@ interface ApiService {
         @Query("username") username: String
     ): Response<Boolean>
 
-    @PUT("users/{id}/update_name")
+    @PUT("users/update_name")
     suspend fun updateUserName(
         @Path("id") userId: Int,
         @Body newName: String
-    ): Response<Void>
+    ): Usuaris
 
     @POST("/add_user")
     suspend fun registerUser(
         @Body user: NewUser
-    ):
-
+    ): Usuaris
 }
 
 class ConnexioAPI {
