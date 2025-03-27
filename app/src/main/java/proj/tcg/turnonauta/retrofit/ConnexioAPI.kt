@@ -30,7 +30,7 @@ interface ApiService {
     suspend fun getLogin(
         @Query("username") username: String,
         @Query("password") password: String
-    ): Response<Int>
+    ): Int
 
     @GET("/users/get_by_id")
     suspend fun getUserById(
@@ -60,12 +60,12 @@ interface ApiService {
     @DELETE("/users/delete_by_id")
     suspend fun deleteUsers(
         @Query("user_id")userId: Int
-    ): Response<Boolean>
+    ): Boolean
 
     @GET("/users/check_username")
     suspend fun checkUsernameExists(
         @Query("username") username: String
-    ): Response<Boolean>
+    ): Boolean
 
     @PUT("/users/update_name")
     suspend fun updateUserName(
