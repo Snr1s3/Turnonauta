@@ -21,6 +21,13 @@ data class UsuarisAmbPunts(
     val punts: Int
 )
 
+data class NewUser(
+    val username: String,
+    val email: String,
+    val phone: String,
+    val password: String
+)
+
 data class Torneig(
     @SerializedName("id_torneig") val idTorneig: Int?,
     @SerializedName("nom") val nom: String,

@@ -64,6 +64,7 @@ class Registre : AppCompatActivity() {
 
         lifecycleScope.launch {
             try {
+
                 val response = ConnexioAPI.API().registerUser(username, email, phone, password)
                 if (response.isSuccessful) {
                     Toast.makeText(this@Registre, "Registro exitoso", Toast.LENGTH_SHORT).show()

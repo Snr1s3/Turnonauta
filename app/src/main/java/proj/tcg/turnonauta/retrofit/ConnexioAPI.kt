@@ -2,6 +2,7 @@ package proj.tcg.turnonauta.retrofit
 
 import android.util.Log
 import okhttp3.OkHttpClient
+import proj.tcg.turnonauta.models.NewUser
 import proj.tcg.turnonauta.models.Torneig
 import proj.tcg.turnonauta.models.Usuaris
 import proj.tcg.turnonauta.models.UsuarisAmbPunts
@@ -61,15 +62,15 @@ interface ApiService {
     ): Response<Boolean>
 
     @PUT("users/{id}/update_name")
-    suspend fun updateUserName(@Path("id") userId: Int, @Body newName: String): Response<Void>
-
-    @POST("register")
-    suspend fun registerUser(
-        @Query("username") username: String,
-        @Query("email") email: String,
-        @Query("phone") phone: String,
-        @Query("password") password: String
+    suspend fun updateUserName(
+        @Path("id") userId: Int,
+        @Body newName: String
     ): Response<Void>
+
+    @POST("/add_user")
+    suspend fun registerUser(
+        @Body user: NewUser
+    ):
 
 }
 
