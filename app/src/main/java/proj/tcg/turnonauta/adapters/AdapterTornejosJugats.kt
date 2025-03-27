@@ -1,4 +1,4 @@
-package proj.tcg.turnonauta.tornejos_jugats.recycled_view
+package proj.tcg.turnonauta.adapters
 
 import android.content.Context
 import android.content.Intent
@@ -11,9 +11,10 @@ import proj.tcg.turnonauta.R
 import proj.tcg.turnonauta.aplicacio.DetallTorneig
 import proj.tcg.turnonauta.aplicacio.LlistaTornejosJugats
 import proj.tcg.turnonauta.app.AppTurnonauta
+import proj.tcg.turnonauta.models.TornejosJugats
 
-class Adapter_tornejosJugats_recyled_view(private val context: Context, private val list: List<tornejosJugats_recyled_view>) :
-    RecyclerView.Adapter<Adapter_tornejosJugats_recyled_view.ViewHolder>() {
+class AdapterTornejosJugats(private val context: Context, private val list: List<TornejosJugats>) :
+    RecyclerView.Adapter<AdapterTornejosJugats.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)

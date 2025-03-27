@@ -1,5 +1,6 @@
 package proj.tcg.turnonauta.aplicacio
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -19,7 +20,7 @@ import proj.tcg.turnonauta.screen.MenuInferiorAndroid
 import retrofit2.HttpException
 import java.io.IOException
 
-class Pagina_Principal : AppCompatActivity() {
+class PaginaPrincipal : AppCompatActivity() {
     private lateinit var botonConfig : ImageButton
     private var userId: Int = 0
     private lateinit var response: UsuarisStatistics
@@ -41,29 +42,30 @@ class Pagina_Principal : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun getDataUser(){
         lifecycleScope.launch {
             try {
-                response = ConnexioAPI.API().getStatistic(userId)
-                Log.d("User_ID Pantalla d'Inici:", "ID: "+response)
+                response = ConnexioAPI.api().getStatistic(userId)
+                Log.d("User_ID Pantalla d'Inici:", "ID: $response")
                 val idText = findViewById<TextView>(R.id.idUser)
                 val nomText = findViewById<TextView>(R.id.nomUser)
                 val rJ = findViewById<TextView>(R.id.rJ)
                 val rG = findViewById<TextView>(R.id.rG)
                 val tJ = findViewById<TextView>(R.id.tJ)
                 val tG = findViewById<TextView>(R.id.tG)
-                idText.setText(response.id.toString())
-                nomText.setText(response.username.toString())
-                rJ.setText(response.roundsPlayed.toString())
-                rG.setText(response.roundsWon.toString())
-                tJ.setText(response.tournamentsPlayed.toString())
-                tG.setText(response.tournamentsWon.toString())
+                idText.text = response.id.toString()
+                nomText.text = response.username
+                rJ.text = response.roundsPlayed.toString()
+                rG.text = response.roundsWon.toString()
+                tJ.text = response.tournamentsPlayed.toString()
+                tG.text = response.tournamentsWon.toString()
             } catch (e: HttpException) {
-                Toast.makeText(this@Pagina_Principal, "HTTP Error: ${e.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@PaginaPrincipal, "HTTP Error: ${e.message}", Toast.LENGTH_SHORT).show()
             } catch (e: IOException) {
-                Toast.makeText(this@Pagina_Principal, "Network Error: ${e.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@PaginaPrincipal, "Network Error: ${e.message}", Toast.LENGTH_SHORT).show()
             } catch (e: Exception) {
-                Toast.makeText(this@Pagina_Principal,"Error: ${e.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@PaginaPrincipal,"Error: ${e.message}", Toast.LENGTH_SHORT).show()
             }
         }
     }

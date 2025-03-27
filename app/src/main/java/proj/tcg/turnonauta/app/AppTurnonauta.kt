@@ -1,13 +1,12 @@
 package proj.tcg.turnonauta.app
 
 import android.app.Application
-import android.content.Context
 
 
 class AppTurnonauta : Application() {
 
-    var userId: Int = 0
-    var torneigId: Int = 0
+    private var userId: Int = 0
+    private var torneigId: Int = 0
 
     companion object {
         private var instance: AppTurnonauta? = null

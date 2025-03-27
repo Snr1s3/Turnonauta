@@ -61,28 +61,30 @@ class Registre : AppCompatActivity() {
             Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
             return
         }
+        /*
+                lifecycleScope.launch {
+                    try {
 
-        lifecycleScope.launch {
-            try {
-
-                val response = ConnexioAPI.API().registerUser(username, email, phone, password)
-                if (response.isSuccessful) {
-                    Toast.makeText(this@Registre, "Registro exitoso", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this@Registre, PantallaLogin::class.java)
-                    startActivity(intent)
-                } else {
-                    Toast.makeText(this@Registre, "Error en el registro", Toast.LENGTH_SHORT).show()
+                        val response = ConnexioAPI.API().registerUser(username, email, phone, password)
+                        if (response.isSuccessful) {
+                            Toast.makeText(this@Registre, "Registro exitoso", Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this@Registre, PantallaLogin::class.java)
+                            startActivity(intent)
+                        } else {
+                            Toast.makeText(this@Registre, "Error en el registro", Toast.LENGTH_SHORT).show()
+                        }
+                    } catch (e: HttpException) {
+                        Toast.makeText(this@Registre, "Error HTTP: ${e.message}", Toast.LENGTH_SHORT).show()
+                        Log.e("Registre", "HTTP Exception: ${e.message}")
+                    } catch (e: IOException) {
+                        Toast.makeText(this@Registre, "Error de conexión: ${e.message}", Toast.LENGTH_SHORT).show()
+                        Log.e("Registre", "IO Exception: ${e.message}")
+                    } catch (e: Exception) {
+                        Toast.makeText(this@Registre, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+                        Log.e("Registre", "Exception: ${e.message}")
+                    }
                 }
-            } catch (e: HttpException) {
-                Toast.makeText(this@Registre, "Error HTTP: ${e.message}", Toast.LENGTH_SHORT).show()
-                Log.e("Registre", "HTTP Exception: ${e.message}")
-            } catch (e: IOException) {
-                Toast.makeText(this@Registre, "Error de conexión: ${e.message}", Toast.LENGTH_SHORT).show()
-                Log.e("Registre", "IO Exception: ${e.message}")
-            } catch (e: Exception) {
-                Toast.makeText(this@Registre, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
-                Log.e("Registre", "Exception: ${e.message}")
-            }
-        }
+
+         */
     }
 }

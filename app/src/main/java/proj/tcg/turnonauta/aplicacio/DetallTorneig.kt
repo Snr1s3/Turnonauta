@@ -1,5 +1,6 @@
 package proj.tcg.turnonauta.aplicacio
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -14,14 +15,12 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.launch
 import proj.tcg.turnonauta.R
 import proj.tcg.turnonauta.app.AppTurnonauta
-import proj.tcg.turnonauta.detall_torneig_recyled_view.Adapter_detall_torneig_recyled_view
-import proj.tcg.turnonauta.detall_torneig_recyled_view.detall_torneig_recyled_view
+import proj.tcg.turnonauta.adapters.AdapterDetallTorneig
 import proj.tcg.turnonauta.models.Torneig
 import proj.tcg.turnonauta.models.UsuarisAmbPunts
+import proj.tcg.turnonauta.models.DetallTorneig
 import proj.tcg.turnonauta.retrofit.ConnexioAPI
 import proj.tcg.turnonauta.screen.MenuInferiorAndroid
-import proj.tcg.turnonauta.tornejos_jugats.recycled_view.Adapter_tornejosJugats_recyled_view
-import proj.tcg.turnonauta.tornejos_jugats.recycled_view.tornejosJugats_recyled_view
 import retrofit2.HttpException
 import java.io.IOException
 
@@ -50,8 +49,8 @@ class DetallTorneig : AppCompatActivity() {
     private fun getTorneigId(){
         lifecycleScope.launch {
             try {
-                response2 = ConnexioAPI.API().getTournamentById(torneigId)
-                Log.d("Id Torneig", "ID: "+response2)
+                response2 = ConnexioAPI.api().getTournamentById(torneigId)
+                Log.d("Id Torneig", "ID: $response2")
                 setTorneig()
             } catch (e: HttpException) {
                 Toast.makeText(this@DetallTorneig, "HTTP Error: ${e.message}", Toast.LENGTH_SHORT).show()
@@ -63,25 +62,26 @@ class DetallTorneig : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun setTorneig(){
-        var nom = findViewById<TextView>(R.id.nom)
-        var codi = findViewById<TextView>(R.id.codi)
-        var format= findViewById<TextView>(R.id.format)
-        var joc = findViewById<TextView>(R.id.joc)
-        var jugadors = findViewById<TextView>(R.id.jugadors)
-        nom.setText(response2.nom)
-        codi.setText("Codi: "+response2.idTorneig.toString())
-        format.setText("Format: "+response2.format)
-        joc.setText("Joc: "+response2.joc)
-        jugadors.setText("Jugadors: "+ response2.numJugadors.toString())
+        val nom = findViewById<TextView>(R.id.nom)
+        val codi = findViewById<TextView>(R.id.codi)
+        val format= findViewById<TextView>(R.id.format)
+        val joc = findViewById<TextView>(R.id.joc)
+        val jugadors = findViewById<TextView>(R.id.jugadors)
+        nom.text = response2.nom
+        codi.text ="Codi: "+response2.idTorneig.toString()
+        format.text ="Format: "+response2.format
+        joc.text  = "Joc: "+response2.joc
+        jugadors.text  ="Jugadors: "+ response2.numJugadors.toString()
 
     }
 
     private fun getTornejosList(){
         lifecycleScope.launch {
             try {
-                response = ConnexioAPI.API().get_users_in_tournament(torneigId)
-                Log.d("Id Torneig", "ID: "+response)
+                response = ConnexioAPI.api().getUsersTournament(torneigId)
+                Log.d("Id Torneig", "ID: $response")
                 startRecycled()
             } catch (e: HttpException) {
                 Toast.makeText(this@DetallTorneig, "HTTP Error: ${e.message}", Toast.LENGTH_SHORT).show()
@@ -96,13 +96,13 @@ class DetallTorneig : AppCompatActivity() {
     private fun startRecycled(){
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
         recyclerView.layoutManager = GridLayoutManager(this, 1)
-        val data = ArrayList<detall_torneig_recyled_view>()
+        val data = ArrayList<DetallTorneig>()
         var num = 0
         for (t in response) {
-            num = num + 1
-            data.add(detall_torneig_recyled_view(num.toString() +"º  "+t.username+ "   "+t.punts.toString()+" punts"))
+            num += 1
+            data.add(DetallTorneig(num.toString() +"º  "+t.username+ "   "+t.punts.toString()+" punts"))
         }
-        val adapter = Adapter_detall_torneig_recyled_view(this, data)
+        val adapter = AdapterDetallTorneig(data)
         recyclerView.adapter = adapter
     }
 }

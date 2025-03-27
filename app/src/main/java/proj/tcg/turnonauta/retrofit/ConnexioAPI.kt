@@ -1,5 +1,6 @@
 package proj.tcg.turnonauta.retrofit
 
+import android.annotation.SuppressLint
 import android.util.Log
 import okhttp3.OkHttpClient
 import proj.tcg.turnonauta.models.NewUser
@@ -7,7 +8,6 @@ import proj.tcg.turnonauta.models.Torneig
 import proj.tcg.turnonauta.models.Usuaris
 import proj.tcg.turnonauta.models.UsuarisAmbPunts
 import proj.tcg.turnonauta.models.UsuarisStatistics
-import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Body
@@ -30,42 +30,42 @@ interface ApiService {
     suspend fun getLogin(
         @Query("username") username: String,
         @Query("password") password: String
-    ): Response<Int>
+    ): Int
 
     @GET("/users/get_by_id")
     suspend fun getUserById(
-        @Query("user_id") user_id: Int
+        @Query("user_id") userId: Int
     ): Usuaris
 
     @GET("/users/user_statistics")
     suspend fun getStatistic(
-        @Query("user_id") user_id: Int
+        @Query("user_id") userId: Int
     ): UsuarisStatistics
 
     @GET("/users/tournaments_played")
     suspend fun getTournamentsPlayed(
-        @Query("user_id") user_id: Int
+        @Query("user_id") userId: Int
     ): List<Torneig>
 
     @GET("/users/users_in_tournament")
-    suspend fun get_users_in_tournament(
-        @Query("torneig_id") torneig_id: Int
+    suspend fun getUsersTournament(
+        @Query("torneig_id") torneigId: Int
     ): List<UsuarisAmbPunts>
 
     @GET("/tournamets/tournament_by_id")
     suspend fun getTournamentById(
-        @Query("torneig_id")torneigId: Int
+        @Query("torneig_id") torneigId: Int
     ): Torneig
 
     @DELETE("/users/delete_by_id")
     suspend fun deleteUsers(
         @Query("user_id")userId: Int
-    ): Response<Boolean>
+    ): Boolean
 
     @GET("/users/check_username")
     suspend fun checkUsernameExists(
         @Query("username") username: String
-    ): Response<Boolean>
+    ): Boolean
 
     @PUT("/users/update_name")
     suspend fun updateUserName(
@@ -84,7 +84,7 @@ class ConnexioAPI {
         private var mAPI: ApiService? = null
 
         @Synchronized
-        fun API(): ApiService {
+        fun api(): ApiService {
             if (mAPI == null) {
                 val unsafeClient = getUnsafeOkHttpClient()
 
@@ -104,11 +104,14 @@ class ConnexioAPI {
 
 private fun getUnsafeOkHttpClient(): OkHttpClient {
     try {
-        val trustAllCerts = arrayOf<TrustManager>(object : X509TrustManager {
+        val trustAllCerts = arrayOf<TrustManager>(@SuppressLint("CustomX509TrustManager")
+        object : X509TrustManager {
+            @SuppressLint("TrustAllX509TrustManager")
             @Throws(CertificateException::class)
             override fun checkClientTrusted(chain: Array<X509Certificate>, authType: String) {
             }
 
+            @SuppressLint("TrustAllX509TrustManager")
             @Throws(CertificateException::class)
             override fun checkServerTrusted(chain: Array<X509Certificate>, authType: String) {
             }
@@ -123,7 +126,7 @@ private fun getUnsafeOkHttpClient(): OkHttpClient {
 
         val builder = OkHttpClient.Builder()
         builder.sslSocketFactory(sslSocketFactory, trustAllCerts[0] as X509TrustManager)
-        builder.hostnameVerifier { hostname, session -> true }
+        builder.hostnameVerifier { _, _ -> true }
         val okHttpClient = builder.build()
         return okHttpClient
     } catch (e: Exception) {

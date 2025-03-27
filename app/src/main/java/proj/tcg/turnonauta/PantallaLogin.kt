@@ -13,7 +13,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
-import proj.tcg.turnonauta.aplicacio.Pagina_Principal
+import proj.tcg.turnonauta.aplicacio.PaginaPrincipal
 import proj.tcg.turnonauta.recuperar_contrasenya.RecuperarContrasenya
 import proj.tcg.turnonauta.registre.Registre
 import proj.tcg.turnonauta.screen.MenuInferiorAndroid
@@ -73,7 +73,7 @@ class PantallaLogin : AppCompatActivity() {
 
         lifecycleScope.launch {
             try {
-                response = ConnexioAPI.API().getLogin(username, password)
+                response = ConnexioAPI.api().getLogin(username, password)
                 Log.d("User_ID Login:", "ID: $response")
 
                 if (response > -1) {
@@ -81,7 +81,7 @@ class PantallaLogin : AppCompatActivity() {
                     appInstance.setUserIdApp(response)
 
                     Toast.makeText(this@PantallaLogin, "Login Successful!", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this@PantallaLogin, Pagina_Principal::class.java)
+                    val intent = Intent(this@PantallaLogin, PaginaPrincipal::class.java)
                     startActivity(intent)
                 } else {
                     // Mostrar el mensaje de error si las credenciales son incorrectas

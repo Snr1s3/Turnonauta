@@ -1,31 +1,35 @@
-package proj.tcg.turnonauta.detall_torneig_recyled_view
+package proj.tcg.turnonauta.adapters
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import proj.tcg.turnonauta.R
+import proj.tcg.turnonauta.models.UsuariTorneig
 
-class Adapter_detall_torneig_recyled_view(private val context: Context, private val list: List<detall_torneig_recyled_view>) :
-    RecyclerView.Adapter<Adapter_detall_torneig_recyled_view.ViewHolder>() {
+class AdapterUsuarTorneig(private val list: List<UsuariTorneig>) :
+    RecyclerView.Adapter<AdapterUsuarTorneig.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.detall_torneig_recycled_view, parent, false)
+            .inflate(R.layout.usuari_recycled_view, parent, false)
+
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = list[position]
-        holder.textViewNom.text = item.nom
+        holder.imageView.setImageResource(item.image)
+        holder.textView.text = item.text
     }
 
     override fun getItemCount(): Int {
         return list.size
     }
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val textViewNom: TextView = itemView.findViewById(R.id.textView )
+        val imageView: ImageView = view.findViewById(R.id.imageview)
+        val textView: TextView = view.findViewById(R.id.textView)
     }
 }

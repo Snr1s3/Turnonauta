@@ -14,10 +14,10 @@ import kotlinx.coroutines.launch
 import proj.tcg.turnonauta.R
 import proj.tcg.turnonauta.app.AppTurnonauta
 import proj.tcg.turnonauta.models.Torneig
+import proj.tcg.turnonauta.models.TornejosJugats
 import proj.tcg.turnonauta.retrofit.ConnexioAPI
 import proj.tcg.turnonauta.screen.MenuInferiorAndroid
-import proj.tcg.turnonauta.tornejos_jugats.recycled_view.Adapter_tornejosJugats_recyled_view
-import proj.tcg.turnonauta.tornejos_jugats.recycled_view.tornejosJugats_recyled_view
+import proj.tcg.turnonauta.adapters.AdapterTornejosJugats
 import retrofit2.HttpException
 import java.io.IOException
 
@@ -44,8 +44,8 @@ class LlistaTornejosJugats : AppCompatActivity() {
     private fun getTornejosList(){
         lifecycleScope.launch {
             try {
-                response = ConnexioAPI.API().getTournamentsPlayed(userId)
-                Log.d("User_ID Pantalla d'Inici:", "ID: "+response)
+                response = ConnexioAPI.api().getTournamentsPlayed(userId)
+                Log.d("User_ID Pantalla d'Inici:", "ID: $response")
                 startRecycled()
             } catch (e: HttpException) {
                 Toast.makeText(this@LlistaTornejosJugats, "HTTP Error: ${e.message}", Toast.LENGTH_SHORT).show()
@@ -60,11 +60,11 @@ class LlistaTornejosJugats : AppCompatActivity() {
     private fun startRecycled(){
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
         recyclerView.layoutManager = GridLayoutManager(this, 1)
-        val data = ArrayList<tornejosJugats_recyled_view>()
+        val data = ArrayList<TornejosJugats>()
         for (t in response) {
-            data.add(tornejosJugats_recyled_view(t.nom, t.idTorneig!!,t.joc, t.format!!, t.numJugadors!!))
+            data.add(TornejosJugats(t.nom, t.idTorneig!!,t.joc, t.format!!, t.numJugadors!!))
         }
-        val adapter = Adapter_tornejosJugats_recyled_view(this, data)
+        val adapter = AdapterTornejosJugats(this, data)
         recyclerView.adapter = adapter
     }
 }

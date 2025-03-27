@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
 import proj.tcg.turnonauta.PantallaLogin
 import proj.tcg.turnonauta.R
-import proj.tcg.turnonauta.aplicacio.Pagina_Principal
+import proj.tcg.turnonauta.aplicacio.PaginaPrincipal
 
 class Configuracio : AppCompatActivity() {
     private lateinit var botonImagen: ImageButton
