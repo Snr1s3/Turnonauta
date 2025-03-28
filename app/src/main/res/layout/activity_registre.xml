@@ -149,12 +149,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:orientation="vertical"
         android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tConObl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginBottom="40dp"
+            android:text=""
+            android:textColor="@color/color_text"
+            android:background="@drawable/rounded_textview"
+            android:textSize="14sp"
+            android:layout_gravity="center"
+            android:visibility="invisible" />
 
         <Button
             android:id="@+id/bRegistre"
             style="@style/CustomButton"
             android:layout_width="300dp"
+            android:layout_marginBottom="40dp"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="@string/registrar_button" />

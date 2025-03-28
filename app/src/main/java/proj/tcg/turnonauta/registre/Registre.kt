@@ -5,13 +5,15 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 import proj.tcg.turnonauta.PantallaLogin
 import proj.tcg.turnonauta.R
+import proj.tcg.turnonauta.models.NewUser
+import proj.tcg.turnonauta.models.Usuaris
 import proj.tcg.turnonauta.retrofit.ConnexioAPI
 import proj.tcg.turnonauta.screen.MenuInferiorAndroid
 import retrofit2.HttpException
@@ -24,6 +26,7 @@ class Registre : AppCompatActivity() {
     private lateinit var eTelf: EditText
     private lateinit var eContra: EditText
     private lateinit var eRepContra: EditText
+    private lateinit var tConObl: TextView // Para mostrar errores
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +42,7 @@ class Registre : AppCompatActivity() {
         eTelf = findViewById(R.id.itelf)
         eContra = findViewById(R.id.iContra1)
         eRepContra = findViewById(R.id.iContra2)
+        tConObl = findViewById(R.id.tConObl) // Asignamos el TextView
 
         bRegistre.setOnClickListener {
             registerUser()
@@ -52,39 +56,59 @@ class Registre : AppCompatActivity() {
         val password = eContra.text.toString().trim()
         val confirmPassword = eRepContra.text.toString().trim()
 
+        // Limpiar mensaje de error anterior
+        tConObl.text = ""
+        tConObl.visibility = TextView.GONE
+
         if (username.isEmpty() || email.isEmpty() || phone.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
-            Toast.makeText(this, "Todos los campos son obligatorios", Toast.LENGTH_SHORT).show()
+            showError("Todos los campos son obligatorios")
             return
         }
 
-        if (password != confirmPassword) {
-            Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
+        // Validar la contraseña con los requisitos mínimos
+        val passwordError = validatePassword(password, confirmPassword)
+        if (passwordError != null) {
+            showError(passwordError)
             return
         }
-        /*
-                lifecycleScope.launch {
-                    try {
 
-                        val response = ConnexioAPI.API().registerUser(username, email, phone, password)
-                        if (response.isSuccessful) {
-                            Toast.makeText(this@Registre, "Registro exitoso", Toast.LENGTH_SHORT).show()
-                            val intent = Intent(this@Registre, PantallaLogin::class.java)
-                            startActivity(intent)
-                        } else {
-                            Toast.makeText(this@Registre, "Error en el registro", Toast.LENGTH_SHORT).show()
-                        }
-                    } catch (e: HttpException) {
-                        Toast.makeText(this@Registre, "Error HTTP: ${e.message}", Toast.LENGTH_SHORT).show()
-                        Log.e("Registre", "HTTP Exception: ${e.message}")
-                    } catch (e: IOException) {
-                        Toast.makeText(this@Registre, "Error de conexión: ${e.message}", Toast.LENGTH_SHORT).show()
-                        Log.e("Registre", "IO Exception: ${e.message}")
-                    } catch (e: Exception) {
-                        Toast.makeText(this@Registre, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
-                        Log.e("Registre", "Exception: ${e.message}")
-                    }
+        lifecycleScope.launch {
+            try {
+                val newUser = NewUser(username, email, phone, password)
+                val response: Usuaris? = ConnexioAPI.API().registerUser(newUser)
+
+                if (response != null) {
+                    val intent = Intent(this@Registre, PantallaLogin::class.java)
+                    startActivity(intent)
+                } else {
+                    showError("Error en el registro, intenta nuevamente.")
                 }
+            } catch (e: HttpException) {
+                showError("Error en el servidor: ${e.message}")
+                Log.e("Registre", "HTTP Exception: ${e.message}")
+            } catch (e: IOException) {
+                showError("Error de conexión: Verifica tu internet.")
+                Log.e("Registre", "IO Exception: ${e.message}")
+            } catch (e: Exception) {
+                showError("Error inesperado: ${e.message}")
+                Log.e("Registre", "Exception: ${e.message}")
+            }
+        }
+    }
 
-         */
+    private fun validatePassword(password: String, confirmPassword: String): String? {
+        val regex = Regex("^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@\$!%*?&])[A-Za-z\\d@\$!%*?&]{8,}$")
+
+        return when {
+            password != confirmPassword -> "Las contraseñas no coinciden"
+            password.length < 8 -> "La contraseña debe tener al menos 8 caracteres"
+            !regex.matches(password) -> "Debe contener al menos una letra, un número y un carácter especial"
+            else -> null
+        }
+    }
+
+    private fun showError(message: String) {
+        tConObl.text = message
+        tConObl.visibility = TextView.VISIBLE
     }
 }
