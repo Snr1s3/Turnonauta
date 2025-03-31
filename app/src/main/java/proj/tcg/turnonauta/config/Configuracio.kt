@@ -14,8 +14,10 @@ class Configuracio : AppCompatActivity() {
     private lateinit var botonImagen: ImageButton
     private lateinit var botonPerfil: MaterialButton
     private lateinit var botonLogOut: MaterialButton
+    private lateinit var botonModo: ImageButton
 
     private var isRedBorder = false // Estado inicial (borde verde)
+    private var isNight=false
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,10 +28,28 @@ class Configuracio : AppCompatActivity() {
         botonImagen = findViewById(R.id.btnNoti)
         botonPerfil = findViewById(R.id.btnPerfil)
         botonLogOut=findViewById(R.id.btnLogOut)
+        botonModo=findViewById(R.id.btnModo)
 
-        botonImagen.setImageResource(R.drawable.campana_noti_on) // Imagen original
+
+        botonImagen.setImageResource(R.drawable.campana_noti_on)
         botonImagen.setBackgroundResource(R.drawable.rounded_green_border_button) // Borde verde
-        // Listener para cambiar imagen y borde al hacer clic
+
+        botonModo.setImageResource(R.drawable.sol_turno)
+        botonModo.setImageResource(R.drawable.rounded_day_button)
+
+        botonModo.setOnClickListener {
+            if(isNight) {
+
+                botonModo.setImageResource(R.drawable.luna_turno)
+                botonModo.setImageResource(R.drawable.rounded_night_button)
+            }else{
+                botonModo.setImageResource(R.drawable.sol_turno)
+                botonModo.setImageResource(R.drawable.rounded_day_button)
+            }
+            isNight=!isNight
+
+        }
+
         botonImagen.setOnClickListener {
             if (isRedBorder) {
                 botonImagen.setImageResource(R.drawable.campana_noti_on) // Imagen original

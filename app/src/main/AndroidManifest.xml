@@ -32,7 +32,7 @@
             android:name=".aplicacio.EscriureCodi"
             android:exported="false" />
         <activity
-            android:name=".aplicacio.Pagina_Principal"
+            android:name=".aplicacio.PaginaPrincipal"
             android:exported="false" />
         <activity
             android:name=".registre.Registre"
@@ -54,6 +54,9 @@
             android:exported="false" />
         <activity
             android:name=".config.Configuracio"
+            android:exported="false" />
+        <activity
+            android:name=".config.TermsOfUse"
             android:exported="false" />
         <activity
             android:name=".PantallaLogin"
