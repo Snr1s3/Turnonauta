@@ -56,6 +56,9 @@
             android:name=".config.Configuracio"
             android:exported="false" />
         <activity
+            android:name=".config.TermsOfUse"
+            android:exported="false" />
+        <activity
             android:name=".PantallaLogin"
             android:exported="true">
             <intent-filter>

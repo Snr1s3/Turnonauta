@@ -74,7 +74,7 @@ class Registre : AppCompatActivity() {
 
         lifecycleScope.launch {
             try {
-                val newUser = NewUser(username,  email, phone, password)
+              val newUser = NewUser(username,  email, phone, password)
                 val response: Usuaris = ConnexioAPI.api().registerUser(newUser)
 
                 if (response != null) {
@@ -87,7 +87,7 @@ class Registre : AppCompatActivity() {
                 showError("Error en el servidor: ${e.message}")
                 Log.e("Registre", "HTTP Exception: ${e.message}")
             } catch (e: IOException) {
-                showError("Error de conexió: Verifica tu internet.")
+                showError("Error de conexión: Verifica tu internet.")
                 Log.e("Registre", "IO Exception: ${e.message}")
             } catch (e: Exception) {
                 showError("Error inesperado: ${e.message}")

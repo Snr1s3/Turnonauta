@@ -43,7 +43,6 @@ class PantallaLogin : AppCompatActivity() {
         eTContra = findViewById(R.id.eTContra)
         response = -1
 
-        // Asegurar que el mensaje de error esté oculto al iniciar
         tConObl.visibility = View.GONE
 
         bInici.setOnClickListener {
@@ -63,11 +62,11 @@ class PantallaLogin : AppCompatActivity() {
         val username = eTUsuari.text.toString().trim()
         val password = eTContra.text.toString().trim()
 
-        // Ocultar mensaje de error antes de intentar login
         tConObl.visibility = View.GONE
 
         if (username.isEmpty() || password.isEmpty()) {
-            Toast.makeText(this, "Please enter both username and password", Toast.LENGTH_SHORT).show()
+            tConObl.text = "Debe ingresar usuario y contraseña"
+            tConObl.visibility = View.VISIBLE
             return
         }
 
@@ -80,24 +79,23 @@ class PantallaLogin : AppCompatActivity() {
                     val appInstance = AppTurnonauta.getInstance()
                     appInstance.setUserIdApp(response)
 
-                    Toast.makeText(this@PantallaLogin, "Login Successful!", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this@PantallaLogin, PaginaPrincipal::class.java)
                     startActivity(intent)
                 } else {
-                    // Mostrar el mensaje de error si las credenciales son incorrectas
+                    tConObl.text = "Usuario o contraseña incorrectos"
                     tConObl.visibility = View.VISIBLE
                 }
             } catch (e: HttpException) {
+                tConObl.text = "Error del servidor, intente más tarde"
                 tConObl.visibility = View.VISIBLE
-                Toast.makeText(this@PantallaLogin, "HTTP Error: ${e.message}", Toast.LENGTH_SHORT).show()
             } catch (e: IOException) {
+                tConObl.text = "Problema de conexión, verifique su internet"
                 tConObl.visibility = View.VISIBLE
-                Toast.makeText(this@PantallaLogin, "Network Error: ${e.message}", Toast.LENGTH_SHORT).show()
             } catch (e: Exception) {
+                tConObl.text = "Ocurrió un error inesperado"
                 tConObl.visibility = View.VISIBLE
-                Log.d("User_ID Login:", "ID: ${e.message}")
-                Toast.makeText(this@PantallaLogin, "Error23: ${e.message}", Toast.LENGTH_SHORT).show()
             }
         }
     }
+
 }
