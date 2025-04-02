@@ -1,7 +1,6 @@
 package proj.tcg.turnonauta.models
 
 import com.google.gson.annotations.SerializedName
-import java.time.LocalDate
 import java.util.Date
 
 
@@ -14,8 +13,10 @@ data class Usuaris(
     val telefon: String? = null,
     val contrasenya: String,
     val rang: Int? = null,
-    val data_de_registre: LocalDate? = null
+    val data_de_registre: String? = null
+
 )
+
 data class UsuarisAmbPunts(
     val username: String,
     val punts: Int

@@ -9,7 +9,6 @@ import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.button.MaterialButton
 import kotlinx.coroutines.launch
-import org.json.JSONObject
 import proj.tcg.turnonauta.R
 import proj.tcg.turnonauta.app.AppTurnonauta
 import proj.tcg.turnonauta.models.UsuarisStatistics
@@ -44,11 +43,11 @@ class EditarPerfil : AppCompatActivity() {
     private fun getDataUser(){
         lifecycleScope.launch {
             try {
-                response = ConnexioAPI.API().getStatistic(userId)
+                response = ConnexioAPI.api().getStatistic(userId)
                 Log.d("User_ID Pantalla d'Inici:", "ID: "+response)
                 val nomText = findViewById<MaterialButton>(R.id.btnChangeName)
 
-                nomText.setText(response.username.toString())
+                nomText.setText(response.username)
             } catch (e: HttpException) {
                 Toast.makeText(this@EditarPerfil, "HTTP Error: ${e.message}", Toast.LENGTH_SHORT).show()
             } catch (e: IOException) {

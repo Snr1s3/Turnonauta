@@ -95,7 +95,8 @@ class PantallaLogin : AppCompatActivity() {
                 Toast.makeText(this@PantallaLogin, "Network Error: ${e.message}", Toast.LENGTH_SHORT).show()
             } catch (e: Exception) {
                 tConObl.visibility = View.VISIBLE
-                Toast.makeText(this@PantallaLogin, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+                Log.d("User_ID Login:", "ID: ${e.message}")
+                Toast.makeText(this@PantallaLogin, "Error23: ${e.message}", Toast.LENGTH_SHORT).show()
             }
         }
     }

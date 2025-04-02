@@ -32,7 +32,7 @@
             android:background="@color/color_surface"
             android:gravity="center"
             android:padding="10dp"
-            android:text="Filtres"
+            android:text="@string/filtres"
             android:textColor="#000"
             android:textSize="22sp"
             android:textStyle="bold" />
@@ -61,12 +61,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Joc:"
+                android:text="@string/joc"
                 android:textColor="@color/color_text2"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <RadioGroup
+                android:id="@+id/radio_joc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -76,7 +77,7 @@
                     android:id="@+id/radio_magic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Magic: The Gathering"
+                    android:text="@string/mtg"
                     android:textColor="@color/color_text2"
                     app:buttonTint="@color/color_bottom_menu" />
 
@@ -84,22 +85,24 @@
                     android:id="@+id/radio_pokemon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pokémon"
+                    android:text="@string/pkm"
                     android:textColor="@color/color_text2"
                     app:buttonTint="@color/color_bottom_menu" />
             </RadioGroup>
 
             <!-- Format Section -->
             <TextView
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Format:"
+                android:text="@string/format"
                 android:textColor="@color/color_text2"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <RadioGroup
+                android:id="@+id/radio_format"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -108,7 +111,7 @@
                     android:id="@+id/radio_eliminatoria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Eliminatoria"
+                    android:text="@string/elim"
                     android:textColor="@color/color_text2"
                     app:buttonTint="@color/color_bottom_menu" />
 
@@ -116,7 +119,7 @@
                     android:id="@+id/radio_swiss"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Suís"
+                    android:text="@string/suis"
                     android:textColor="@color/color_text2"
                     app:buttonTint="@color/color_bottom_menu" />
             </RadioGroup>
@@ -126,12 +129,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Jugadors:"
+                android:text="@string/jugadors"
                 android:textColor="@color/color_text2"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <RadioGroup
+                android:id="@+id/radio_jugadors"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -140,7 +144,7 @@
                     android:id="@+id/radio_8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="8"
+                    android:text="@string/vuit"
                     android:textColor="@color/color_text2"
                     app:buttonTint="@color/color_bottom_menu" />
 
@@ -148,17 +152,10 @@
                     android:id="@+id/radio_16"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="16"
+                    android:text="@string/setze"
                     android:textColor="@color/color_text2"
                     app:buttonTint="@color/color_bottom_menu" />
 
-                <RadioButton
-                    android:id="@+id/radio_32"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="32"
-                    android:textColor="@color/color_text2"
-                    app:buttonTint="@color/color_bottom_menu" />
             </RadioGroup>
 
         </LinearLayout>
@@ -173,7 +170,7 @@
                 android:layout_height="48dp"
                 android:minWidth="48dp"
                 android:minHeight="48dp"
-                android:text="Guardar Filtres" />
+                android:text="@string/gfiltres" />
         </FrameLayout>
 
 

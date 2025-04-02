@@ -42,7 +42,7 @@ interface ApiService {
         @Query("user_id") userId: Int
     ): UsuarisStatistics
 
-    @GET("/users/tournaments_played")
+    @GET("/tournaments/tournaments_played")
     suspend fun getTournamentsPlayed(
         @Query("user_id") userId: Int
     ): List<Torneig>
@@ -52,7 +52,7 @@ interface ApiService {
         @Query("torneig_id") torneigId: Int
     ): List<UsuarisAmbPunts>
 
-    @GET("/tournamets/tournament_by_id")
+    @GET("/tournaments/tournament_by_id")
     suspend fun getTournamentById(
         @Query("torneig_id") torneigId: Int
     ): Torneig

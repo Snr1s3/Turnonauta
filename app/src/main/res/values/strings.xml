@@ -47,11 +47,13 @@
 
     <!-- Pantalla Inici -->
     <string name="inici">Benvinguda</string>
+    <string name="gfiltres">Guardar Filtres</string>
     <string name="id">ID:</string>
     <string name="rondesJ">Rondes Jugades:</string>
     <string name="rondesG">Rondes Guanyades:</string>
     <string name="tornejosJ">Tornejos Jugats:</string>
     <string name="tornejosG">Tornes Guanyats:</string>
+    <string name="zero">0</string>
     <string name="config">config</string>
 
 
@@ -85,6 +87,17 @@
 
     <!-- Pantalla Preview torneig-->
     <string name="comencar">Comença</string>
+
+    <!-- Filtres -->
+    <string name="joc">Joc: </string>
+    <string name="jugadors">Jugadors: </string>
+    <string name="format">Format:</string>
+    <string name="mtg">Magic: The Gathering</string>
+    <string name="pkm">Pokemon</string>
+    <string name="vuit">8</string>
+    <string name="setze">16</string>
+    <string name="suis">Suis</string>
+    <string name="elim">Eliminatoria</string>
 
 </resources>
  
