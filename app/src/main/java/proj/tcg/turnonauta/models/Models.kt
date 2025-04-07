@@ -14,7 +14,7 @@ data class Usuaris(
     val telefon: String? = null,
     val contrasenya: String,
     val rang: Int? = null,
-    val data_de_registre: LocalDate? = null
+    val data_de_registre: String? = null
 )
 data class UsuarisAmbPunts(
     val username: String,
@@ -49,4 +49,8 @@ data class UsuarisStatistics(
     @SerializedName("rounds_won") val roundsWon: Int,
     @SerializedName("tournaments_played") val tournamentsPlayed: Int,
     @SerializedName("tournaments_won") val tournamentsWon: Int
+)
+
+data class UpdateNameRequest(
+    val username: String
 )
