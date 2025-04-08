@@ -47,15 +47,14 @@
                 response = ConnexioAPI.api().getStatistic(userId)
                 Log.d("User_ID Pantalla d'Inici:", "ID: "+response)
                 val nomText = findViewById<MaterialButton>(R.id.btnChangeName)
-
-                    nomText.setText(response.username.toString())
-                } catch (e: HttpException) {
-                    Toast.makeText(this@EditarPerfil, "HTTP Error: ${e.message}", Toast.LENGTH_SHORT).show()
-                } catch (e: IOException) {
-                    Toast.makeText(this@EditarPerfil, "Network Error: ${e.message}", Toast.LENGTH_SHORT).show()
-                } catch (e: Exception) {
-                    Toast.makeText(this@EditarPerfil,"Error: ${e.message}", Toast.LENGTH_SHORT).show()
-                }
+                nomText.setText(response.username.toString())
+            } catch (e: HttpException) {
+                Toast.makeText(this@EditarPerfil, "HTTP Error: ${e.message}", Toast.LENGTH_SHORT).show()
+            } catch (e: IOException) {
+                Toast.makeText(this@EditarPerfil, "Network Error: ${e.message}", Toast.LENGTH_SHORT).show()
+            } catch (e: Exception) {
+                Toast.makeText(this@EditarPerfil,"Error: ${e.message}", Toast.LENGTH_SHORT).show()
             }
         }
     }
+}

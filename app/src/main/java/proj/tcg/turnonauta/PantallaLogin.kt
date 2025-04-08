@@ -17,6 +17,7 @@ import proj.tcg.turnonauta.aplicacio.PaginaPrincipal
 import proj.tcg.turnonauta.recuperar_contrasenya.RecuperarContrasenya
 import proj.tcg.turnonauta.registre.Registre
 import proj.tcg.turnonauta.screen.MenuInferiorAndroid
+import proj.tcg.turnonauta.socket.clientSocket
 import retrofit2.HttpException
 import java.io.IOException
 
@@ -32,7 +33,8 @@ class PantallaLogin : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.pantalla_login)
-
+        val client = clientSocket()
+        client.main(this)
         val menuInferior = MenuInferiorAndroid(window)
         menuInferior.hideSystemNavigationBar()
 

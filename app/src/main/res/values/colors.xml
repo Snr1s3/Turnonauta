@@ -4,6 +4,7 @@
     <color name="color_primary">#001D3D</color>
     <color name="color_primary_variant">#003566</color>
     <color name="color_background">#FFFFFF</color> <!-- Light Background -->
+    <color name="color_background_2">#FFFFFF</color>
     <color name="color_surface">#80FFC300</color>
     <color name="color_accent">#FFD60A</color>
     <color name="color_bottom_menu">#FFD60A</color>
