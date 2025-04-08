@@ -1,99 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:background="@color/color_background">
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/tituloPoliticas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Política de Privacidad"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="8dp" />
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:fillViewport="true">
 
         <TextView
+            android:id="@+id/textoPoliticas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Términos de Uso"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:paddingBottom="10dp"/>
+            android:text="Esta Política de Privacidad describe cómo se recopila, utiliza y protege la información personal de los usuarios de esta aplicación. El uso de la aplicación implica la aceptación de esta política.
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Última actualización: [Fecha]"
-            android:textSize="14sp"
-            android:gravity="center"
-            android:paddingBottom="20dp"/>
+            \n\n1. INFORMACIÓN RECOPILADA
+            \nSe recopila información de los usuarios de la aplicación de las siguientes maneras:
+            \n- Información proporcionada directamente por el usuario al registrarse o utilizar funciones específicas de la aplicación.
+            \n- Datos recopilados automáticamente, incluyendo información del dispositivo, dirección IP, identificadores únicos, sistema operativo y datos de uso.
+            \n- Datos recopilados mediante cookies y tecnologías similares para mejorar la experiencia del usuario y optimizar el funcionamiento de la aplicación.
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="1. Introducción"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:paddingBottom="5dp"/>
+            \n\n2. FINALIDAD DEL TRATAMIENTO DE DATOS
+            \nLa información recopilada se utiliza con los siguientes fines:
+            \n- Gestionar la cuenta del usuario y proporcionar acceso a los servicios de la aplicación.
+            \n- Mejorar el rendimiento y la funcionalidad de la aplicación a través del análisis de uso.
+            \n- Enviar notificaciones importantes sobre cambios en la aplicación o en la política de privacidad.
+            \n- Garantizar el cumplimiento de obligaciones legales y normativas aplicables.
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Bienvenido a Turnonauta, la aplicación diseñada para gestionar torneos de cartas en tiendas y eventos locales."/>
+            \n\n3. COMPARTICIÓN DE DATOS CON TERCEROS
+            \nLa información del usuario no se vende ni se comparte con terceros, salvo en las siguientes circunstancias:
+            \n- Cuando sea necesario para la prestación de servicios mediante proveedores externos que estén sujetos a estrictos acuerdos de confidencialidad.
+            \n- Cuando lo exija la ley, en cumplimiento de requerimientos judiciales o normativos.
+            \n- En caso de fusión, adquisición o reestructuración de la empresa, en cuyo caso los datos podrán ser transferidos a la nueva entidad.
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="2. Uso de la Aplicación"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:paddingTop="10dp"
-            android:paddingBottom="5dp"/>
+            \n\n4. USO DE COOKIES Y TECNOLOGÍAS SIMILARES
+            \nEsta aplicación puede utilizar cookies y tecnologías similares para almacenar información y mejorar la experiencia del usuario. Las cookies pueden ser desactivadas o gestionadas desde la configuración del dispositivo, aunque esto puede afectar el funcionamiento de algunas funciones.
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="- Los jugadores pueden registrarse, ver torneos y actualizar su información personal.\n- Los administradores pueden gestionar torneos y editar información de los jugadores desde la versión de escritorio."/>
+            \n\n5. MEDIDAS DE SEGURIDAD
+            \nSe han implementado medidas técnicas y organizativas para proteger la información personal de los usuarios contra accesos no autorizados, alteraciones, divulgación o destrucción. No obstante, ningún sistema es completamente seguro y no se puede garantizar la seguridad absoluta de la información.
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="3. Reglas de Conducta"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:paddingTop="10dp"
-            android:paddingBottom="5dp"/>
+            \n\n6. DERECHOS DEL USUARIO
+            \nEl usuario tiene derecho a:
+            \n- Acceder a la información recopilada sobre su persona.
+            \n- Rectificar cualquier dato incorrecto o incompleto.
+            \n- Solicitar la eliminación de sus datos personales en determinadas circunstancias.
+            \n- Oponerse al tratamiento de su información personal cuando así lo establezca la legislación aplicable.
+            \n- Presentar una reclamación ante las autoridades de protección de datos si considera que sus derechos han sido vulnerados.
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Los usuarios deben respetar las reglas de cada torneo y actuar con deportividad. Cualquier conducta inapropiada puede resultar en la expulsión de la plataforma."/>
+            \n\n7. CONSERVACIÓN DE LOS DATOS
+            \nLos datos personales se conservarán durante el tiempo necesario para cumplir con los fines para los que fueron recopilados y conforme a las obligaciones legales aplicables. En caso de que el usuario desee eliminar su cuenta, se tomarán las medidas necesarias para la eliminación de sus datos conforme a la legislación vigente.
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="4. Limitación de Responsabilidad"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:paddingTop="10dp"
-            android:paddingBottom="5dp"/>
+            \n\n8. MODIFICACIONES DE LA POLÍTICA DE PRIVACIDAD
+            \nEsta Política de Privacidad puede ser actualizada en cualquier momento. Cualquier cambio significativo será notificado a los usuarios a través de los medios disponibles en la aplicación. Se recomienda revisar esta política periódicamente para estar informado sobre la protección de la información personal.
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Turnonauta no se responsabiliza por errores en la información de los torneos o por decisiones tomadas por los organizadores."/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="5. Contacto"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:paddingTop="10dp"
-            android:paddingBottom="5dp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Si tienes dudas o problemas, contáctanos en soporte@turnonauta.com."/>
-    </LinearLayout>
-</ScrollView>
+            \n\n9. CONTACTO
+            \nPara cualquier consulta sobre esta Política de Privacidad o el tratamiento de los datos personales, el usuario puede ponerse en contacto con el equipo de soporte a través del correo electrónico: soporte@turnonauta.com."
+            android:textSize="16sp" />
+    </ScrollView>
+</LinearLayout>

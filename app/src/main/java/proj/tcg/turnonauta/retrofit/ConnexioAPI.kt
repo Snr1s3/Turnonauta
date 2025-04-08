@@ -5,6 +5,7 @@ import android.util.Log
 import okhttp3.OkHttpClient
 import proj.tcg.turnonauta.models.NewUser
 import proj.tcg.turnonauta.models.Torneig
+import proj.tcg.turnonauta.models.UpdateNameRequest
 import proj.tcg.turnonauta.models.Usuaris
 import proj.tcg.turnonauta.models.UsuarisAmbPunts
 import proj.tcg.turnonauta.models.UsuarisStatistics
@@ -67,11 +68,12 @@ interface ApiService {
         @Query("username") username: String
     ): Boolean
 
-    @PUT("/users/update_name")
+    @PUT("/users/update_name/{id}")
     suspend fun updateUserName(
         @Path("id") userId: Int,
-        @Body newName: String
+        @Body updateNameRequest: UpdateNameRequest
     ): Usuaris
+
 
     @POST("/users/add_user")
     suspend fun registerUser(

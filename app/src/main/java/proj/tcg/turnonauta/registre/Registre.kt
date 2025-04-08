@@ -74,8 +74,8 @@ class Registre : AppCompatActivity() {
 
         lifecycleScope.launch {
             try {
-              val newUser = NewUser(username,  email, phone, password)
-                val response: Usuaris = ConnexioAPI.api().registerUser(newUser)
+                val newUser = NewUser(username, email, phone, password)
+                val response = ConnexioAPI.api().registerUser(newUser)
 
                 if (response != null) {
                     val intent = Intent(this@Registre, PantallaLogin::class.java)

@@ -1,6 +1,7 @@
 package proj.tcg.turnonauta.models
 
 import com.google.gson.annotations.SerializedName
+import java.time.LocalDate
 import java.util.Date
 
 
@@ -14,7 +15,6 @@ data class Usuaris(
     val contrasenya: String,
     val rang: Int? = null,
     val data_de_registre: String? = null
-
 )
 
 data class UsuarisAmbPunts(
@@ -50,4 +50,8 @@ data class UsuarisStatistics(
     @SerializedName("rounds_won") val roundsWon: Int,
     @SerializedName("tournaments_played") val tournamentsPlayed: Int,
     @SerializedName("tournaments_won") val tournamentsWon: Int
+)
+
+data class UpdateNameRequest(
+    val username: String
 )

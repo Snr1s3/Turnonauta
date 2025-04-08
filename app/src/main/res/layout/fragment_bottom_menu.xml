@@ -46,6 +46,6 @@
             android:layout_weight="1"
             android:contentDescription="Hola"
             android:scaleType="fitCenter"
-            android:src="@drawable/user" />
+            android:src="@drawable/home_icono" />
     </LinearLayout>
 </FrameLayout>
