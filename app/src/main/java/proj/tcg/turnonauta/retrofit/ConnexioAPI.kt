@@ -32,7 +32,10 @@ interface ApiService {
         @Query("username") username: String,
         @Query("password") password: String
     ): Int
-
+    @GET("/tournaments/active/")
+    suspend fun getTornejosActiusId(
+        @Query("torneig_id") torneig_id: Int
+    ): Int
     @GET("/users/get_by_id")
     suspend fun getUserById(
         @Query("user_id") userId: Int
