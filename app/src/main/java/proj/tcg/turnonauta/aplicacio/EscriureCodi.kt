@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 import proj.tcg.turnonauta.R
+import proj.tcg.turnonauta.app.AppTurnonauta
 import proj.tcg.turnonauta.retrofit.ConnexioAPI
 
 import proj.tcg.turnonauta.screen.MenuInferiorAndroid
@@ -44,10 +45,8 @@ class EscriureCodi : AppCompatActivity() {
 
                         if (response > -1) {
                             val intent = Intent(this@EscriureCodi, PreviewTorneig::class.java)
-                            val bundle = Bundle().apply {
-                                putInt("idTorneig", 123)
-                            }
-                            intent.putExtras(bundle)
+                            val appInstance = AppTurnonauta.getInstance()
+                            appInstance.setTorneigIdApp(response)
                             startActivity(intent)
                         } else {
                             Toast.makeText(this@EscriureCodi, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show()

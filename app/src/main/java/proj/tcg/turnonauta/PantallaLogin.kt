@@ -33,8 +33,6 @@ class PantallaLogin : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.pantalla_login)
-        val client = clientSocket()
-        client.main(this)
         val menuInferior = MenuInferiorAndroid(window)
         menuInferior.hideSystemNavigationBar()
 

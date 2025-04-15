@@ -26,12 +26,13 @@
 
         <!-- Title -->
         <TextView
+            android:id="@+id/torneig_t"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/color_surface"
             android:gravity="center"
             android:padding="10dp"
-            android:text="Torneig 12"
+            android:text="-"
             android:textColor="#000"
             android:textSize="22sp"
             android:textStyle="bold" />
@@ -45,10 +46,11 @@
         android:orientation="vertical"
         android:padding="10dp">
         <TextView
+            android:id="@+id/torneig_sub"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Torneig 12 MTG 16 Jugadors"
+            android:text="-"
             android:textColor="@color/color_text"
             android:textSize="24sp" />
 
