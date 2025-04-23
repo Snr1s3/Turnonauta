@@ -32,7 +32,7 @@ class PaginaPrincipal : AppCompatActivity() {
         menuInferior.hideSystemNavigationBar()
         val appInstance = AppTurnonauta.getInstance()
         userId = appInstance.getUserIdApp()
-      //Log.d("User_ID Login:", "user ID: "+userId)
+        // Log.d("User_ID Login:", "user ID: "+userId)
         getDataUser()
         botonConfig = findViewById(R.id.boton_config)
 
