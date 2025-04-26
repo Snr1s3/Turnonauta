@@ -23,6 +23,7 @@ import java.io.IOException
 class PaginaPrincipal : AppCompatActivity() {
     private lateinit var botonConfig : ImageButton
     private var userId: Int = 0
+    private lateinit var appInstance: AppTurnonauta
     private lateinit var response: UsuarisStatistics
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +31,7 @@ class PaginaPrincipal : AppCompatActivity() {
         setContentView(R.layout.activity_pagina_principal)
         val menuInferior = MenuInferiorAndroid(window)
         menuInferior.hideSystemNavigationBar()
-        val appInstance = AppTurnonauta.getInstance()
+        appInstance = AppTurnonauta.getInstance()
         userId = appInstance.getUserIdApp()
         // Log.d("User_ID Login:", "user ID: "+userId)
         getDataUser()
@@ -54,6 +55,8 @@ class PaginaPrincipal : AppCompatActivity() {
                 val rG = findViewById<TextView>(R.id.rG)
                 val tJ = findViewById<TextView>(R.id.tJ)
                 val tG = findViewById<TextView>(R.id.tG)
+
+                appInstance.setPlayerNameApp(response.username)
                 idText.text = response.id.toString()
                 nomText.text = response.username
                 rJ.text = response.roundsPlayed.toString()

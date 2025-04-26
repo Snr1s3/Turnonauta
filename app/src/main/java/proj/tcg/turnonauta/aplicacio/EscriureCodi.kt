@@ -13,6 +13,7 @@ import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 import proj.tcg.turnonauta.R
 import proj.tcg.turnonauta.app.AppTurnonauta
+import proj.tcg.turnonauta.models.Torneig
 import proj.tcg.turnonauta.retrofit.ConnexioAPI
 
 import proj.tcg.turnonauta.screen.MenuInferiorAndroid
@@ -22,6 +23,7 @@ import java.io.IOException
 class EscriureCodi : AppCompatActivity() {
     private lateinit var codiT : EditText
     private lateinit var bTorneig : Button
+    private lateinit var torneig : Torneig
     private var response : Int = -1
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,9 +42,9 @@ class EscriureCodi : AppCompatActivity() {
             }else{
                 lifecycleScope.launch {
                     try {
-                        response = ConnexioAPI.api().getTornejosActiusId(codi.toInt())
+                        torneig  = ConnexioAPI.api().getTornejosActiusId(codi.toInt())
                         Log.d("User_ID Login:", "ID: $response")
-
+                        response = torneig.idTorneig!!
                         if (response > -1) {
                             val intent = Intent(this@EscriureCodi, PreviewTorneig::class.java)
                             val appInstance = AppTurnonauta.getInstance()
