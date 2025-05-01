@@ -9,6 +9,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+import proj.tcg.turnonauta.app.AppTurnonauta
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.io.OutputStream
@@ -27,8 +28,8 @@ class clientSocket {
                 socket = Socket(host, port)
                 val input = BufferedReader(InputStreamReader(socket.getInputStream()))
                 val output: OutputStream = socket.getOutputStream()
-
-                output.write("0.3.453ws2.plaeyer3".toByteArray())
+                val app = AppTurnonauta.getInstance()
+                output.write("0.${app.getTorneigIdApp()}.${app.getUserIdApp()}.${app.getPlayerNameApp()}".toByteArray())
                 output.flush()
 
                 // Read the initial response
