@@ -83,7 +83,15 @@ class PreviewTorneig : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
         recyclerView.layoutManager = GridLayoutManager(this, 2)
         val data = ArrayList<UsuariTorneig>()
-
+        if(list[0] == "2"){
+            val intent = Intent(this, OponentActual::class.java)
+            startActivity(intent)
+        }
+        else if(list[0] == "3"){
+            val intent = Intent(this, DetallTorneig::class.java)
+            startActivity(intent)
+        }
+        Toast.makeText(this@PreviewTorneig, list[0], Toast.LENGTH_SHORT).show()
         for (i in 1 until list.size) {
             if (list[i] != "1") {
                 data.add(UsuariTorneig(R.drawable.logo2, list[i]))

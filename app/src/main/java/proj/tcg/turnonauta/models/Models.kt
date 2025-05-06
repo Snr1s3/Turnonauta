@@ -16,6 +16,18 @@ data class Usuaris(
     val rang: Int? = null,
     val data_de_registre: String? = null
 )
+data class EmparellamentNom(
+    val id_emperallent: Int,
+    val id_ronda: Int,
+    val id_usuari1: Int,
+    val resultat_usuari_1: Int,
+    val id_usuari2: Int,
+    val resultat_usuari_2: Int,
+    val id_usuari_guanyador: Int,
+    val id_usuari_perdedor: Int,
+    val nom_usuari1: String,
+    val nom_usuari2: String
+)
 
 data class UsuarisAmbPunts(
     val username: String,

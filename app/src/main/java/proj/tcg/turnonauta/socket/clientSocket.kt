@@ -16,6 +16,7 @@ import java.io.OutputStream
 import java.net.Socket
 import java.net.SocketException
 
+
 class clientSocket {
     private val host = "52.20.160.197"
     private val port = 8444
@@ -37,7 +38,7 @@ class clientSocket {
                 if (!serverMessage.isNullOrEmpty()) {
                     Handler(Looper.getMainLooper()).post {
                         val parts = serverMessage.split(".")
-                        if (parts.isNotEmpty() && parts[0] == "1") {
+                        if (parts.isNotEmpty()) {
                             onMessageReceived(parts)
                         }
                         Toast.makeText(context, "Server: $serverMessage", Toast.LENGTH_SHORT).show()
@@ -51,7 +52,7 @@ class clientSocket {
                         if (message != null) {
                             Log.d("SocketClient", "Server: $message")
                             val parts = message.split(".")
-                            if (parts.isNotEmpty() && parts[0] == "1") {
+                            if (parts.isNotEmpty()) {
                                 Handler(Looper.getMainLooper()).post {
                                     onMessageReceived(parts)
                                 }

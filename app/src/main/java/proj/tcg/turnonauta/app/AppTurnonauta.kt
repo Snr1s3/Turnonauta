@@ -8,6 +8,7 @@ class AppTurnonauta : Application() {
     private var userId: Int = 0
     private var torneigId: Int = 0
     private var playerName: String = ""
+    private var rondes: Int = 1
 
     companion object {
         private var instance: AppTurnonauta? = null
@@ -45,5 +46,12 @@ class AppTurnonauta : Application() {
 
     fun getTorneigIdApp(): Int {
         return torneigId
+    }
+    fun getNumRonda() : Int {
+        return rondes
+    }
+    fun setNumRonda() {
+        rondes = rondes + 1
+
     }
 }
