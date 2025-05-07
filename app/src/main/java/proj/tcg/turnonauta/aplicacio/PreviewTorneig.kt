@@ -23,7 +23,6 @@ import retrofit2.HttpException
 import java.io.IOException
 
 class PreviewTorneig : AppCompatActivity() {
-    private lateinit var btn: Button
     private var torneig_id: Int = 0
     private lateinit var torneig_t: TextView
     private lateinit var torneig_sub: TextView
@@ -34,7 +33,6 @@ class PreviewTorneig : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_preview_torneig)
 
-        btn = findViewById(R.id.bActualitzar)
         torneig_t = findViewById(R.id.torneig_t)
         torneig_sub = findViewById(R.id.torneig_sub)
 
@@ -58,12 +56,6 @@ class PreviewTorneig : AppCompatActivity() {
                     startRecycled(responseParts)
                 }
             }
-        }
-
-
-        btn.setOnClickListener {
-            val intent = Intent(this, OponentActual::class.java)
-            startActivity(intent)
         }
     }
 

@@ -1,7 +1,9 @@
 package proj.tcg.turnonauta.aplicacio
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.RadioGroup
 import android.widget.TextView
 import android.widget.Toast
@@ -33,6 +35,7 @@ class OponentActual : AppCompatActivity() {
     private lateinit var tronda: TextView
     private lateinit var toponent: TextView
     private lateinit var playername: TextView
+    private lateinit var progressBar: ProgressBar
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -42,7 +45,8 @@ class OponentActual : AppCompatActivity() {
         tronda = findViewById(R.id.round)
         toponent = findViewById(R.id.oponent)
         playername = findViewById(R.id.playerName)
-
+        progressBar = findViewById(R.id.progressBar)
+        progressBar.visibility = View.GONE
         val menuInferior = MenuInferiorAndroid(window)
         menuInferior.hideSystemNavigationBar()
 
@@ -125,6 +129,7 @@ class OponentActual : AppCompatActivity() {
                         Toast.makeText(this@OponentActual, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
                     }
                 }
+                progressBar.visibility = View.VISIBLE
             } else {
                 if (selectedId1 == -1) {
                     Toast.makeText(this@OponentActual, "Error Fila 1", Toast.LENGTH_SHORT).show()
