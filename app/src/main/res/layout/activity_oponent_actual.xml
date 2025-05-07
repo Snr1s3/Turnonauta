@@ -8,14 +8,6 @@
     android:orientation="vertical"
     tools:context=".aplicacio.OponentActual">
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:indeterminateTint="@color/color_radio_button"
-        android:visibility="gone" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,209 +39,218 @@
 
 
     <!-- Login Form -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="141dp"
+        android:layout_height="109dp"
+        android:layout_gravity="center"
+        android:indeterminateTint="@color/color_radio_button"
+        android:visibility="gone" />
+
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="30dp"
         app:cardCornerRadius="20dp"
-        app:cardElevation="8dp">
+        app:cardElevation="8dp"
+        tools:visibility="visible">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:background="@color/color_radio_button"
             android:gravity="center_horizontal"
-            android:background="@color/color_radio_button">
+            android:orientation="vertical">
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/playerName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textColor="@color/color_text2"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
 
             <TextView
-                android:id="@+id/playerName"
+                android:id="@+id/round"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:text="Jugador 2"
+                android:layout_gravity="center_horizontal"
+                android:paddingTop="8dp"
                 android:textColor="@color/color_text2"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/round"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:paddingTop="8dp"
-            android:text="Ronda 1"
-            android:textColor="@color/color_text2"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TableLayout
-            android:layout_width="315dp"
-            android:layout_height="wrap_content"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp">
-
-            <TableRow
-                android:layout_width="match_parent"
+            <TableLayout
+                android:layout_width="315dp"
                 android:layout_height="wrap_content"
-                android:paddingBottom="8dp">
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/p1"
-                    android:textColor="#00000000"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/tu"
-                    android:textColor="@color/color_text2"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/oponent"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Jugador 2"
-                    android:textColor="@color/color_text2"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-            </TableRow>
-            <!-- Row 1 -->
-            <TableRow
-                android:layout_width="240dp"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/p1"
-                    android:textColor="@color/color_text2"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-                <RadioGroup
-                    android:id="@+id/Partida1"
+                <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:checked="true"
-                    app:backgroundTint="@color/color_text2"
-                    android:orientation="horizontal">
+                    android:paddingBottom="8dp">
 
-                    <RadioButton
-                        android:id="@+id/p1b1"
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/p1"
+                        android:textColor="#00000000"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/tu"
+                        android:textColor="@color/color_text2"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/oponent"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="@color/color_text2"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </TableRow>
+                <!-- Row 1 -->
+                <TableRow
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        app:buttonTint="@color/color_bottom_menu" />
+                        android:text="@string/p1"
+                        android:textColor="@color/color_text2"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
-                    <RadioButton
-                        android:id="@+id/p1b2"
+                    <RadioGroup
+                        android:id="@+id/Partida1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:orientation="horizontal"
+                        app:backgroundTint="@color/color_text2">
+
+                        <RadioButton
+                            android:id="@+id/p1b1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:buttonTint="@color/color_bottom_menu" />
+
+                        <RadioButton
+                            android:id="@+id/p1b2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:buttonTint="@color/color_bottom_menu" />
+                    </RadioGroup>
+                </TableRow>
+
+                <!-- Row 2 -->
+                <TableRow
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        app:buttonTint="@color/color_bottom_menu" />
-                </RadioGroup>
-            </TableRow>
+                        android:text="@string/p2"
+                        android:textColor="@color/color_text2"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
-            <!-- Row 2 -->
-            <TableRow
-                android:layout_width="240dp"
-                android:layout_height="wrap_content">
+                    <RadioGroup
+                        android:id="@+id/Partida2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:orientation="horizontal"
+                        app:backgroundTint="@color/color_text2">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/p2"
-                    android:textColor="@color/color_text2"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:buttonTint="@color/color_bottom_menu" />
 
-                <RadioGroup
-                    android:id="@+id/Partida2"
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:buttonTint="@color/color_bottom_menu" />
+                    </RadioGroup>
+                </TableRow>
+
+                <!-- Row 3 -->
+                <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:checked="true"
-                    app:backgroundTint="@color/color_text2"
-                    android:orientation="horizontal">
+                    android:layout_height="wrap_content">
 
-                    <RadioButton
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        app:buttonTint="@color/color_bottom_menu" />
+                        android:text="@string/p3"
+                        android:textColor="@color/color_text2"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
-                    <RadioButton
-                        android:layout_width="wrap_content"
+                    <RadioGroup
+                        android:id="@+id/Partida3"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        app:buttonTint="@color/color_bottom_menu" />
-                </RadioGroup>
-            </TableRow>
+                        android:checked="true"
+                        android:orientation="horizontal"
+                        app:backgroundTint="@color/color_text2">
 
-            <!-- Row 3 -->
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:buttonTint="@color/color_bottom_menu" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/p3"
-                    android:textColor="@color/color_text2"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:buttonTint="@color/color_bottom_menu" />
+                    </RadioGroup>
+                </TableRow>
 
-                <RadioGroup
-                    android:id="@+id/Partida3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:checked="true"
-                    app:backgroundTint="@color/color_text2"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:buttonTint="@color/color_bottom_menu" />
-
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:buttonTint="@color/color_bottom_menu" />
-                </RadioGroup>
-            </TableRow>
-
-        </TableLayout>
+            </TableLayout>
 
 
             <!-- Login Button -->
@@ -262,13 +263,15 @@
         android:gravity="center_horizontal"
         android:layout_weight="1"
         android:orientation="horizontal">
+
         <Button
             android:id="@+id/bActualitzar"
             style="@style/CustomButton"
-            android:layout_gravity="center_vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/enviar" />
+            android:layout_gravity="center_vertical"
+            android:text="@string/enviar"
+            tools:visibility="visible" />
     </LinearLayout>
 
     <androidx.fragment.app.FragmentContainerView

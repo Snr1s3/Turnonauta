@@ -9,6 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 import proj.tcg.turnonauta.R
@@ -36,6 +37,7 @@ class OponentActual : AppCompatActivity() {
     private lateinit var toponent: TextView
     private lateinit var playername: TextView
     private lateinit var progressBar: ProgressBar
+    private lateinit var cardView:CardView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -46,6 +48,9 @@ class OponentActual : AppCompatActivity() {
         toponent = findViewById(R.id.oponent)
         playername = findViewById(R.id.playerName)
         progressBar = findViewById(R.id.progressBar)
+        cardView = findViewById(R.id.cardView)
+        btn.visibility = View.VISIBLE
+        cardView.visibility = View.VISIBLE
         progressBar.visibility = View.GONE
         val menuInferior = MenuInferiorAndroid(window)
         menuInferior.hideSystemNavigationBar()
@@ -130,6 +135,8 @@ class OponentActual : AppCompatActivity() {
                     }
                 }
                 progressBar.visibility = View.VISIBLE
+                cardView.visibility = View.GONE
+                btn.visibility = View.GONE
             } else {
                 if (selectedId1 == -1) {
                     Toast.makeText(this@OponentActual, "Error Fila 1", Toast.LENGTH_SHORT).show()
