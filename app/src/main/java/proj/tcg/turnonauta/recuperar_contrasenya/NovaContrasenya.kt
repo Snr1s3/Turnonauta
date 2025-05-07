@@ -52,6 +52,7 @@ class NovaContrasenya : AppCompatActivity() {
         val regex = Regex("^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@\$!%*?&])[A-Za-z\\d@\$!%*?&]{8,}\$")
 
         return when {
+            password.isEmpty() || confirmPassword.isEmpty() -> "Els camps no poden estar buits"
             password != confirmPassword -> getString(R.string.error_new_pw_1)
             password.length < 8 -> getString(R.string.error_new_pw_3)
             !regex.matches(password) -> getString(R.string.error_new_pw_2)

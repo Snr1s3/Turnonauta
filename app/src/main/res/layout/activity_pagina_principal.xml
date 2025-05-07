@@ -19,12 +19,15 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+
             android:gravity="end"
             android:orientation="horizontal">
             <ImageButton
                 android:id="@+id/boton_config"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="20dp"
                 android:src="@drawable/ajustesapp"
                 android:contentDescription="@string/config"
                 android:backgroundTint="@color/color_background"/>

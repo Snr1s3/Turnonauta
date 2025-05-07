@@ -59,6 +59,12 @@
             android:name=".config.TermsOfUse"
             android:exported="false" />
         <activity
+            android:name=".config.PoliticasPrivacidad"
+            android:exported="false" />
+        <activity
+            android:name=".config.AboutUs"
+            android:exported="false" />
+        <activity
             android:name=".PantallaLogin"
             android:exported="true">
             <intent-filter>

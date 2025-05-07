@@ -56,43 +56,70 @@ class Registre : AppCompatActivity() {
         val password = eContra.text.toString().trim()
         val confirmPassword = eRepContra.text.toString().trim()
 
-        // Limpiar mensaje de error anterior
+        // Limpiar errores anteriores
         tConObl.text = ""
         tConObl.visibility = TextView.GONE
 
         if (username.isEmpty() || email.isEmpty() || phone.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
-            showError("Todos los campos son obligatorios")
+            showError("Todos los camps són obligatoris")
             return
         }
 
-        // Validar la contraseña con los requisitos mínimos
-        val passwordError = validatePassword(password, confirmPassword)
-        if (passwordError != null) {
-            showError(passwordError)
+        // Validar email
+        val emailError = validateEmail(email)
+        if (emailError != null) {
+            showError(emailError)
             return
         }
 
+        // Lanzamos una corrutina para poder llamar a la API
         lifecycleScope.launch {
             try {
+                // ⚠️ Verificamos si el username ya existe
+                val usernameExists = ConnexioAPI.api().checkUsernameExists(username)
+                if (usernameExists) {
+                    showError("Aquest nom d'usuari ja existeix")
+                    return@launch
+                }
+
+                // 🧠 Validar contraseña
+                val passwordError = validatePassword(password, confirmPassword)
+                if (passwordError != null) {
+                    showError(passwordError)
+                    return@launch
+                }
+
+                // ✅ Si todo está OK, hacemos el registro
                 val newUser = NewUser(username, email, phone, password)
                 val response = ConnexioAPI.api().registerUser(newUser)
 
                 if (response != null) {
                     val intent = Intent(this@Registre, PantallaLogin::class.java)
                     startActivity(intent)
+                    finish()
                 } else {
-                    showError("Error en el registro, intenta nuevamente.")
+                    showError("Error en el registre, torna-ho a intentar.")
                 }
+
             } catch (e: HttpException) {
-                showError("Error en el servidor: ${e.message}")
+                showError("Error del servidor: ${e.message}")
                 Log.e("Registre", "HTTP Exception: ${e.message}")
             } catch (e: IOException) {
-                showError("Error de conexión: Verifica tu internet.")
+                showError("Error de connexió: revisa internet.")
                 Log.e("Registre", "IO Exception: ${e.message}")
             } catch (e: Exception) {
-                showError("Error inesperado: ${e.message}")
+                showError("Error inesperat: ${e.message}")
                 Log.e("Registre", "Exception: ${e.message}")
             }
+        }
+    }
+
+    private fun validateEmail(email: String): String? {
+        val regex = Regex("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$")
+        return if (!regex.matches(email)) {
+            "El correu electrònic no és vàlid"
+        } else {
+            null
         }
     }
 
@@ -100,9 +127,9 @@ class Registre : AppCompatActivity() {
         val regex = Regex("^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@\$!%*?&])[A-Za-z\\d@\$!%*?&]{8,}$")
 
         return when {
-            password != confirmPassword -> "Las contraseñas no coinciden"
-            password.length < 8 -> "La contraseña debe tener al menos 8 caracteres"
-            !regex.matches(password) -> "Debe contener al menos una letra, un número y un carácter especial"
+            password != confirmPassword -> "Les contrasenyes no coincideixen"
+            password.length < 8 -> "La contrasenya ha de tenir almenys 8 caràcters"
+            !regex.matches(password) -> "Ha de contenir almenys una lletra, un número i un caràcter especial"
             else -> null
         }
     }

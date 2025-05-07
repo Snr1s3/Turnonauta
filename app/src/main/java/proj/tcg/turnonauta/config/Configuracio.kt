@@ -1,14 +1,13 @@
 package proj.tcg.turnonauta.config
 
-
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.google.android.material.button.MaterialButton
 import proj.tcg.turnonauta.PantallaLogin
 import proj.tcg.turnonauta.R
-import proj.tcg.turnonauta.aplicacio.PaginaPrincipal
 
 class Configuracio : AppCompatActivity() {
     private lateinit var botonImagen: ImageButton
@@ -19,62 +18,74 @@ class Configuracio : AppCompatActivity() {
     private lateinit var botoTerms: MaterialButton
     private lateinit var botoUbi: ImageButton
 
-
-
-
-    private var isRedBorder = false // Estado inicial (borde verde)
-    private var isNight=false
-    private var isUbiON=false
-
-
+    private var isRedBorder = false
+    private var isNight = false
+    private var isUbiON = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_config) // Asegúrate de que el layout es correcto
+        // Aplicar el modo noche según la preferencia guardada
+        val prefs = getSharedPreferences("ajustes", MODE_PRIVATE)
+        isNight = prefs.getBoolean("modo_noche", false)
+        if (isNight) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
 
-        // Referencia al botón
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_config)
+
+        // Inicializar botones
         botonImagen = findViewById(R.id.btnNoti)
         botonPerfil = findViewById(R.id.btnPerfil)
-        botonLogOut=findViewById(R.id.btnLogOut)
-        botonModo=findViewById(R.id.btnModo)
-        botoPoliticas=findViewById(R.id.btnPoliticas)
-        botoTerms=findViewById(R.id.btnTerms)
-        botoUbi=findViewById(R.id.btn_ubi)
+        botonLogOut = findViewById(R.id.btnLogOut)
+        botonModo = findViewById(R.id.btnModo)
+        botoPoliticas = findViewById(R.id.btnPoliticas)
+        botoTerms = findViewById(R.id.btnTerms)
+        botoUbi = findViewById(R.id.btn_ubi)
 
-
+        // Configuración visual inicial
         botonImagen.setImageResource(R.drawable.campana_noti_on)
-        botonImagen.setBackgroundResource(R.drawable.rounded_green_border_button) // Borde verde
+        botonImagen.setBackgroundResource(R.drawable.rounded_green_border_button)
 
-        botonModo.setImageResource(R.drawable.sol_turno)
-        botonModo.setBackgroundResource(R.drawable.rounded_day_button)
-
-        botoUbi.setBackgroundResource(R.drawable.rounded_green_border_button)
-        botoUbi.setImageResource(R.drawable.location_on)
-
-        botonModo.setOnClickListener {
-            if(isNight) {
-                botonModo.setImageResource(R.drawable.sol_turno)
-                botonModo.setBackgroundResource(R.drawable.rounded_day_button)
-            }else{
-                botonModo.setImageResource(R.drawable.luna_turno)
-                botonModo.setBackgroundResource(R.drawable.rounded_night_button)
-            }
-            isNight=!isNight
-
+        if (isNight) {
+            botonModo.setImageResource(R.drawable.luna_turno)
+            botonModo.setBackgroundResource(R.drawable.rounded_night_button)
+        } else {
+            botonModo.setImageResource(R.drawable.sol_turno)
+            botonModo.setBackgroundResource(R.drawable.rounded_day_button)
         }
 
+        botoUbi.setImageResource(R.drawable.location_on)
+        botoUbi.setBackgroundResource(R.drawable.rounded_green_border_button)
+
+        // Botón de modo noche
+        botonModo.setOnClickListener {
+            isNight = !isNight
+            prefs.edit().putBoolean("modo_noche", isNight).apply()
+
+            if (isNight) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
+
+            recreate() // Recarga la actividad para aplicar el cambio de tema
+        }
+
+        // Botón de notificaciones
         botonImagen.setOnClickListener {
             if (isRedBorder) {
-                botonImagen.setImageResource(R.drawable.campana_noti_on) // Imagen original
-                botonImagen.setBackgroundResource(R.drawable.rounded_green_border_button) // Borde verde
+                botonImagen.setImageResource(R.drawable.campana_noti_on)
+                botonImagen.setBackgroundResource(R.drawable.rounded_green_border_button)
             } else {
-                botonImagen.setImageResource(R.drawable.campana_noti_off) // Imagen cambiada
-                botonImagen.setBackgroundResource(R.drawable.rounded_red_border_button) // Borde rojo
+                botonImagen.setImageResource(R.drawable.campana_noti_off)
+                botonImagen.setBackgroundResource(R.drawable.rounded_red_border_button)
             }
-            isRedBorder = !isRedBorder // Alternar estado
+            isRedBorder = !isRedBorder
         }
 
-
+        // Botón de ubicación
         botoUbi.setOnClickListener {
             if (isUbiON) {
                 botoUbi.setImageResource(R.drawable.location_on)
@@ -86,23 +97,21 @@ class Configuracio : AppCompatActivity() {
             isUbiON = !isUbiON
         }
 
-
+        // Navegaciones
         botonPerfil.setOnClickListener {
-            val intent = Intent(this, EditarPerfil::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, EditarPerfil::class.java))
         }
-        botonLogOut.setOnClickListener{
-            val intent= Intent(this,PantallaLogin::class.java)
-            startActivity(intent)
+
+        botonLogOut.setOnClickListener {
+            startActivity(Intent(this, PantallaLogin::class.java))
         }
-        botoTerms.setOnClickListener{
-            val intent= Intent(this,TermsOfUse::class.java)
-            startActivity(intent)
+
+        botoTerms.setOnClickListener {
+            startActivity(Intent(this, TermsOfUse::class.java))
         }
-        botonLogOut.setOnClickListener{
-            val intent= Intent(this,PoliticasPrivacidad::class.java)
-            startActivity(intent)
+
+        botoPoliticas.setOnClickListener {
+            startActivity(Intent(this, PoliticasPrivacidad::class.java))
         }
     }
-
 }

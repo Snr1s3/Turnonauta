@@ -55,3 +55,8 @@ data class UsuarisStatistics(
 data class UpdateNameRequest(
     val username: String
 )
+
+interface OnNameUpdatedListener {
+    fun onNameUpdated(newName: String)
+}
+

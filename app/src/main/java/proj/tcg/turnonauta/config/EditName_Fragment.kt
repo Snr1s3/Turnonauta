@@ -15,6 +15,7 @@ import com.google.android.material.button.MaterialButton
 import kotlinx.coroutines.launch
 import proj.tcg.turnonauta.R
 import proj.tcg.turnonauta.app.AppTurnonauta
+import proj.tcg.turnonauta.models.OnNameUpdatedListener
 import proj.tcg.turnonauta.models.UpdateNameRequest
 import proj.tcg.turnonauta.models.UsuarisStatistics
 import proj.tcg.turnonauta.retrofit.ConnexioAPI
@@ -55,39 +56,45 @@ class EditName_Fragment : BottomSheetDialogFragment() {
                     errorTextView.text = "El nom a de contenir maxim 14 caracters"
                     errorTextView.visibility = View.VISIBLE
                 }
-                newName.equals("pau", ignoreCase = true) || newName.equals("hola", ignoreCase = true) -> {
-                    errorTextView.text = "Aquet nom de usuari ja existeix"
-                    errorTextView.visibility = View.VISIBLE
-                }
-                else -> {
-                    errorTextView.visibility = View.INVISIBLE
-                    val updateNameRequest = UpdateNameRequest(newName)
 
+                else -> {
                     lifecycleScope.launch {
                         try {
-                            val updatedUser = ConnexioAPI.api().updateUserName(userId, updateNameRequest)
+                            // Comprobar si el nombre ya existe en la BBDD
+                            val nameExists = ConnexioAPI.api().checkUsernameExists(newName)
 
-                            // Mostrar mensaje de éxito
-                            Toast.makeText(requireContext(), "Nombre de usuario actualizado", Toast.LENGTH_SHORT).show()
-                            dismiss()
+                            if (nameExists) {
+                                errorTextView.text = "Aquest nom d'usuari ja existeix"
+                                errorTextView.visibility = View.VISIBLE
+                            } else {
+                                errorTextView.visibility = View.INVISIBLE
 
+                                val updateNameRequest = UpdateNameRequest(newName)
+                                val updatedUser = ConnexioAPI.api().updateUserName(userId, updateNameRequest)
+
+                                Toast.makeText(requireContext(), "Nom actualitzat correctament", Toast.LENGTH_SHORT).show()
+
+                                // Llamar al listener para actualizar en la actividad principal
+                                val listener = activity as? OnNameUpdatedListener
+                                listener?.onNameUpdated(newName)
+
+                                dismiss()
+                            }
                         } catch (e: HttpException) {
-                            // Mostrar error en Logcat
                             Log.e("EditName_Fragment", "HTTP Error: ${e.message}", e)
                             Toast.makeText(requireContext(), "Error HTTP: ${e.message}", Toast.LENGTH_SHORT).show()
                         } catch (e: IOException) {
-                            // Mostrar error en Logcat
                             Log.e("EditName_Fragment", "Network Error: ${e.message}", e)
-                            Toast.makeText(requireContext(), "Error de red: ${e.message}", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(), "Error de xarxa: ${e.message}", Toast.LENGTH_SHORT).show()
                         } catch (e: Exception) {
-                            // Mostrar error en Logcat
-                            Log.e("EditName_Fragment", "Error inesperado: ${e.message}", e)
+                            Log.e("EditName_Fragment", "Error inesperat: ${e.message}", e)
                             Toast.makeText(requireContext(), "Error: ${e.message}", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
             }
         }
+
 
 
 

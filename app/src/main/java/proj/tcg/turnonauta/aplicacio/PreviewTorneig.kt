@@ -20,7 +20,7 @@ import proj.tcg.turnonauta.adapters.AdapterUsuarTorneig
 import proj.tcg.turnonauta.app.AppTurnonauta
 import proj.tcg.turnonauta.models.Torneig
 import proj.tcg.turnonauta.retrofit.ConnexioAPI
-import proj.tcg.turnonauta.socket.clientSocket
+import proj.tcg.turnonauta.socket.ClientSocket
 import retrofit2.HttpException
 import java.io.IOException
 
@@ -49,14 +49,19 @@ class PreviewTorneig : AppCompatActivity() {
         torneig_t.text = "Torneig $torneig_id"
         getTorneigId()
 
-        val client = clientSocket()
+        val client = appInstance.getSocket()
+        val torneigId = appInstance.getTorneigIdApp()
+        val userId = appInstance.getUserIdApp()
+        val playerName = appInstance.getPlayerNameApp()
+
         lifecycleScope.launch(Dispatchers.IO) {
-            client.main(this@PreviewTorneig) { responseParts ->
+            client.connect(this@PreviewTorneig,playerName,torneigId,userId) { responseParts ->
                 runOnUiThread {
                     startRecycled(responseParts)
                 }
             }
         }
+
 
         btn.setOnClickListener {
             val intent = Intent(this, OponentActual::class.java)

@@ -17,7 +17,7 @@ import proj.tcg.turnonauta.aplicacio.PaginaPrincipal
 import proj.tcg.turnonauta.recuperar_contrasenya.RecuperarContrasenya
 import proj.tcg.turnonauta.registre.Registre
 import proj.tcg.turnonauta.screen.MenuInferiorAndroid
-import proj.tcg.turnonauta.socket.clientSocket
+import proj.tcg.turnonauta.socket.ClientSocket
 import retrofit2.HttpException
 import java.io.IOException
 
@@ -65,7 +65,7 @@ class PantallaLogin : AppCompatActivity() {
         tConObl.visibility = View.GONE
 
         if (username.isEmpty() || password.isEmpty()) {
-            tConObl.text = "Debe ingresar usuario y contraseña"
+            tConObl.text = "Has d'introduir usuari i contrasenya"
             tConObl.visibility = View.VISIBLE
             return
         }
@@ -79,20 +79,22 @@ class PantallaLogin : AppCompatActivity() {
                     val appInstance = AppTurnonauta.getInstance()
                     appInstance.setUserIdApp(response)
 
+
+
                     val intent = Intent(this@PantallaLogin, PaginaPrincipal::class.java)
                     startActivity(intent)
                 } else {
-                    tConObl.text = "Usuario o contraseña incorrectos"
+                    tConObl.text = "Usuari o contrasenya incorrectes. Has oblidat la contrasenya? Prem aquí."
                     tConObl.visibility = View.VISIBLE
                 }
             } catch (e: HttpException) {
-                tConObl.text = "Error del servidor, intente más tarde"
+                tConObl.text = "Error del servidor, intenta-ho més tard"
                 tConObl.visibility = View.VISIBLE
             } catch (e: IOException) {
-                tConObl.text = "Problema de conexión, verifique su internet"
+                tConObl.text = "Problema de connexió, comprova la teva connexió a Internet"
                 tConObl.visibility = View.VISIBLE
             } catch (e: Exception) {
-                tConObl.text = "Ocurrió un error inesperado"
+                tConObl.text = "S'ha produït un error inesperat"
                 tConObl.visibility = View.VISIBLE
             }
         }

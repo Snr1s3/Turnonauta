@@ -93,12 +93,13 @@
 
         <!-- Register Link -->
         <TextView
+            android:id="@+id/textRegistrarse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="@string/sense_registre1"
             android:textColor="@color/color_text"
-            android:textSize="14sp" />
+            android:textSize="18sp" />
 
     </LinearLayout>
 </LinearLayout>

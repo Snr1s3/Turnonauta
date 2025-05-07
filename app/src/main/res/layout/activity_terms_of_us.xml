@@ -1,72 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="24dp"
+    android:background="#FFFFFF">
 
-    <TextView
-        android:id="@+id/tituloPoliticas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Política de Privacidad"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:layout_gravity="center_horizontal"
-        android:paddingBottom="8dp" />
-
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fillViewport="true">
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textoPoliticas"
+            android:id="@+id/tituloTerminos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Esta Política de Privacidad describe cómo se recopila, utiliza y protege la información personal de los usuarios de esta aplicación. El uso de la aplicación implica la aceptación de esta política.
+            android:text="Términos de Uso"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginBottom="16dp"/>
 
-            \n\n1. INFORMACIÓN RECOPILADA
-            \nSe recopila información de los usuarios de la aplicación de las siguientes maneras:
-            \n- Información proporcionada directamente por el usuario al registrarse o utilizar funciones específicas de la aplicación.
-            \n- Datos recopilados automáticamente, incluyendo información del dispositivo, dirección IP, identificadores únicos, sistema operativo y datos de uso.
-            \n- Datos recopilados mediante cookies y tecnologías similares para mejorar la experiencia del usuario y optimizar el funcionamiento de la aplicación.
+        <TextView
+            android:id="@+id/textoTerminos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#333333"
+            android:textSize="16sp"
+            android:lineSpacingExtra="4dp"
+            android:text="Bienvenido a nuestra aplicación. Al acceder o utilizar nuestros servicios, usted acepta estar sujeto a los siguientes términos de uso. Por favor, léalos detenidamente.
 
-            \n\n2. FINALIDAD DEL TRATAMIENTO DE DATOS
-            \nLa información recopilada se utiliza con los siguientes fines:
-            \n- Gestionar la cuenta del usuario y proporcionar acceso a los servicios de la aplicación.
-            \n- Mejorar el rendimiento y la funcionalidad de la aplicación a través del análisis de uso.
-            \n- Enviar notificaciones importantes sobre cambios en la aplicación o en la política de privacidad.
-            \n- Garantizar el cumplimiento de obligaciones legales y normativas aplicables.
+1. Aceptación de los Términos:
+Al registrarse y utilizar esta aplicación, usted acepta estos términos de uso y cualquier modificación futura. Si no está de acuerdo con alguno de estos términos, le recomendamos no utilizar la aplicación.
 
-            \n\n3. COMPARTICIÓN DE DATOS CON TERCEROS
-            \nLa información del usuario no se vende ni se comparte con terceros, salvo en las siguientes circunstancias:
-            \n- Cuando sea necesario para la prestación de servicios mediante proveedores externos que estén sujetos a estrictos acuerdos de confidencialidad.
-            \n- Cuando lo exija la ley, en cumplimiento de requerimientos judiciales o normativos.
-            \n- En caso de fusión, adquisición o reestructuración de la empresa, en cuyo caso los datos podrán ser transferidos a la nueva entidad.
+2. Uso del Servicio:
+Usted se compromete a utilizar el servicio únicamente con fines legales y a no infringir derechos de terceros. No se permite el uso indebido del contenido, la manipulación de datos, ni el acceso no autorizado al sistema.
 
-            \n\n4. USO DE COOKIES Y TECNOLOGÍAS SIMILARES
-            \nEsta aplicación puede utilizar cookies y tecnologías similares para almacenar información y mejorar la experiencia del usuario. Las cookies pueden ser desactivadas o gestionadas desde la configuración del dispositivo, aunque esto puede afectar el funcionamiento de algunas funciones.
+3. Registro y Cuenta:
+Es responsabilidad del usuario proporcionar información veraz durante el registro. Usted es responsable de mantener la confidencialidad de sus credenciales de acceso y de cualquier actividad que ocurra bajo su cuenta.
 
-            \n\n5. MEDIDAS DE SEGURIDAD
-            \nSe han implementado medidas técnicas y organizativas para proteger la información personal de los usuarios contra accesos no autorizados, alteraciones, divulgación o destrucción. No obstante, ningún sistema es completamente seguro y no se puede garantizar la seguridad absoluta de la información.
+4. Propiedad Intelectual:
+Todos los contenidos, imágenes, logotipos, textos y diseños de esta aplicación están protegidos por derechos de autor. Queda prohibida su reproducción total o parcial sin autorización previa y por escrito.
 
-            \n\n6. DERECHOS DEL USUARIO
-            \nEl usuario tiene derecho a:
-            \n- Acceder a la información recopilada sobre su persona.
-            \n- Rectificar cualquier dato incorrecto o incompleto.
-            \n- Solicitar la eliminación de sus datos personales en determinadas circunstancias.
-            \n- Oponerse al tratamiento de su información personal cuando así lo establezca la legislación aplicable.
-            \n- Presentar una reclamación ante las autoridades de protección de datos si considera que sus derechos han sido vulnerados.
+5. Responsabilidad:
+La aplicación se proporciona “tal cual”, sin garantías de ningún tipo. No nos hacemos responsables de posibles daños o pérdidas derivados del uso o mal funcionamiento del servicio.
 
-            \n\n7. CONSERVACIÓN DE LOS DATOS
-            \nLos datos personales se conservarán durante el tiempo necesario para cumplir con los fines para los que fueron recopilados y conforme a las obligaciones legales aplicables. En caso de que el usuario desee eliminar su cuenta, se tomarán las medidas necesarias para la eliminación de sus datos conforme a la legislación vigente.
+6. Modificaciones:
+Nos reservamos el derecho de modificar estos términos en cualquier momento. El uso continuado del servicio después de los cambios implica la aceptación de los nuevos términos.
 
-            \n\n8. MODIFICACIONES DE LA POLÍTICA DE PRIVACIDAD
-            \nEsta Política de Privacidad puede ser actualizada en cualquier momento. Cualquier cambio significativo será notificado a los usuarios a través de los medios disponibles en la aplicación. Se recomienda revisar esta política periódicamente para estar informado sobre la protección de la información personal.
+7. Terminación:
+Podemos suspender o cancelar su cuenta si incumple estos términos o si consideramos que su uso afecta negativamente al servicio o a otros usuarios.
 
-            \n\n9. CONTACTO
-            \nPara cualquier consulta sobre esta Política de Privacidad o el tratamiento de los datos personales, el usuario puede ponerse en contacto con el equipo de soporte a través del correo electrónico: soporte@turnonauta.com."
-            android:textSize="16sp" />
-    </ScrollView>
-</LinearLayout>
+Gracias por confiar en nosotros. Si tiene alguna pregunta, puede contactarnos a través del soporte de la aplicación."/>
+
+    </LinearLayout>
+</ScrollView>
