@@ -27,9 +27,17 @@ class RecuperarContrasenya : AppCompatActivity(){
         bRegistrarse=findViewById(R.id.textRegistrarse)
 
         bEnviar.setOnClickListener {
+            val correu = iCorreu.text.toString().trim()
+
+            if (correu.isNotEmpty()) {
                 val intent = Intent(this, EscriureCodiMail::class.java)
-            startActivity(intent)
+                intent.putExtra("email", correu)
+                startActivity(intent)
+            } else {
+                iCorreu.error = "Introdueix un correu vàlid"
+            }
         }
+
 
         bRegistrarse.setOnClickListener{
             val intent = Intent(this, Registre::class.java)

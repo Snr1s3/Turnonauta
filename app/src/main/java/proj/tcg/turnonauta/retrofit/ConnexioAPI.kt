@@ -5,6 +5,7 @@ import android.util.Log
 import okhttp3.OkHttpClient
 import proj.tcg.turnonauta.models.EmparellamentNom
 import proj.tcg.turnonauta.models.NewUser
+import proj.tcg.turnonauta.models.PasswordUpdateRequest
 import proj.tcg.turnonauta.models.Torneig
 import proj.tcg.turnonauta.models.UpdateNameRequest
 import proj.tcg.turnonauta.models.Usuaris
@@ -80,7 +81,12 @@ interface ApiService {
     suspend fun updateUserName(
         @Path("id") userId: Int,
         @Body updateNameRequest: UpdateNameRequest
+
     ): Usuaris
+    @PUT("/users/update_password")
+    suspend fun updatePassword(
+        @Body passwordUpdateRequest: PasswordUpdateRequest
+    ): Boolean
 
 
     @POST("/users/add_user")

@@ -23,6 +23,7 @@ class EscriureCodiMail : AppCompatActivity() {
         setContentView(R.layout.activity_escriure_codi_mail)
         val menuInferior = MenuInferiorAndroid(window)
         menuInferior.hideSystemNavigationBar()
+        val email = intent.getStringExtra("email") ?: ""
 
         bComprobar = findViewById(R.id.bComprobar)
 
@@ -43,6 +44,7 @@ class EscriureCodiMail : AppCompatActivity() {
 
             if (enteredCode == correctCode) {
                 val intent = Intent(this, NovaContrasenya::class.java)
+                intent.putExtra("email", email)
                 startActivity(intent)
             } else {
                 Toast.makeText(this, "Código incorrecto", Toast.LENGTH_SHORT).show()
