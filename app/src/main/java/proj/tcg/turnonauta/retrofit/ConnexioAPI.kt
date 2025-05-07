@@ -6,8 +6,10 @@ import okhttp3.OkHttpClient
 import proj.tcg.turnonauta.models.EmparellamentNom
 import proj.tcg.turnonauta.models.NewUser
 import proj.tcg.turnonauta.models.PasswordUpdateRequest
+import proj.tcg.turnonauta.models.Ronda
 import proj.tcg.turnonauta.models.Torneig
 import proj.tcg.turnonauta.models.UpdateNameRequest
+import proj.tcg.turnonauta.models.UpdateRondaRequest
 import proj.tcg.turnonauta.models.Usuaris
 import proj.tcg.turnonauta.models.UsuarisAmbPunts
 import proj.tcg.turnonauta.models.UsuarisStatistics
@@ -83,6 +85,11 @@ interface ApiService {
         @Body updateNameRequest: UpdateNameRequest
 
     ): Usuaris
+
+    @PUT("/rondes/update_ronda")
+    suspend fun updateRonda(
+        @Body updateRondaRequest: UpdateRondaRequest
+    ): Ronda
     @PUT("/users/update_password")
     suspend fun updatePassword(
         @Body passwordUpdateRequest: PasswordUpdateRequest

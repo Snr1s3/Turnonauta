@@ -1,7 +1,6 @@
 package proj.tcg.turnonauta.models
 
 import com.google.gson.annotations.SerializedName
-import java.time.LocalDate
 import java.util.Date
 
 
@@ -28,7 +27,20 @@ data class EmparellamentNom(
     val nom_usuari1: String,
     val nom_usuari2: String
 )
-
+data class Ronda(
+    val id_ronda: Int,
+    val id_torneig: Int,
+    val estat: String
+)
+data class UpdateRondaRequest(
+    val id_ronda: Int,
+    val id_usuari_1: Int,
+    val resultat_usuari_1: Int,
+    val id_usuari_2: Int,
+    val resultat_usuari_2: Int,
+    val id_usuari_guanyador: Int,
+    val id_usuari_perdedor: Int
+)
 data class UsuarisAmbPunts(
     val username: String,
     val punts: Int

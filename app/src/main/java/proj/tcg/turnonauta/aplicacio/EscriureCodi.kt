@@ -47,20 +47,10 @@ class EscriureCodi : AppCompatActivity() {
                         response = torneig.idTorneig!!
                         if (response > -1) {
                             val intent = Intent(this@EscriureCodi, PreviewTorneig::class.java)
+
                             val appInstance = AppTurnonauta.getInstance()
-                            val socket = appInstance.getSocket()
-                            val torneigId = appInstance.getTorneigIdApp()
-                            val userId = appInstance.getUserIdApp()
-                            val playerName = appInstance.getPlayerNameApp()
-
-
-                            if (!socket.isConnected) {
-                                socket.connect(applicationContext, playerName, torneigId,userId ) { mensaje ->
-                                    Log.d("SocketMessage", "Mensaje recibido: $mensaje")
-                                    // Aquí puedes manejar los mensajes si lo necesitas
-                                }
-                            }
                             appInstance.setTorneigIdApp(response)
+                            
                             startActivity(intent)
                         } else {
                             Toast.makeText(this@EscriureCodi, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show()

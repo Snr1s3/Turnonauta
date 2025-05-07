@@ -2,7 +2,6 @@ package proj.tcg.turnonauta.aplicacio
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -20,7 +19,6 @@ import proj.tcg.turnonauta.adapters.AdapterUsuarTorneig
 import proj.tcg.turnonauta.app.AppTurnonauta
 import proj.tcg.turnonauta.models.Torneig
 import proj.tcg.turnonauta.retrofit.ConnexioAPI
-import proj.tcg.turnonauta.socket.ClientSocket
 import retrofit2.HttpException
 import java.io.IOException
 
@@ -55,7 +53,7 @@ class PreviewTorneig : AppCompatActivity() {
         val playerName = appInstance.getPlayerNameApp()
 
         lifecycleScope.launch(Dispatchers.IO) {
-            client.connect(this@PreviewTorneig,playerName,torneigId,userId) { responseParts ->
+            client.connect(applicationContext,playerName,torneigId,userId) { responseParts ->
                 runOnUiThread {
                     startRecycled(responseParts)
                 }
@@ -96,7 +94,6 @@ class PreviewTorneig : AppCompatActivity() {
             val intent = Intent(this, DetallTorneig::class.java)
             startActivity(intent)
         }
-        Toast.makeText(this@PreviewTorneig, list[0], Toast.LENGTH_SHORT).show()
         for (i in 1 until list.size) {
             if (list[i] != "1") {
                 data.add(UsuariTorneig(R.drawable.logo2, list[i]))
