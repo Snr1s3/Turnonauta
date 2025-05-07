@@ -10,6 +10,7 @@ class AppTurnonauta : Application() {
     private var userId: Int = 0
     private var torneigId: Int = 0
     private var playerName: String = ""
+    private var rondes: Int = 1
     private val clientSocket = ClientSocket()
 
 
@@ -50,6 +51,7 @@ class AppTurnonauta : Application() {
 
     fun setPlayerNameApp(response: String) {
         playerName = response
+
     }
 
     fun getPlayerNameApp(): String {
@@ -62,5 +64,12 @@ class AppTurnonauta : Application() {
 
     fun getTorneigIdApp(): Int {
         return torneigId
+    }
+    fun getNumRonda() : Int {
+        return rondes
+    }
+    fun setNumRonda() {
+        rondes = rondes + 1
+
     }
 }

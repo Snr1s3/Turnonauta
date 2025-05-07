@@ -3,6 +3,7 @@ package proj.tcg.turnonauta.retrofit
 import android.annotation.SuppressLint
 import android.util.Log
 import okhttp3.OkHttpClient
+import proj.tcg.turnonauta.models.EmparellamentNom
 import proj.tcg.turnonauta.models.NewUser
 import proj.tcg.turnonauta.models.Torneig
 import proj.tcg.turnonauta.models.UpdateNameRequest
@@ -50,7 +51,11 @@ interface ApiService {
     suspend fun getTournamentsPlayed(
         @Query("user_id") userId: Int
     ): List<Torneig>
-
+    @GET("/rondas/get_new_pairing")
+    suspend fun getPairing(
+        @Query("torneig_id") torneig_id: Int,
+        @Query("usuari_id") usuari_id: Int
+    ): EmparellamentNom
     @GET("/users/users_in_tournament")
     suspend fun getUsersTournament(
         @Query("torneig_id") torneigId: Int

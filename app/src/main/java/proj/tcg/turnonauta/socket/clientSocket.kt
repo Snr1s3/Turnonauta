@@ -10,6 +10,7 @@ import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.io.OutputStream
 import java.net.Socket
+import java.net.SocketException
 
 class ClientSocket {
     private val host = "52.20.160.197"
@@ -40,13 +41,14 @@ class ClientSocket {
                 if (!serverMessage.isNullOrEmpty()) {
                     Handler(Looper.getMainLooper()).post {
                         val parts = serverMessage.split(".")
-                        if (parts.isNotEmpty() && parts[0] == "1") {
+                        if (parts.isNotEmpty()) {
                             onMessageReceived(parts)
                         }
                         Toast.makeText(context, "Server: $serverMessage", Toast.LENGTH_SHORT).show()
                     }
                 }
 
+                // Start listening continuously
                 listenJob = CoroutineScope(Dispatchers.IO).launch {
                     while (socket.isConnected && !socket.isClosed) {
                         val message = input?.readLine()
