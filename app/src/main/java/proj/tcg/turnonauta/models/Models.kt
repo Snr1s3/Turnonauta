@@ -72,3 +72,8 @@ interface OnNameUpdatedListener {
     fun onNameUpdated(newName: String)
 }
 
+data class PasswordUpdateRequest(
+    val email: String,
+    val novaContrasenya: String
+)
+

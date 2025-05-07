@@ -28,7 +28,7 @@ class RecuperarContrasenya : AppCompatActivity(){
 
         bEnviar.setOnClickListener {
                 val intent = Intent(this, EscriureCodiMail::class.java)
-                startActivity(intent)
+            startActivity(intent)
         }
 
         bRegistrarse.setOnClickListener{
