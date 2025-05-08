@@ -1,25 +1,25 @@
 package proj.tcg.turnonauta
-import proj.tcg.turnonauta.retrofit.ConnexioAPI
-import proj.tcg.turnonauta.app.AppTurnonauta
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 import proj.tcg.turnonauta.aplicacio.PaginaPrincipal
+import proj.tcg.turnonauta.app.AppTurnonauta
 import proj.tcg.turnonauta.recuperar_contrasenya.RecuperarContrasenya
 import proj.tcg.turnonauta.registre.Registre
+import proj.tcg.turnonauta.retrofit.ConnexioAPI
 import proj.tcg.turnonauta.screen.MenuInferiorAndroid
-import proj.tcg.turnonauta.socket.ClientSocket
 import retrofit2.HttpException
 import java.io.IOException
+
 
 class PantallaLogin : AppCompatActivity() {
     private lateinit var bInici: Button
@@ -27,6 +27,8 @@ class PantallaLogin : AppCompatActivity() {
     private lateinit var tRegistre: TextView
     private lateinit var eTUsuari: EditText
     private lateinit var eTContra: EditText
+    private var prefs: SharedPreferences = getSharedPreferences("turnonauta_app", MODE_PRIVATE)
+    private val appInstance = AppTurnonauta.getInstance()
     private var response: Int = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +37,11 @@ class PantallaLogin : AppCompatActivity() {
         setContentView(R.layout.pantalla_login)
         val menuInferior = MenuInferiorAndroid(window)
         menuInferior.hideSystemNavigationBar()
-
+        if(prefs.contains("userId")){
+            appInstance.setUserIdApp(prefs.getInt("userID", 0))
+            val intent = Intent(this@PantallaLogin, PaginaPrincipal::class.java)
+            startActivity(intent)
+        }
         bInici = findViewById(R.id.bInici)
         tConObl = findViewById(R.id.tConObl)
         tRegistre = findViewById(R.id.tRegistre)
@@ -57,7 +63,6 @@ class PantallaLogin : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
     private fun checkLogin() {
         val username = eTUsuari.text.toString().trim()
         val password = eTContra.text.toString().trim()
@@ -74,13 +79,8 @@ class PantallaLogin : AppCompatActivity() {
             try {
                 response = ConnexioAPI.api().getLogin(username, password)
                 Log.d("User_ID Login:", "ID: $response")
-
                 if (response > -1) {
-                    val appInstance = AppTurnonauta.getInstance()
                     appInstance.setUserIdApp(response)
-
-
-
                     val intent = Intent(this@PantallaLogin, PaginaPrincipal::class.java)
                     startActivity(intent)
                 } else {
@@ -99,5 +99,4 @@ class PantallaLogin : AppCompatActivity() {
             }
         }
     }
-
 }

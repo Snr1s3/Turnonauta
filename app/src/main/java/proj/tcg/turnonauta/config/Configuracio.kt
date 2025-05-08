@@ -1,6 +1,7 @@
 package proj.tcg.turnonauta.config
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +18,8 @@ class Configuracio : AppCompatActivity() {
     private lateinit var botoPoliticas: MaterialButton
     private lateinit var botoTerms: MaterialButton
     private lateinit var botoUbi: ImageButton
+
+    private var prefs: SharedPreferences = getSharedPreferences("turnonauta_app", MODE_PRIVATE)
 
     private var isRedBorder = false
     private var isNight = false
@@ -103,6 +106,7 @@ class Configuracio : AppCompatActivity() {
         }
 
         botonLogOut.setOnClickListener {
+            prefs.edit().remove("userId").apply()
             startActivity(Intent(this, PantallaLogin::class.java))
         }
 
