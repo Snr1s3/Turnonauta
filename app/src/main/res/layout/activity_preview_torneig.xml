@@ -32,7 +32,7 @@
             android:background="@color/color_surface"
             android:gravity="center"
             android:padding="10dp"
-            android:text="-"
+            android:text=""
             android:textColor="#000"
             android:textSize="22sp"
             android:textStyle="bold" />
@@ -50,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="-"
+            android:text=""
             android:textColor="@color/color_text"
             android:textSize="24sp" />
 
@@ -58,7 +58,7 @@
             android:id="@+id/recyclerview"
             android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:columnCount="2"
             tools:listitem="@layout/usuari_recycled_view" />
     </LinearLayout>

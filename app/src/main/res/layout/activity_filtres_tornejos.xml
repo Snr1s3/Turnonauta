@@ -164,6 +164,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp">
+
             <Button
                 android:id="@+id/guardar"
                 style="@style/CustomButton"
@@ -171,7 +172,8 @@
                 android:layout_height="48dp"
                 android:minWidth="48dp"
                 android:minHeight="48dp"
-                android:text="@string/gfiltres" />
+                android:text="@string/gfiltres"
+                tools:ignore="TouchTargetSizeCheck" />
         </FrameLayout>
 
 

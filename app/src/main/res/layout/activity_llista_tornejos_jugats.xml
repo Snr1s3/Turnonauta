@@ -52,7 +52,8 @@
             android:layout_height="0dp"
             android:layout_gravity="center_horizontal"
             android:layout_weight="1"
-            tools:listitem="@layout/tornejos_jugats_recycled_view" />
+            tools:listitem="@layout/tornejos_jugats_recycled_view"
+            tools:ignore="NestedWeights" />
 
         <Button
             android:id="@+id/filtres"

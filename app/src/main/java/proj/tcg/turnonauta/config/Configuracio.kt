@@ -1,25 +1,30 @@
 package proj.tcg.turnonauta.config
 
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.content.res.Configuration
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.google.android.material.button.MaterialButton
 import proj.tcg.turnonauta.PantallaLogin
 import proj.tcg.turnonauta.R
+import java.util.Locale
 
 class Configuracio : AppCompatActivity() {
     private lateinit var botonImagen: ImageButton
     private lateinit var botonPerfil: MaterialButton
     private lateinit var botonLogOut: MaterialButton
     private lateinit var botonModo: ImageButton
+    private lateinit var botonIdioma: MaterialButton
     private lateinit var botoPoliticas: MaterialButton
     private lateinit var botoTerms: MaterialButton
     private lateinit var botoUbi: ImageButton
 
-    private var prefs: SharedPreferences = getSharedPreferences("turnonauta_app", MODE_PRIVATE)
+    private lateinit var prefs2: SharedPreferences
 
     private var isRedBorder = false
     private var isNight = false
@@ -40,6 +45,7 @@ class Configuracio : AppCompatActivity() {
 
         // Inicializar botones
         botonImagen = findViewById(R.id.btnNoti)
+        botonIdioma = findViewById(R.id.btnIdioma)
         botonPerfil = findViewById(R.id.btnPerfil)
         botonLogOut = findViewById(R.id.btnLogOut)
         botonModo = findViewById(R.id.btnModo)
@@ -75,7 +81,18 @@ class Configuracio : AppCompatActivity() {
 
             recreate() // Recarga la actividad para aplicar el cambio de tema
         }
+        botonIdioma.setOnClickListener {
+            val currentLang = prefs.getString("app_language", "") ?: ""
 
+            val newLang = when (currentLang) {
+                "es-rES" -> "en-rGB"
+                "en-rGB" -> ""
+                else -> "es-rES"
+            }
+
+            prefs.edit().putString("app_language", newLang).apply()
+            recreateApp()
+        }
         // Botón de notificaciones
         botonImagen.setOnClickListener {
             if (isRedBorder) {
@@ -106,7 +123,8 @@ class Configuracio : AppCompatActivity() {
         }
 
         botonLogOut.setOnClickListener {
-            prefs.edit().remove("userId").apply()
+            prefs2 = getSharedPreferences("turnonauta_app", MODE_PRIVATE)
+            prefs2.edit().remove("userId").apply()
             startActivity(Intent(this, PantallaLogin::class.java))
         }
 
@@ -117,5 +135,30 @@ class Configuracio : AppCompatActivity() {
         botoPoliticas.setOnClickListener {
             startActivity(Intent(this, PoliticasPrivacidad::class.java))
         }
+    }
+
+    private fun recreateApp() {
+        val intent = Intent(this, Configuracio::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
+    }
+
+    override fun attachBaseContext(newBase: Context?) {
+        newBase?.let {
+            val prefs = it.getSharedPreferences("ajustes", MODE_PRIVATE)
+            val lang = prefs.getString("app_language", "en") ?: "en"
+            val context = setLocale(it, lang)
+            super.attachBaseContext(context)
+        } ?: super.attachBaseContext(newBase)
+    }
+    fun setLocale(context: Context, language: String): Context {
+        val localeParts = language.split("-r")
+        val locale = if (localeParts.size == 2) Locale(localeParts[0], localeParts[1]) else Locale(language)
+        Locale.setDefault(locale)
+
+        val config = Configuration(context.resources.configuration)
+        config.setLocale(locale)
+        return context.createConfigurationContext(config)
     }
 }

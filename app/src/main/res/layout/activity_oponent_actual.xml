@@ -75,7 +75,7 @@
 
                 <TextView
                     android:id="@+id/playerName"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
@@ -165,7 +165,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            app:buttonTint="@color/color_bottom_menu" />
+                            app:buttonTint="@color/color_bottom_menu"
+                            tools:ignore="DuplicateSpeakableTextCheck" />
 
                         <RadioButton
                             android:id="@+id/p1b2"

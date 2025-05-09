@@ -99,6 +99,64 @@
     <string name="suis">Suis</string>
     <string name="elim">Eliminatoria</string>
 
+    <!-- Config-->
+    <string name="configuracio">Configuració</string>
+    <string name="idioma">Idioma</string>
+    <string name="editarPerfil">Editar Perfil</string>
+    <string name="termesDus">Termes d\'ús</string>
+    <string name="politicaPrivacitat">Política de privacitat</string>
+    <string name="aboutUs">Sobre Nosaltres</string>
+    <string name="tancarSessio">Tancar Sessió</string>
+
+    <!-- Editar Perfil-->
+    <string name="esborrarPerfil">Esborrar Perfil</string>
+
+    <!-- politiques de privacitat-->
+    <string name="politicaPrivacitat1">Aquesta Política de Privacitat descriu com es recopila, utilitza i protegeix la informació personal dels usuaris d\'aquesta aplicació. L\'ús de l\'aplicació implica l\'acceptació d\'aquesta política.\n
+
+1. INFORMACIÓ RECOPILADA\n
+Es recopila informació dels usuaris de l\'aplicació de les maneres següents:\n
+- Informació proporcionada directament per l\'usuari en registrar-se o utilitzar funcions específiques de l\'aplicació.\n
+- Dades recopilades automàticament, incloent informació del dispositiu, adreça IP, identificadors únics, sistema operatiu i dades d\'ús.\n
+- Dades recopilades mitjançant cookies i tecnologies similars per millorar l\'experiència de l\'usuari i optimitzar el funcionament de l\'aplicació.\n
+
+2. FINALITAT DEL TRACTAMENT DE DADES\n
+La informació recopilada s\'utilitza amb les finalitats següents:\n
+- Gestionar el compte de l\'usuari i proporcionar accés als serveis de l\'aplicació.\n
+- Millorar el rendiment i la funcionalitat de l\'aplicació mitjançant l\'anàlisi d\'ús.\n
+- Enviar notificacions importants sobre canvis en l\'aplicació o en la política de privacitat.\n
+- Garantir el compliment de les obligacions legals i normatives aplicables.\n
+
+3. COMPARTICIÓ DE DADES AMB TERCERS\n
+La informació de l\'usuari no es ven ni es comparteix amb tercers, excepte en les circumstàncies següents:\n
+- Quan sigui necessari per a la prestació de serveis mitjançant proveïdors externs que estiguin subjectes a estrictes acords de confidencialitat.\n
+- Quan ho exigeixi la llei, en compliment de requeriments judicials o normatius.\n
+- En cas de fusió, adquisició o reestructuració de l\'empresa, en què les dades podran ser transferides a la nova entitat.\n
+
+4. ÚS DE COOKIES I TECNOLOGIES SIMILARS\n
+Aquesta aplicació pot utilitzar cookies i tecnologies similars per emmagatzemar informació i millorar l\'experiència de l\'usuari. Les cookies poden ser desactivades o gestionades des de la configuració del dispositiu, tot i que això pot afectar el funcionament d\'algunes funcions.\n
+
+5. MESURES DE SEGURETAT\n
+S\'han implementat mesures tècniques i organitzatives per protegir la informació personal dels usuaris contra accessos no autoritzats, alteracions, divulgació o destrucció. No obstant això, cap sistema és completament segur i no es pot garantir la seguretat absoluta de la informació.\n
+
+6. DRETS DE L\'USUARI\n
+L\'usuari té dret a:\n
+- Accedir a la informació recopilada sobre la seva persona.\n
+- Rectificar qualsevol dada incorrecta o incompleta.\n
+- Sol·licitar l\'eliminació de les seves dades personals en determinades circumstàncies.\n
+- Oposar-se al tractament de la seva informació personal quan així ho estableixi la legislació aplicable.\n
+- Presentar una reclamació davant les autoritats de protecció de dades si considera que els seus drets han estat vulnerats.\n
+
+7. CONSERVACIÓ DE LES DADES\n
+Les dades personals es conservaran durant el temps necessari per complir amb les finalitats per les quals van ser recopilades i conforme a les obligacions legals aplicables. En cas que l\'usuari desitgi eliminar el seu compte, es prendran les mesures necessàries per a l\'eliminació de les seves dades conforme a la legislació vigent.\n
+
+8. MODIFICACIONS DE LA POLÍTICA DE PRIVACITAT\n
+Aquesta Política de Privacitat pot ser actualitzada en qualsevol moment. Qualsevol canvi significatiu serà notificat als usuaris a través dels mitjans disponibles a l\'aplicació. Es recomana revisar aquesta política periòdicament per estar informat sobre la protecció de la informació personal.\n
+
+9. CONTACTE\n
+Per a qualsevol consulta sobre aquesta Política de Privacitat o el tractament de les dades personals, l\'usuari pot posar-se en contacte amb l\'equip de suport a través del correu electrònic: suport@turnonauta.com.
+</string>
+
 </resources>
  
 

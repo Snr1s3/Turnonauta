@@ -60,7 +60,7 @@
                 android:id="@+id/nom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Magic 3"
+                android:text=""
                 android:textColor="@color/color_text2"
                 android:textStyle="bold"
                 android:textSize="22sp"
@@ -79,7 +79,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Codi: 6"
+                    android:text=""
                     android:textColor="@color/color_text2"
                     android:textSize="16sp"
                     android:textStyle="bold"/>
@@ -89,7 +89,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Joc: MTG"
+                    android:text=""
                     android:textColor="@color/color_text2"
                     android:textSize="16sp"
                     android:textStyle="bold"
@@ -108,7 +108,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Format: Suís"
+                    android:text=""
                     android:textColor="@color/color_text2"
                     android:textSize="16sp"
                     android:textStyle="bold"/>
@@ -118,7 +118,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Jugadors: 8"
+                    android:text=""
                     android:textColor="@color/color_text2"
                     android:textSize="16sp"
                     android:textStyle="bold"
@@ -136,7 +136,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerview"
                     android:layout_width="match_parent"
-                    android:layout_height="253dp"
+                    android:layout_height="0dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_weight="1"
                     tools:listitem="@layout/detall_torneig_recycled_view" />

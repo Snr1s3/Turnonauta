@@ -12,10 +12,11 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
 
         <!-- Profile Image -->
         <ImageView
@@ -34,7 +35,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:paddingTop="5dp"
-            android:text="Configuració"
+            android:text="@string/configuracio"
             android:textColor="#000"
             android:textSize="32sp"
             android:fontFamily="@font/poppins_regular" />
@@ -44,42 +45,52 @@
             android:id="@+id/btnPerfil"
             style="@style/WhiteButton"
             android:layout_width="350dp"
+            android:layout_height="48dp"
             android:layout_marginTop="20dp"
-            android:layout_height="45dp"
+            android:contentDescription="@string/app_name"
+            android:text="@string/editarPerfil"
             android:textSize="20sp"
-            android:text="Editar Perfil" />
+            tools:ignore="TextSizeCheck,DuplicateSpeakableTextCheck" />
+
         <Button
             android:id="@+id/btnIdioma"
             style="@style/WhiteButton"
             android:layout_width="350dp"
+            android:layout_height="48dp"
             android:layout_marginTop="10dp"
-            android:layout_height="45dp"
+            android:text="@string/idioma"
             android:textSize="20sp"
-            android:text="Idioma" />
+            tools:ignore="TextSizeCheck" />
+
         <Button
             android:id="@+id/btnTerms"
             style="@style/WhiteButton"
             android:layout_width="350dp"
+            android:layout_height="48dp"
             android:layout_marginTop="10dp"
-            android:layout_height="45dp"
+            android:text="@string/termesDus"
             android:textSize="20sp"
-            android:text="Termes D'ús" />
+            tools:ignore="TextSizeCheck" />
+
         <Button
             android:id="@+id/btnPoliticas"
             style="@style/WhiteButton"
             android:layout_width="350dp"
+            android:layout_height="48dp"
             android:layout_marginTop="10dp"
-            android:layout_height="45dp"
+            android:text="@string/politicaPrivacitat"
             android:textSize="20sp"
-            android:text="Politiques de privacitat" />
+            tools:ignore="TextSizeCheck" />
+
         <Button
             android:id="@+id/btnAbout"
             style="@style/WhiteButton"
             android:layout_width="350dp"
+            android:layout_height="48dp"
             android:layout_marginTop="10dp"
-            android:layout_height="45dp"
+            android:text="@string/aboutUs"
             android:textSize="20sp"
-            android:text="About us" />
+            tools:ignore="TextSizeCheck" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -93,19 +104,22 @@
                 style="@style/WhiteButton"
                 android:scaleType="fitCenter"
                 android:layout_width="80dp"
+                android:contentDescription="@string/app_name"
                 android:layout_height="80dp"
-                android:layout_marginRight="20dp" />
+                android:layout_marginEnd="20dp" />
 
             <ImageButton
                 android:id="@+id/btnNoti"
                 style="@style/WhiteButton"
                 android:layout_width="80dp"
+                android:contentDescription="@string/app_name"
                 android:layout_height="80dp"
-                android:layout_marginRight="20dp" />
+                android:layout_marginEnd="20dp" />
 
             <ImageButton
                 android:id="@+id/btnModo"
                 style="@style/WhiteButton"
+                android:contentDescription="@string/app_name"
                 android:scaleType="fitCenter"
                 android:layout_width="80dp"
                 android:layout_height="80dp" />
@@ -119,7 +133,7 @@
             android:layout_height="60dp"
             android:layout_marginTop="20dp"
             android:textSize="20sp"
-            android:text="Tancar Sessió" />
+            android:text="@string/tancarSessio" />
 
 
 

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Turnonauta</string>
+
+    <!-- Pantalla Login -->
+    <string name="usuari">Usuario:</string>
+    <string name="contrasenya">Contraseña:</string>
+    <string name="contrasenyaOblidada">¿Has olvidado la contraseña? ¡Haz clic aquí!</string>
+    <string name="iniciar_sessio">Iniciar Sesión</string>
+    <string name="inici_de_sessio">Inicio de Sesión</string>
+    <string name="sense_registre1">Si no tienes cuenta, regístrate aquí</string>
+    <string name="logo">Logo</string>
+
+    <!-- Recuperar Contrasenya -->
+    <string name="recuperar_contrasenya">Recuperar contraseña</string>
+    <string name="escriu_el_mail">Escribe tu correo electrónico</string>
+    <string name="mail_exemple">ejemplo@gmail.com</string>
+    <string name="enviar_codi">Enviar código al correo</string>
+    <string name="escriu_el_codi">Escribe el código que has recibido</string>
+    <string name="codi">Código</string>
+    <string name="reenviar_codi">Si no has recibido el correo, ¡Reenvíalo!</string>
+    <string name="comprobar">Comprobar</string>
+    <string name="actualitzar_contrasenya">Actualizar contraseña</string>
+    <string name="nova_contrasenya">Nueva contraseña:</string>
+    <string name="repetir_contrasenya">Repetir contraseña:</string>
+    <string name="genial">¡Genial! Tu contraseña</string>
+    <string name="exit">se ha restablecido con éxito.</string>
+    <string name="error_new_pw_1">Las contraseñas no coinciden</string>
+    <string name="error_new_pw_2">La contraseña debe contener letras, números y caracteres especiales</string>
+    <string name="error_new_pw_3">La contraseña debe tener al menos 8 caracteres</string>
+
+    <!-- Registre -->
+    <string name="registre">Registro</string>
+    <string name="mail">Correo electrónico</string>
+    <string name="telf">Teléfono</string>
+    <string name="contra">Contraseña</string>
+    <string name="rep_contra">Repetir Contraseña</string>
+    <string name="nom_usuari">Nombre de usuario</string>
+    <string name="mail2">Correo electrónico:</string>
+    <string name="telf2">Teléfono:</string>
+    <string name="nom_usuari2">Nombre de usuario:</string>
+    <string name="contra2">Contraseña:</string>
+    <string name="rep_contra2">Repetir Contraseña:</string>
+    <string name="registrar_button">Registrarse</string>
+
+    <!-- Pantalla Inici -->
+    <string name="inici">Bienvenida</string>
+    <string name="gfiltres">Guardar Filtros</string>
+    <string name="id">ID:</string>
+    <string name="rondesJ">Rondas Jugadas:</string>
+    <string name="rondesG">Rondas Ganadas:</string>
+    <string name="tornejosJ">Torneos Jugados:</string>
+    <string name="tornejosG">Torneos Ganados:</string>
+    <string name="zero">0</string>
+    <string name="config">Configuración</string>
+
+    <!-- Pantalla Recycler Torneig-->
+    <string name="codi_text">Código: %d</string>
+    <string name="joc_text">Juego: %s</string>
+    <string name="format_text">Formato: %s</string>
+    <string name="jugadors_text">Jugadores: %d</string>
+
+    <!-- Pantalla Escriure el Codi -->
+    <string name="eCodi">Entrar al Torneo</string>
+    <string name="codiTorneig">Escribe el código del torneo</string>
+    <string name="codiTorneig2">Escribe el código del torneo:</string>
+    <string name="buscarTorneig">Buscar torneo</string>
+
+    <!-- Pantalla Detall Torneig-->
+    <string name="detallTorneig">Detalle del Torneo</string>
+    <string name="tornar">Volver</string>
+
+    <!-- Pantalla Llista Tornejos-->
+    <string name="llistaTornejos">Torneos Jugados</string>
+    <string name="filtres">Filtros</string>
+
+    <!-- Pantalla Oponent Actual-->
+    <string name="oponentActual">Oponente Actual</string>
+    <string name="enviar">Enviar</string>
+    <string name="tu">Tú</string>
+    <string name="p1">Partida 1</string>
+    <string name="p2">Partida 2</string>
+    <string name="p3">Partida 3</string>
+
+    <!-- Pantalla Preview Torneig-->
+    <string name="comencar">Comenzar</string>
+
+    <!-- Filtres -->
+    <string name="joc">Juego: </string>
+    <string name="jugadors">Jugadores: </string>
+    <string name="format">Formato:</string>
+    <string name="mtg">Magic: The Gathering</string>
+    <string name="pkm">Pokémon</string>
+    <string name="vuit">8</string>
+    <string name="setze">16</string>
+    <string name="suis">Suizo</string>
+    <string name="elim">Eliminatoria</string>
+</resources>
