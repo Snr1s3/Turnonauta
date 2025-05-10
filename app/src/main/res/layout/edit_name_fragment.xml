@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:text="Nou nom de Perfil"
+        android:text="@string/nouNom"
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_gravity="center"
@@ -26,7 +26,8 @@
         android:id="@+id/editName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nom de perfil"/>
+        android:hint="@string/nouNomdos"
+        android:minHeight="48dp" />
 
     <TextView
         android:id="@+id/tConObl"
@@ -34,7 +35,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_marginHorizontal="40dp"
-        android:text="---"
+        android:text=""
         android:textColor="@color/color_text"
         android:background="@drawable/rounded_textview"
         android:textSize="14sp"
@@ -55,7 +56,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="Guardar"
+            android:text="@string/guradar"
             android:layout_marginEnd="8dp"/>
 
         <Button
@@ -64,7 +65,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="Cancelar"
+            android:text="@string/cancelar"
             android:layout_marginStart="8dp"/>
     </LinearLayout>
 </LinearLayout>

@@ -1,8 +1,6 @@
 package proj.tcg.turnonauta.app
 
 import android.app.Application
-import android.content.Context
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatDelegate
 import proj.tcg.turnonauta.socket.ClientSocket
 
@@ -35,7 +33,6 @@ class AppTurnonauta : Application() {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         }
     }
-
 
     fun getSocket(): ClientSocket {
         return clientSocket

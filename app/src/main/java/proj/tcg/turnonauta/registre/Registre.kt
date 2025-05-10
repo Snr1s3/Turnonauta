@@ -1,6 +1,8 @@
 package proj.tcg.turnonauta.registre
 
+import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -13,11 +15,11 @@ import kotlinx.coroutines.launch
 import proj.tcg.turnonauta.PantallaLogin
 import proj.tcg.turnonauta.R
 import proj.tcg.turnonauta.models.NewUser
-import proj.tcg.turnonauta.models.Usuaris
 import proj.tcg.turnonauta.retrofit.ConnexioAPI
 import proj.tcg.turnonauta.screen.MenuInferiorAndroid
 import retrofit2.HttpException
 import java.io.IOException
+import java.util.Locale
 
 class Registre : AppCompatActivity() {
     private lateinit var bRegistre: Button
@@ -137,5 +139,23 @@ class Registre : AppCompatActivity() {
     private fun showError(message: String) {
         tConObl.text = message
         tConObl.visibility = TextView.VISIBLE
+    }override fun attachBaseContext(newBase: Context?) {
+        newBase?.let {
+            val prefs = it.getSharedPreferences("ajustes", MODE_PRIVATE)
+            val lang = prefs.getString("app_language", "en") ?: "en"
+            val context = setLocale(it, lang)
+            super.attachBaseContext(context)
+        } ?: super.attachBaseContext(newBase)
+    }
+
+    fun setLocale(context: Context, language: String): Context {
+        val localeParts = language.split("-r")
+        val locale =
+            if (localeParts.size == 2) Locale(localeParts[0], localeParts[1]) else Locale(language)
+        Locale.setDefault(locale)
+
+        val config = Configuration(context.resources.configuration)
+        config.setLocale(locale)
+        return context.createConfigurationContext(config)
     }
 }

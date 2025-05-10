@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Turnonauta</string>
 
-    <!-- Pantalla Login -->
     <string name="usuari">Usuari:</string>
     <string name="contrasenya">Contrasenya:</string>
     <string name="contrasenyaOblidada">Has oblidat la contrasenya? Clica aquí!</string>
@@ -10,7 +9,6 @@
     <string name="sense_registre1">Si no tens conta registrat aquí</string>
     <string name="logo">Logo</string>
 
-    <!-- Recuperar Contrasenya -->
     <string name="recuperar_contrasenya">Recuperar contrasenya</string>
     <string name="escriu_el_mail">Escriu el teu correu electronic</string>
     <string name="mail_exemple">example@gmail.com</string>
@@ -28,7 +26,6 @@
     <string name="error_new_pw_2">La contrasenya a de contenir lletres, números i caràracters especials</string>
     <string name="error_new_pw_3">La contrasenya a de contenir com a minim 8 caracters</string>
 
-    <!-- Registre -->
     <string name="registre">Registre</string>
     <string name="mail">Correu electronic</string>
     <string name="telf">Telefon</string>
@@ -45,7 +42,6 @@
 
 
 
-    <!-- Pantalla Inici -->
     <string name="inici">Benvinguda</string>
     <string name="gfiltres">Guardar Filtres</string>
     <string name="id">ID:</string>
@@ -57,27 +53,22 @@
     <string name="config">config</string>
 
 
-    <!-- Pantalla Recycler Torneig-->
     <string name="codi_text">Codi: %d</string>
     <string name="joc_text">Joc: %s</string>
     <string name="format_text">Format: %s</string>
     <string name="jugadors_text">Jugadors: %d</string>
 
-    <!-- Pantalla Escriure el Coid-->
     <string name="eCodi">Entrar Al Torneig</string>
     <string name="codiTorneig">Escriu el codi del torneig</string>
     <string name="codiTorneig2">Escriu el codi del torneig:</string>
     <string name="buscarTorneig">Buscar torneig</string>
 
-    <!-- Pantalla Detall Torneig-->
     <string name="detallTorneig">Detall del Torneig</string>
     <string name="tornar">Tornar</string>
 
-    <!-- Pantalla Llista Tornejos-->
     <string name="llistaTornejos">Tornejos Jugats</string>
     <string name="filtres">Filtres</string>
 
-    <!-- Pantalla Oponent Actual-->
     <string name="oponentActual">Oponent Actual</string>
     <string name="enviar">Enviar</string>
     <string name="tu">Tu</string>
@@ -85,10 +76,8 @@
     <string name="p2">Partida 2</string>
     <string name="p3">Partida 3</string>
 
-    <!-- Pantalla Preview torneig-->
     <string name="comencar">Comença</string>
 
-    <!-- Filtres -->
     <string name="joc">Joc: </string>
     <string name="jugadors">Jugadors: </string>
     <string name="format">Format:</string>
@@ -99,7 +88,6 @@
     <string name="suis">Suis</string>
     <string name="elim">Eliminatoria</string>
 
-    <!-- Config-->
     <string name="configuracio">Configuració</string>
     <string name="idioma">Idioma</string>
     <string name="editarPerfil">Editar Perfil</string>
@@ -108,11 +96,9 @@
     <string name="aboutUs">Sobre Nosaltres</string>
     <string name="tancarSessio">Tancar Sessió</string>
 
-    <!-- Editar Perfil-->
     <string name="esborrarPerfil">Esborrar Perfil</string>
 
-    <!-- politiques de privacitat-->
-    <string name="politicaPrivacitat1">Aquesta Política de Privacitat descriu com es recopila, utilitza i protegeix la informació personal dels usuaris d\'aquesta aplicació. L\'ús de l\'aplicació implica l\'acceptació d\'aquesta política.\n
+    <string name="politicaPrivacitatu">Aquesta Política de Privacitat descriu com es recopila, utilitza i protegeix la informació personal dels usuaris d\'aquesta aplicació. L\'ús de l\'aplicació implica l\'acceptació d\'aquesta política.\n
 
 1. INFORMACIÓ RECOPILADA\n
 Es recopila informació dels usuaris de l\'aplicació de les maneres següents:\n
@@ -157,6 +143,30 @@ Aquesta Política de Privacitat pot ser actualitzada en qualsevol moment. Qualse
 Per a qualsevol consulta sobre aquesta Política de Privacitat o el tractament de les dades personals, l\'usuari pot posar-se en contacte amb l\'equip de suport a través del correu electrònic: suport@turnonauta.com.
 </string>
 
-</resources>
- 
+    <string name="termesDusu">Termes d\'ús</string>
+    <string name="termesDusdos">
+        Benvingut a la nostra aplicació.\n
+        En accedir o utilitzar els nostres serveis, vostè accepta estar subjecte als següents termes d\'ús. Si us plau, llegeixi\'ls detingudament.\n\n
+        1. Acceptació dels Termes:  \n
+        En registrar-se i utilitzar aquesta aplicació, vostè accepta aquests termes d\'ús i qualsevol modificació futura. Si no està d\'acord amb algun d\'aquests termes, li recomanem no utilitzar l\'aplicació.\n\n
+        2. Ús del Servei:  \n
+        Vostè es compromet a utilitzar el servei únicament amb finalitats legals i a no infringir drets de tercers. No es permet l\'ús indegut del contingut, la manipulació de dades, ni l\'accés no autoritzat al sistema.\n\n
+        3. Registre i Compte:  \n
+        És responsabilitat de l\'usuari proporcionar informació veraç durant el registre. Vostè és responsable de mantenir la confidencialitat de les seves credencials d\'accés i de qualsevol activitat que ocorri sota el seu compte.\n\n
+        4. Propietat Intel·lectual:  \n
+        Tots els continguts, imatges, logotips, textos i dissenys d\'aquesta aplicació estan protegits per drets d\'autor. Queda prohibida la seva reproducció total o parcial sense autorització prèvia i per escrit.\n\n
+        5. Responsabilitat:  \n
+        L\'aplicació es proporciona “tal com és”, sense garanties de cap tipus. No ens fem responsables de possibles danys o pèrdues derivades de l\'ús o mal funcionament del servei.\n\n
+        6. Modificacions:  \n
+        Ens reservem el dret de modificar aquests termes en qualsevol moment. L\'ús continuat del servei després dels canvis implica l\'acceptació dels nous termes.\n\n
+        7. Terminació:  \n
+        Podem suspendre o cancel·lar el seu compte si incompleix aquests termes o si considerem que el seu ús afecta negativament al servei o a altres usuaris.\n\n
+        Gràcies per confiar en nosaltres.  \n
+        Si té alguna pregunta, pot contactar-nos a través del suport de l\'aplicació.
+    </string>
 
+    <string name="nouNom">Nou Nom d\'usuari</string>
+    <string name="nouNomdos">Nom d\'usuari:</string>
+    <string name="guradar">Guardar</string>
+    <string name="cancelar">Cancel·lar</string>
+</resources>

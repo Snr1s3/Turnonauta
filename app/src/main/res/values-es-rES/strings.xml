@@ -1,17 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Turnonauta</string>
 
-    <!-- Pantalla Login -->
     <string name="usuari">Usuario:</string>
     <string name="contrasenya">Contraseña:</string>
-    <string name="contrasenyaOblidada">¿Has olvidado la contraseña? ¡Haz clic aquí!</string>
+    <string name="contrasenyaOblidada">¿Has olvidado la contraseña? ¡Clica aquí!</string>
     <string name="iniciar_sessio">Iniciar Sesión</string>
     <string name="inici_de_sessio">Inicio de Sesión</string>
-    <string name="sense_registre1">Si no tienes cuenta, regístrate aquí</string>
+    <string name="sense_registre1">Si no tienes cuenta regístrate aquí</string>
     <string name="logo">Logo</string>
 
-    <!-- Recuperar Contrasenya -->
     <string name="recuperar_contrasenya">Recuperar contraseña</string>
     <string name="escriu_el_mail">Escribe tu correo electrónico</string>
     <string name="mail_exemple">ejemplo@gmail.com</string>
@@ -27,9 +24,8 @@
     <string name="exit">se ha restablecido con éxito.</string>
     <string name="error_new_pw_1">Las contraseñas no coinciden</string>
     <string name="error_new_pw_2">La contraseña debe contener letras, números y caracteres especiales</string>
-    <string name="error_new_pw_3">La contraseña debe tener al menos 8 caracteres</string>
+    <string name="error_new_pw_3">La contraseña debe contener como mínimo 8 caracteres</string>
 
-    <!-- Registre -->
     <string name="registre">Registro</string>
     <string name="mail">Correo electrónico</string>
     <string name="telf">Teléfono</string>
@@ -43,7 +39,9 @@
     <string name="rep_contra2">Repetir Contraseña:</string>
     <string name="registrar_button">Registrarse</string>
 
-    <!-- Pantalla Inici -->
+
+
+
     <string name="inici">Bienvenida</string>
     <string name="gfiltres">Guardar Filtros</string>
     <string name="id">ID:</string>
@@ -52,29 +50,25 @@
     <string name="tornejosJ">Torneos Jugados:</string>
     <string name="tornejosG">Torneos Ganados:</string>
     <string name="zero">0</string>
-    <string name="config">Configuración</string>
+    <string name="config">config</string>
 
-    <!-- Pantalla Recycler Torneig-->
+
     <string name="codi_text">Código: %d</string>
     <string name="joc_text">Juego: %s</string>
     <string name="format_text">Formato: %s</string>
     <string name="jugadors_text">Jugadores: %d</string>
 
-    <!-- Pantalla Escriure el Codi -->
-    <string name="eCodi">Entrar al Torneo</string>
+    <string name="eCodi">Entrar Al Torneo</string>
     <string name="codiTorneig">Escribe el código del torneo</string>
     <string name="codiTorneig2">Escribe el código del torneo:</string>
     <string name="buscarTorneig">Buscar torneo</string>
 
-    <!-- Pantalla Detall Torneig-->
     <string name="detallTorneig">Detalle del Torneo</string>
     <string name="tornar">Volver</string>
 
-    <!-- Pantalla Llista Tornejos-->
     <string name="llistaTornejos">Torneos Jugados</string>
     <string name="filtres">Filtros</string>
 
-    <!-- Pantalla Oponent Actual-->
     <string name="oponentActual">Oponente Actual</string>
     <string name="enviar">Enviar</string>
     <string name="tu">Tú</string>
@@ -82,17 +76,97 @@
     <string name="p2">Partida 2</string>
     <string name="p3">Partida 3</string>
 
-    <!-- Pantalla Preview Torneig-->
     <string name="comencar">Comenzar</string>
 
-    <!-- Filtres -->
     <string name="joc">Juego: </string>
     <string name="jugadors">Jugadores: </string>
     <string name="format">Formato:</string>
     <string name="mtg">Magic: The Gathering</string>
-    <string name="pkm">Pokémon</string>
+    <string name="pkm">Pokemon</string>
     <string name="vuit">8</string>
     <string name="setze">16</string>
     <string name="suis">Suizo</string>
     <string name="elim">Eliminatoria</string>
+
+    <string name="configuracio">Configuración</string>
+    <string name="idioma">Idioma</string>
+    <string name="editarPerfil">Editar Perfil</string>
+    <string name="termesDus">Términos de uso</string>
+    <string name="politicaPrivacitat">Política de privacidad</string>
+    <string name="aboutUs">Sobre Nosotros</string>
+    <string name="tancarSessio">Cerrar Sesión</string>
+
+    <string name="esborrarPerfil">Borrar Perfil</string>
+
+    <string name="politicaPrivacitatu">Esta Política de Privacidad describe cómo se recopila, utiliza y protege la información personal de los usuarios de esta aplicación. El uso de la aplicación implica la aceptación de esta política.\n
+
+1. INFORMACIÓN RECOPILADA\n
+Se recopila información de los usuarios de la aplicación de las siguientes maneras:\n
+- Información proporcionada directamente por el usuario al registrarse o utilizar funciones específicas de la aplicación.\n
+- Datos recopilados automáticamente, incluyendo información del dispositivo, dirección IP, identificadores únicos, sistema operativo y datos de uso.\n
+- Datos recopilados mediante cookies y tecnologías similares para mejorar la experiencia del usuario y optimizar el funcionamiento de la aplicación.\n
+
+2. FINALIDAD DEL TRATAMIENTO DE DATOS\n
+La información recopilada se utiliza con las siguientes finalidades:\n
+- Gestionar la cuenta del usuario y proporcionar acceso a los servicios de la aplicación.\n
+- Mejorar el rendimiento y la funcionalidad de la aplicación mediante el análisis de uso.\n
+- Enviar notificaciones importantes sobre cambios en la aplicación o en la política de privacidad.\n
+- Garantizar el cumplimiento de las obligaciones legales y normativas aplicables.\n
+
+3. COMPARTICIÓN DE DATOS CON TERCEROS\n
+La información del usuario no se vende ni se comparte con terceros, excepto en las siguientes circunstancias:\n
+- Cuando sea necesario para la prestación de servicios mediante proveedores externos que estén sujetos a estrictos acuerdos de confidencialidad.\n
+- Cuando lo exija la ley, en cumplimiento de requerimientos judiciales o normativos.\n
+- En caso de fusión, adquisición o reestructuración de la empresa, en que los datos podrán ser transferidos a la nueva entidad.\n
+
+4. USO DE COOKIES Y TECNOLOGÍAS SIMILARES\n
+Esta aplicación puede utilizar cookies y tecnologías similares para almacenar información y mejorar la experiencia del usuario. Las cookies pueden ser desactivadas o gestionadas desde la configuración del dispositivo, aunque esto puede afectar el funcionamiento de algunas funciones.\n
+
+5. MEDIDAS DE SEGURIDAD\n
+Se han implementado medidas técnicas y organizativas para proteger la información personal de los usuarios contra accesos no autorizados, alteraciones, divulgación o destrucción. Sin embargo, ningún sistema es completamente seguro y no se puede garantizar la seguridad absoluta de la información.\n
+
+6. DERECHOS DEL USUARIO\n
+El usuario tiene derecho a:\n
+- Acceder a la información recopilada sobre su persona.\n
+- Rectificar cualquier dato incorrecto o incompleto.\n
+- Solicitar la eliminación de sus datos personales en determinadas circunstancias.\n
+- Oponerse al tratamiento de su información personal cuando así lo establezca la legislación aplicable.\n
+- Presentar una reclamación ante las autoridades de protección de datos si considera que sus derechos han sido vulnerados.\n
+
+7. CONSERVACIÓN DE LOS DATOS\n
+Los datos personales se conservarán durante el tiempo necesario para cumplir con las finalidades para las que fueron recopilados y conforme a las obligaciones legales aplicables. En caso de que el usuario desee eliminar su cuenta, se tomarán las medidas necesarias para la eliminación de sus datos conforme a la legislación vigente.\n
+
+8. MODIFICACIONES DE LA POLÍTICA DE PRIVACIDAD\n
+Esta Política de Privacidad puede ser actualizada en cualquier momento. Cualquier cambio significativo será notificado a los usuarios a través de los medios disponibles en la aplicación. Se recomienda revisar esta política periódicamente para estar informado sobre la protección de la información personal.\n
+
+9. CONTACTO\n
+Para cualquier consulta sobre esta Política de Privacidad o el tratamiento de los datos personales, el usuario puede ponerse en contacto con el equipo de soporte a través del correo electrónico: suport@turnonauta.com.
+</string>
+
+    <string name="termesDusu">Términos de uso</string>
+    <string name="termesDusdos">
+        Bienvenido a nuestra aplicación.\n
+        Al acceder o utilizar nuestros servicios, usted acepta estar sujeto a los siguientes términos de uso. Por favor, léalos detenidamente.\n\n
+        1. Aceptación de los Términos:  \n
+        Al registrarse y utilizar esta aplicación, usted acepta estos términos de uso y cualquier modificación futura. Si no está de acuerdo con alguno de estos términos, le recomendamos no utilizar la aplicación.\n\n
+        2. Uso del Servicio:  \n
+        Usted se compromete a utilizar el servicio únicamente con fines legales y a no infringir derechos de terceros. No se permite el uso indebido del contenido, la manipulación de datos, ni el acceso no autorizado al sistema.\n\n
+        3. Registro y Cuenta:  \n
+        Es responsabilidad del usuario proporcionar información veraz durante el registro. Usted es responsable de mantener la confidencialidad de sus credenciales de acceso y de cualquier actividad que ocurra bajo su cuenta.\n\n
+        4. Propiedad Intelectual:  \n
+        Todos los contenidos, imágenes, logotipos, textos y diseños de esta aplicación están protegidos por derechos de autor. Queda prohibida su reproducción total o parcial sin autorización previa y por escrito.\n\n
+        5. Responsabilidad:  \n
+        La aplicación se proporciona “tal cual”, sin garantías de ningún tipo. No nos hacemos responsables de posibles daños o pérdidas derivadas del uso o mal funcionamiento del servicio.\n\n
+        6. Modificaciones:  \n
+        Nos reservamos el derecho de modificar estos términos en cualquier momento. El uso continuado del servicio después de los cambios implica la aceptación de los nuevos términos.\n\n
+        7. Terminación:  \n
+        Podemos suspender o cancelar su cuenta si incumple estos términos o si consideramos que su uso afecta negativamente al servicio o a otros usuarios.\n\n
+        Gracias por confiar en nosotros.  \n
+        Si tiene alguna pregunta, puede contactarnos a través del soporte de la aplicación.
+    </string>
+
+    <string name="nouNom">Nuevo Nombre de usuario</string>
+    <string name="nouNomdos">Nombre de usuario:</string>
+    <string name="guradar">Guardar</string>
+    <string name="cancelar">Cancelar</string>
 </resources>

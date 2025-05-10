@@ -1,6 +1,8 @@
 package proj.tcg.turnonauta.recuperar_contrasenya
 
+import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -11,6 +13,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import proj.tcg.turnonauta.R
 import proj.tcg.turnonauta.screen.MenuInferiorAndroid
+import java.util.Locale
 
 class EscriureCodiMail : AppCompatActivity() {
 
@@ -73,5 +76,23 @@ class EscriureCodiMail : AppCompatActivity() {
     private fun getOtpCode(): Int {
         val otpString = otpFields.joinToString("") { it.text.toString() }
         return otpString.toIntOrNull() ?: 0  // Convierte a Int o devuelve 0 si está vacío
+    }override fun attachBaseContext(newBase: Context?) {
+        newBase?.let {
+            val prefs = it.getSharedPreferences("ajustes", MODE_PRIVATE)
+            val lang = prefs.getString("app_language", "en") ?: "en"
+            val context = setLocale(it, lang)
+            super.attachBaseContext(context)
+        } ?: super.attachBaseContext(newBase)
+    }
+
+    fun setLocale(context: Context, language: String): Context {
+        val localeParts = language.split("-r")
+        val locale =
+            if (localeParts.size == 2) Locale(localeParts[0], localeParts[1]) else Locale(language)
+        Locale.setDefault(locale)
+
+        val config = Configuration(context.resources.configuration)
+        config.setLocale(locale)
+        return context.createConfigurationContext(config)
     }
 }

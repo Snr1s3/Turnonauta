@@ -27,7 +27,7 @@
             android:id="@+id/textoPoliticas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/politicaPrivacitat1"
+            android:text="@string/politicaPrivacitatu"
             android:textSize="16sp"
             tools:ignore="VisualLintLongText" />
     </ScrollView>

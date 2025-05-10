@@ -1,6 +1,8 @@
 package proj.tcg.turnonauta.recuperar_contrasenya
 
+import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -14,6 +16,7 @@ import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 import proj.tcg.turnonauta.models.PasswordUpdateRequest
 import proj.tcg.turnonauta.retrofit.ConnexioAPI
+import java.util.Locale
 
 
 class NovaContrasenya : AppCompatActivity() {
@@ -87,5 +90,23 @@ class NovaContrasenya : AppCompatActivity() {
             !regex.matches(password) -> getString(R.string.error_new_pw_2)
             else -> null // No hay errores
         }
+    }override fun attachBaseContext(newBase: Context?) {
+        newBase?.let {
+            val prefs = it.getSharedPreferences("ajustes", MODE_PRIVATE)
+            val lang = prefs.getString("app_language", "en") ?: "en"
+            val context = setLocale(it, lang)
+            super.attachBaseContext(context)
+        } ?: super.attachBaseContext(newBase)
+    }
+
+    fun setLocale(context: Context, language: String): Context {
+        val localeParts = language.split("-r")
+        val locale =
+            if (localeParts.size == 2) Locale(localeParts[0], localeParts[1]) else Locale(language)
+        Locale.setDefault(locale)
+
+        val config = Configuration(context.resources.configuration)
+        config.setLocale(locale)
+        return context.createConfigurationContext(config)
     }
 }
