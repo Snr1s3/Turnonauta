@@ -129,7 +129,6 @@ Gestió de connexions en temps real via sockets.
   Pantalla per establir una nova contrasenya.            
   ![aboutUs](./img/novaContrasenya.png)
 
-
 - **activity_oponent_actual.xml**  
   Mostra informació sobre l'oponent actual en un torneig.                
   ![aboutUs](../img/oponentActual.png)
@@ -154,7 +153,6 @@ Gestió de connexions en temps real via sockets.
   Pantalla per iniciar el procés de recuperació de contrasenya.                
   ![aboutUs](./img/recuperarContrasenya.png)
 
-
 - **activity_registre.xml**  
   Formulari de registre d'usuari.                
   ![aboutUs](./img/registre.png)
@@ -167,16 +165,9 @@ Gestió de connexions en temps real via sockets.
   Mostra els termes d'ús de l'aplicació.                
   ![aboutUs](./img/termesUs.png)
 
-
 - **edit_name_fragment.xml**  
   Fragment per editar el nom d'usuari.                    
   ![aboutUs](./img/editNameFrgament.png)  
-
-
-- **fragment_idioma.xml**  
-  Fragment per seleccionar l'idioma de l'aplicació.                            
-  ![aboutUs](./img)
-
 
 - **tornejos_jugats_recycled_view.xml**  
   Disseny d'ítem per la llista de tornejos jugats (RecyclerView).                                            
