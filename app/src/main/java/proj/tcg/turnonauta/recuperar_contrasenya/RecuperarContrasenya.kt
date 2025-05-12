@@ -13,11 +13,19 @@ import proj.tcg.turnonauta.R
 import proj.tcg.turnonauta.registre.Registre
 import proj.tcg.turnonauta.screen.MenuInferiorAndroid
 import java.util.Locale
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import android.widget.Toast
+import proj.tcg.turnonauta.retrofit.ConnexioAPI
+
 
 class RecuperarContrasenya : AppCompatActivity(){
     private lateinit var bEnviar : Button
     private lateinit var bRegistrarse : TextView
     private lateinit var iCorreu : EditText
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,13 +41,28 @@ class RecuperarContrasenya : AppCompatActivity(){
             val correu = iCorreu.text.toString().trim()
 
             if (correu.isNotEmpty()) {
-                val intent = Intent(this, EscriureCodiMail::class.java)
-                intent.putExtra("email", correu)
-                startActivity(intent)
+                lifecycleScope.launch {
+                    try {
+                        val exists = withContext(Dispatchers.IO) {
+                            ConnexioAPI.api().checkEmailExists(correu)
+                        }
+
+                        if (exists) {
+                            val intent = Intent(this@RecuperarContrasenya, EscriureCodiMail::class.java)
+                            intent.putExtra("email", correu)
+                            startActivity(intent)
+                        } else {
+                            Toast.makeText(this@RecuperarContrasenya, "Aquest correu no existeix", Toast.LENGTH_SHORT).show()
+                        }
+                    } catch (e: Exception) {
+                        Toast.makeText(this@RecuperarContrasenya, "Error de connexió: ${e.message}", Toast.LENGTH_SHORT).show()
+                    }
+                }
             } else {
                 iCorreu.error = "Introdueix un correu vàlid"
             }
         }
+
 
 
         bRegistrarse.setOnClickListener{
