@@ -132,7 +132,7 @@ Gestió de connexions en temps real via sockets.
 
 - **activity_oponent_actual.xml**  
   Mostra informació sobre l'oponent actual en un torneig.                
-  ![aboutUs](./img/oponentActual.png)
+  ![aboutUs](../img/oponentActual.png)
 
 
 - **activity_pagina_principal.xml**  
