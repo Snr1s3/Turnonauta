@@ -9,6 +9,14 @@
     <string name="sense_registre1">If you don\'t have an account register here</string>
     <string name="logo">Logo</string>
 
+
+        <string name="error_usuario_contrasenya_vacios">You must enter username and password</string>
+        <string name="error_login_incorrecto">Incorrect username or password. Forgot your password? Click here.</string>
+        <string name="error_servidor">Server error, please try again later</string>
+        <string name="error_conexion">Connection problem, please check your Internet connection</string>
+        <string name="error_desconegut">An unexpected error occurred</string>
+
+
     <string name="recuperar_contrasenya">Recover password</string>
     <string name="escriu_el_mail">Enter your email address</string>
     <string name="mail_exemple">example@gmail.com</string>
@@ -25,6 +33,11 @@
     <string name="error_new_pw_1">Passwords do not match</string>
     <string name="error_new_pw_2">The password must contain letters, numbers, and special characters</string>
     <string name="error_new_pw_3">The password must contain at least 8 characters</string>
+    <string name="codigo_incorrecto">Incorrect code</string>
+    <string name="toast_email_received">Email entered: %1$s</string>
+    <string name="error_pw_update_failed">Failed to update password</string>
+    <string name="error_connection">Connection error: %1$s</string>
+    <string name="error_pw_empty_fields">Fields cannot be empty</string>
 
     <string name="registre">Register</string>
     <string name="mail">Email address</string>

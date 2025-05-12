@@ -50,7 +50,7 @@ class EscriureCodiMail : AppCompatActivity() {
                 intent.putExtra("email", email)
                 startActivity(intent)
             } else {
-                Toast.makeText(this, "Código incorrecto", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.codigo_incorrecto), Toast.LENGTH_SHORT).show()
             }
         }
     }

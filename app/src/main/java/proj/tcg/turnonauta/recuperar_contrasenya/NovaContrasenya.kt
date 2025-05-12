@@ -18,7 +18,6 @@ import proj.tcg.turnonauta.models.PasswordUpdateRequest
 import proj.tcg.turnonauta.retrofit.ConnexioAPI
 import java.util.Locale
 
-
 class NovaContrasenya : AppCompatActivity() {
 
     private lateinit var bActualitzar: Button
@@ -30,19 +29,17 @@ class NovaContrasenya : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_nova_contrasenya)
-        // Inicialización de vistas
+
         val menuInferior = MenuInferiorAndroid(window)
         menuInferior.hideSystemNavigationBar()
+
         bActualitzar = findViewById(R.id.bActualitzar)
         iContra = findViewById(R.id.iContra)
         iContra2 = findViewById(R.id.iContra2)
         tConObl = findViewById(R.id.tConObl)
 
-
-
         val email = intent.getStringExtra("email") ?: ""
-        Toast.makeText(this, "Correu introduït: $email", Toast.LENGTH_SHORT).show()
-
+        Toast.makeText(this, getString(R.string.toast_email_received, email), Toast.LENGTH_SHORT).show()
 
         bActualitzar.setOnClickListener {
             val password = iContra.text.toString()
@@ -51,7 +48,6 @@ class NovaContrasenya : AppCompatActivity() {
             val errorMessage = validatePassword(password, confirmPassword)
 
             if (errorMessage == null) {
-                val email = intent.getStringExtra("email") ?: ""
                 val request = PasswordUpdateRequest(email, password)
 
                 lifecycleScope.launch {
@@ -61,36 +57,34 @@ class NovaContrasenya : AppCompatActivity() {
                             val intent = Intent(this@NovaContrasenya, ContrasenyaActualitzada::class.java)
                             startActivity(intent)
                         } else {
-                            tConObl.text = "Error al actualitzar la contrasenya"
+                            tConObl.text = getString(R.string.error_pw_update_failed)
                             tConObl.visibility = TextView.VISIBLE
                         }
                     } catch (e: Exception) {
-                        tConObl.text = "Error de connexió: ${e.message}"
+                        tConObl.text = getString(R.string.error_connection, e.message ?: "")
                         tConObl.visibility = TextView.VISIBLE
                     }
                 }
             } else {
-                // Si hay errores de validación, mostrar mensaje
                 tConObl.text = errorMessage
                 tConObl.visibility = TextView.VISIBLE
             }
-
-
         }
     }
 
-    // Función para validar la contraseña
     private fun validatePassword(password: String, confirmPassword: String): String? {
         val regex = Regex("^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@\$!%*?&])[A-Za-z\\d@\$!%*?&]{8,}\$")
 
         return when {
-            password.isEmpty() || confirmPassword.isEmpty() -> "Els camps no poden estar buits"
+            password.isEmpty() || confirmPassword.isEmpty() -> getString(R.string.error_pw_empty_fields)
             password != confirmPassword -> getString(R.string.error_new_pw_1)
             password.length < 8 -> getString(R.string.error_new_pw_3)
             !regex.matches(password) -> getString(R.string.error_new_pw_2)
-            else -> null // No hay errores
+            else -> null
         }
-    }override fun attachBaseContext(newBase: Context?) {
+    }
+
+    override fun attachBaseContext(newBase: Context?) {
         newBase?.let {
             val prefs = it.getSharedPreferences("ajustes", MODE_PRIVATE)
             val lang = prefs.getString("app_language", "en") ?: "en"

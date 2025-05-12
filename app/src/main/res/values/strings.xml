@@ -9,6 +9,13 @@
     <string name="sense_registre1">Si no tens conta registrat aquí</string>
     <string name="logo">Logo</string>
 
+    <string name="error_usuario_contrasenya_vacios">Has d’introduir usuari i contrasenya</string>
+    <string name="error_login_incorrecto">Usuari o contrasenya incorrectes. Has oblidat la contrasenya? Prem aquí.</string>
+    <string name="error_servidor">Error del servidor, intenta-ho més tard</string>
+    <string name="error_conexion">Problema de connexió, comprova la teva connexió a Internet</string>
+    <string name="error_desconegut">S’ha produït un error inesperat</string>
+
+
     <string name="recuperar_contrasenya">Recuperar contrasenya</string>
     <string name="escriu_el_mail">Escriu el teu correu electronic</string>
     <string name="mail_exemple">example@gmail.com</string>
@@ -25,6 +32,13 @@
     <string name="error_new_pw_1">Las contrasenyes no coinsideixen</string>
     <string name="error_new_pw_2">La contrasenya a de contenir lletres, números i caràracters especials</string>
     <string name="error_new_pw_3">La contrasenya a de contenir com a minim 8 caracters</string>
+    <string name="codigo_incorrecto">Codi incorrecte</string>
+
+    <string name="toast_email_received">Correu introduït: %1$s</string>
+    <string name="error_pw_update_failed">Error en actualitzar la contrasenya</string>
+    <string name="error_connection">Error de connexió: %1$s</string>
+    <string name="error_pw_empty_fields">Els camps no poden estar buits</string>
+
 
     <string name="registre">Registre</string>
     <string name="mail">Correu electronic</string>

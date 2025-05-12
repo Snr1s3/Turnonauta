@@ -79,6 +79,12 @@ interface ApiService {
         @Query("username") username: String
     ): Boolean
 
+    @GET("/users/check_mail")
+    suspend fun checkEmailExists(
+        @Query("email") email: String
+    ): Boolean
+
+
     @PUT("/users/update_name/{id}")
     suspend fun updateUserName(
         @Path("id") userId: Int,
