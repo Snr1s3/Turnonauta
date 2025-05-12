@@ -5,10 +5,14 @@ Turnonauta és una aplicació per gestionar tornejos de TCG (Trading Card Games)
 ## Links
 
 - [API](https://github.com/Snr1s3/TurnoNauta_FastAPI.git)
-- [Server APP](https://github.com/Snr1s3/serverApp_Turnonauta.git)]
+- [Server APP](https://github.com/Snr1s3/serverApp_Turnonauta.git)
 - [WEB](https://github.com/EdwindanielTIC/web_TurnoNauta.git)
 
-
+## Estructura de directoris del Projecte( SRC i res)                
+  ![kt.png](./img/kt.png)                    
+  ![kt.png](./img/dir21.png)                      
+  ![kt.png](./img/dir22.png)      
+      
 ## Fitxers .kt del projecte
 
 - **PantallaLogin.kt**  
