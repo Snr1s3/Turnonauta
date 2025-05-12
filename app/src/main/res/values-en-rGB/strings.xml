@@ -97,10 +97,73 @@
     <string name="tancarSessio">Log Out</string>
 
     <string name="esborrarPerfil">Delete Profile</string>
-    <string name="politicaPrivacitatu"> BOndia</string>
+    <string name="politicaPrivacitatu">
+This Privacy Policy describes how user information is collected, used, and protected by this application. Use of the app implies acceptance of this policy.\n
+
+1. INFORMATION COLLECTED\n
+Information is collected from users of the application in the following ways:\n
+- Information provided directly by the user when registering or using specific features.\n
+- Automatically collected data, including device information, IP address, unique identifiers, operating system, and usage data.\n
+- Data collected through cookies and similar technologies to improve user experience and optimize functionality.\n
+
+2. PURPOSE OF DATA PROCESSING\n
+Collected information is used for the following purposes:\n
+- Manage user accounts and provide access to services.\n
+- Improve performance and functionality through usage analysis.\n
+- Send important notifications about changes to the app or this policy.\n
+- Ensure compliance with legal and regulatory obligations.\n
+
+3. DATA SHARING WITH THIRD PARTIES\n
+User information is not sold or shared with third parties, except in the following circumstances:\n
+- When necessary to provide services through external providers under strict confidentiality agreements.\n
+- When required by law, judicial or regulatory demands.\n
+- In the case of a merger, acquisition, or restructuring, data may be transferred to the new entity.\n
+
+4. USE OF COOKIES AND SIMILAR TECHNOLOGIES\n
+This app may use cookies and similar technologies to store information and improve user experience. Cookies can be disabled or managed from device settings, but this may affect some features.\n
+
+5. SECURITY MEASURES\n
+Technical and organizational measures have been implemented to protect personal data from unauthorized access, alteration, disclosure, or destruction. However, no system is completely secure and absolute security cannot be guaranteed.\n
+
+6. USER RIGHTS\n
+Users have the right to:\n
+- Access the information collected about them.\n
+- Correct any inaccurate or incomplete data.\n
+- Request deletion of personal data in certain circumstances.\n
+- Object to data processing when applicable by law.\n
+- File a complaint with data protection authorities if rights are violated.\n
+
+7. DATA RETENTION\n
+Personal data will be retained as long as necessary to fulfill the purposes for which it was collected and in compliance with legal obligations. If the user wishes to delete their account, the appropriate measures will be taken to delete their data according to applicable law.\n
+
+8. CHANGES TO THIS PRIVACY POLICY\n
+This Privacy Policy may be updated at any time. Any significant changes will be notified through available means within the app. Users are encouraged to review this policy periodically.\n
+
+9. CONTACT\n
+For any questions regarding this Privacy Policy or data processing, users can contact support at: support@turnonauta.com.
+    </string>
 
     <string name="termesDusu">Terms of Use</string>
-    <string name="termesDusdos">bondia</string>
+    <string name="termesDusdos">
+Welcome to our application.\n
+By accessing or using our services, you agree to the following terms of use. Please read them carefully.\n\n
+1. Acceptance of Terms:\n
+By registering and using this app, you accept these terms of use and any future modifications. If you disagree with any part, we recommend not using the app.\n\n
+2. Use of Service:\n
+You agree to use the service only for lawful purposes and not to infringe on the rights of others. Misuse, data manipulation, or unauthorized access is not allowed.\n\n
+3. Registration and Account:\n
+Users must provide accurate information when registering. You are responsible for maintaining the confidentiality of your login credentials and for all activity under your account.\n\n
+4. Intellectual Property:\n
+All content, images, logos, texts, and designs in this app are protected by copyright. Reproduction in whole or in part is prohibited without prior written consent.\n\n
+5. Responsibility:\n
+The application is provided "as is" with no guarantees. We are not liable for any damage or loss arising from use or malfunction of the service.\n\n
+6. Modifications:\n
+We reserve the right to modify these terms at any time. Continued use of the service after changes implies acceptance of the new terms.\n\n
+7. Termination:\n
+We may suspend or terminate your account if you violate these terms or negatively impact the service or other users.\n\n
+Thank you for trusting us.\n
+If you have any questions, contact us through app support.
+    </string>
 
     <string name="nouNom">New Username</string>
     <string name="nouNomdos">Username:</string>
