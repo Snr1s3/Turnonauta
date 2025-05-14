@@ -54,8 +54,8 @@ class Configuracio : AppCompatActivity() {
         botoUbi = findViewById(R.id.btn_ubi)
 
         // Configuración visual inicial
-        botonImagen.setImageResource(R.drawable.campana_noti_on)
-        botonImagen.setBackgroundResource(R.drawable.rounded_green_border_button)
+        botonImagen.setImageResource(R.drawable.campana_noti_off)
+        botonImagen.setBackgroundResource(R.drawable.rounded_red_border_button)
 
         if (isNight) {
             botonModo.setImageResource(R.drawable.luna_turno)
@@ -65,8 +65,8 @@ class Configuracio : AppCompatActivity() {
             botonModo.setBackgroundResource(R.drawable.rounded_day_button)
         }
 
-        botoUbi.setImageResource(R.drawable.location_on)
-        botoUbi.setBackgroundResource(R.drawable.rounded_green_border_button)
+        botoUbi.setImageResource(R.drawable.location_off)
+        botoUbi.setBackgroundResource(R.drawable.rounded_red_border_button)
 
         // Botón de modo noche
         botonModo.setOnClickListener {
@@ -96,11 +96,11 @@ class Configuracio : AppCompatActivity() {
         // Botón de notificaciones
         botonImagen.setOnClickListener {
             if (isRedBorder) {
-                botonImagen.setImageResource(R.drawable.campana_noti_on)
-                botonImagen.setBackgroundResource(R.drawable.rounded_green_border_button)
-            } else {
                 botonImagen.setImageResource(R.drawable.campana_noti_off)
                 botonImagen.setBackgroundResource(R.drawable.rounded_red_border_button)
+            } else {
+                botonImagen.setImageResource(R.drawable.campana_noti_on)
+                botonImagen.setBackgroundResource(R.drawable.rounded_green_border_button)
             }
             isRedBorder = !isRedBorder
         }
@@ -108,11 +108,11 @@ class Configuracio : AppCompatActivity() {
         // Botón de ubicación
         botoUbi.setOnClickListener {
             if (isUbiON) {
-                botoUbi.setImageResource(R.drawable.location_on)
-                botoUbi.setBackgroundResource(R.drawable.rounded_green_border_button)
-            } else {
                 botoUbi.setImageResource(R.drawable.location_off)
                 botoUbi.setBackgroundResource(R.drawable.rounded_red_border_button)
+            } else {
+                botoUbi.setImageResource(R.drawable.location_on)
+                botoUbi.setBackgroundResource(R.drawable.rounded_green_border_button)
             }
             isUbiON = !isUbiON
         }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Primary Colors -->
-    <color name="color_primary">#000814</color>
+    <color name="color_primary">#D418FF</color>
     <color name="color_accent">#001D3D</color>
     <color name="color_background">#000814</color> <!-- Dark Background -->
-    <color name="color_background_2">#020F21</color>
-    <color name="color_primary_variant">#003566</color>
+    <color name="color_background_2">#001D3D</color>
+    <color name="color_primary_variant">#2F5A83</color>
     <color name="color_surface">#FFC300</color>
     <color name="color_text">#FFD60A</color>
     <color name="color_text2">#FFD60A</color>
